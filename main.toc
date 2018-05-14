@@ -32,45 +32,47 @@
 \contentsline {chapter}{\numberline {III}DESAIN DAN PERANCANGAN}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Deskripsi Umum Sistem}{15}{section.3.1}
 \contentsline {section}{\numberline {3.2}Kasus Penggunaan}{15}{section.3.2}
-\contentsline {section}{\numberline {3.3}Arsitektur Sistem}{17}{section.3.3}
+\contentsline {section}{\numberline {3.3}Arsitektur Sistem}{18}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Desain Umum Sistem}{18}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Perancangan Pemeriksaan Data Kontainer yang Sudah Dibuat pada \textit {docker host}.}{19}{subsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.2.1}Desain Basis Data}{20}{subsubsection.3.3.2.1}
-\contentsline {subsubsection}{\numberline {3.3.2.2}Desain Web Service}{21}{subsubsection.3.3.2.2}
-\contentsline {subsection}{\numberline {3.3.3}Perancangan Pemasangan Kontainer pada \textit {docker host}.}{21}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {IV}IMPLEMENTASI}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Lingkungan Implementasi}{23}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Perangkat Keras}{23}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Perangkat Lunak}{23}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Implementasi Mengarahkan \textit {Client} ke Halaman \textit {Login}}{24}{section.4.2}
-\contentsline {section}{\numberline {4.3}Implementasi Pembuatan Halaman \textit {Login}}{24}{section.4.3}
-\contentsline {section}{\numberline {4.4}Implementasi \textit {Middleware}}{25}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Implementasi Basis Data}{25}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Implementasi \textit {Web Service}}{26}{subsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.2.1}Rute \textit {Web Service}}{26}{subsubsection.4.4.2.1}
-\contentsline {subsection}{\numberline {4.4.3}\textit {Pseduocode Web Service}}{27}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Implementasi Pemasangan Kontainer \textit {Docker} pada \textit {Docker Host}}{28}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Menambahkan dan Memperbarui Kontainer \textit {Docker} yang Berisikan Mitmproxy}{29}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Menggunakan \textit {Image} Kontainer \textit {Docker} yang Sudah Dibuat}{31}{subsection.4.5.2}
-\contentsline {chapter}{\numberline {V}PENGUJIAN DAN EVALUASI}{33}{chapter.5}
-\contentsline {section}{\numberline {5.1}Lingkungan Uji Coba}{33}{section.5.1}
-\contentsline {section}{\numberline {5.2}Skenario Uji Coba}{35}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Skenario Uji Fungsionalitas}{35}{subsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.1.1}Uji Coba \textit {Client} dapat \textit {Login} ke Dalam Sistem}{36}{subsubsection.5.2.1.1}
-\contentsline {subsubsection}{\numberline {5.2.1.2}Uji Coba \textit {Client} dapat Mengirimkan Permintaan Penyediaan Kontainer \textit {Docker} ke \textit {Docker Host}}{37}{subsubsection.5.2.1.2}
-\contentsline {subsubsection}{\numberline {5.2.1.3}Uji Coba \textit {Docker Host} dapat Menerima Perintah Penyediaan Kontainer \textit {Docker}}{37}{subsubsection.5.2.1.3}
-\contentsline {subsection}{\numberline {5.2.2}Skenario Uji Performa}{38}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Hasil Uji Coba dan Evaluasi}{39}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Uji Fungsionalitas}{40}{subsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.1.1}Uji Coba User Mengirim Permintaan Penyediaan Kontainer}{40}{subsubsection.5.3.1.1}
-\contentsline {subsubsection}{\numberline {5.3.1.2}Uji Coba Sistem dapat Melakukan Penghitungan AHP}{40}{subsubsection.5.3.1.2}
-\contentsline {subsubsection}{\numberline {5.3.1.3}Uji Coba \textit {Docker Host} dapat Menerima Perintah Penyediaan Kontainer}{42}{subsubsection.5.3.1.3}
-\contentsline {subsubsection}{\numberline {5.3.1.4}Uji Coba \textit {Docker Host} dapat Mengirim Data Resourcenya Masing-Masing}{45}{subsubsection.5.3.1.4}
-\contentsline {subsection}{\numberline {5.3.2}Uji Performa}{47}{subsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.2.1}Pengujian Dengan Algoritma AHP}{48}{subsubsection.5.3.2.1}
-\contentsline {subsubsection}{\numberline {5.3.2.2}Pengujian Dengan Algoritma \textit {Round Robin}}{49}{subsubsection.5.3.2.2}
-\contentsline {subsubsection}{\numberline {5.3.2.3}Pengujian Performa Sistem dengan Algoritma AHP Berdasarkan Jumlah Kontainer yang Akan Dipasangkan}{50}{subsubsection.5.3.2.3}
-\contentsline {chapter}{\numberline {VI}PENUTUP}{55}{chapter.6}
-\contentsline {section}{\numberline {6.1}Kesimpulan}{55}{section.6.1}
-\contentsline {section}{\numberline {6.2}Saran}{56}{section.6.2}
-\contentsline {chapter}{DAFTAR PUSTAKA}{57}{chapter*.20}
+\contentsline {subsection}{\numberline {3.3.2}Perancangan Pemeriksaan Data Kontainer yang Sudah Dibuat pada \textit {docker host}.}{20}{subsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.2.1}Desain Basis Data}{21}{subsubsection.3.3.2.1}
+\contentsline {subsubsection}{\numberline {3.3.2.2}Desain Web Service}{22}{subsubsection.3.3.2.2}
+\contentsline {subsection}{\numberline {3.3.3}Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Halaman \textit {Login} dari Sistem}{22}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Kontainer \textit {Docker} dari Tiap-Tiap \textit {Client}}{22}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Perancangan Pemasangan Kontainer pada \textit {Docker Host}}{22}{subsection.3.3.5}
+\contentsline {chapter}{\numberline {IV}IMPLEMENTASI}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Lingkungan Implementasi}{25}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Perangkat Keras}{25}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Perangkat Lunak}{25}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Implementasi Mengarahkan \textit {Client} ke Halaman \textit {Login}}{26}{section.4.2}
+\contentsline {section}{\numberline {4.3}Implementasi Pembuatan Halaman \textit {Login}}{26}{section.4.3}
+\contentsline {section}{\numberline {4.4}Implementasi \textit {Middleware}}{27}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Implementasi Basis Data}{27}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Implementasi \textit {Web Service}}{28}{subsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.2.1}Rute \textit {Web Service}}{28}{subsubsection.4.4.2.1}
+\contentsline {subsection}{\numberline {4.4.3}\textit {Pseduocode Web Service}}{29}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Implementasi Pemasangan Kontainer \textit {Docker} pada \textit {Docker Host}}{30}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Menambahkan dan Memperbarui Kontainer \textit {Docker} yang Berisikan Mitmproxy}{31}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Menggunakan \textit {Image} Kontainer \textit {Docker} yang Sudah Dibuat}{33}{subsection.4.5.2}
+\contentsline {chapter}{\numberline {V}PENGUJIAN DAN EVALUASI}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Lingkungan Uji Coba}{35}{section.5.1}
+\contentsline {section}{\numberline {5.2}Skenario Uji Coba}{37}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Skenario Uji Fungsionalitas}{37}{subsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.1.1}Uji Coba \textit {Client} dapat \textit {Login} ke Dalam Sistem}{38}{subsubsection.5.2.1.1}
+\contentsline {subsubsection}{\numberline {5.2.1.2}Uji Coba \textit {Client} dapat Mengirimkan Permintaan Penyediaan Kontainer \textit {Docker} ke \textit {Docker Host}}{39}{subsubsection.5.2.1.2}
+\contentsline {subsubsection}{\numberline {5.2.1.3}Uji Coba \textit {Docker Host} dapat Menerima Perintah Penyediaan Kontainer \textit {Docker}}{39}{subsubsection.5.2.1.3}
+\contentsline {subsection}{\numberline {5.2.2}Skenario Uji Performa}{40}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Hasil Uji Coba dan Evaluasi}{41}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Uji Fungsionalitas}{42}{subsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.1.1}Uji Coba User Mengirim Permintaan Penyediaan Kontainer}{42}{subsubsection.5.3.1.1}
+\contentsline {subsubsection}{\numberline {5.3.1.2}Uji Coba Sistem dapat Melakukan Penghitungan AHP}{42}{subsubsection.5.3.1.2}
+\contentsline {subsubsection}{\numberline {5.3.1.3}Uji Coba \textit {Docker Host} dapat Menerima Perintah Penyediaan Kontainer}{44}{subsubsection.5.3.1.3}
+\contentsline {subsubsection}{\numberline {5.3.1.4}Uji Coba \textit {Docker Host} dapat Mengirim Data Resourcenya Masing-Masing}{47}{subsubsection.5.3.1.4}
+\contentsline {subsection}{\numberline {5.3.2}Uji Performa}{49}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}Pengujian Dengan Algoritma AHP}{50}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}Pengujian Dengan Algoritma \textit {Round Robin}}{51}{subsubsection.5.3.2.2}
+\contentsline {subsubsection}{\numberline {5.3.2.3}Pengujian Performa Sistem dengan Algoritma AHP Berdasarkan Jumlah Kontainer yang Akan Dipasangkan}{52}{subsubsection.5.3.2.3}
+\contentsline {chapter}{\numberline {VI}PENUTUP}{57}{chapter.6}
+\contentsline {section}{\numberline {6.1}Kesimpulan}{57}{section.6.1}
+\contentsline {section}{\numberline {6.2}Saran}{58}{section.6.2}
+\contentsline {chapter}{DAFTAR PUSTAKA}{59}{chapter*.20}

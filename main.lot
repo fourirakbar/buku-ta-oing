@@ -4,29 +4,30 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Daftar Kode Kasus Penggunaan\relax }}{17}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Atribut basis data NRP mahasiswa\relax }}{20}{table.3.2}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Atribut basis data kontainer\relax }}{21}{table.3.3}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Daftar Kode Kasus Penggunaan\relax }}{18}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Atribut basis data NRP mahasiswa\relax }}{21}{table.3.2}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Atribut basis data kontainer\relax }}{22}{table.3.3}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Daftar Rute \textit {Web Service}\relax }}{27}{table.4.1}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Daftar Rute \textit {Web Service}\relax }}{29}{table.4.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Komputer sebagai \textit {Docker Host}\relax }}{33}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Komputer sebagai \textit {Server} dari Halaman \textit {Login}\relax }}{34}{table.5.2}
-\contentsline {table}{\numberline {5.3}{\ignorespaces \textit {Client} 1\relax }}{34}{table.5.3}
-\contentsline {table}{\numberline {5.4}{\ignorespaces \textit {Client} 2\relax }}{35}{table.5.4}
-\contentsline {table}{\numberline {5.5}{\ignorespaces Skenario Uji Coba User dapat \textit {Login} ke Dalam Sistem\relax }}{36}{table.5.5}
-\contentsline {table}{\numberline {5.6}{\ignorespaces Skenario Uji Coba User dapat \textit {Login} ke Dalam Sistem\relax }}{37}{table.5.6}
-\contentsline {table}{\numberline {5.7}{\ignorespaces Skenario Uji Coba \textit {Docker Host} dapat Menerima Perintah Penyediaan Kontainer \textit {Docker}\relax }}{38}{table.5.7}
-\contentsline {table}{\numberline {5.8}{\ignorespaces Hasil Skenario Uji Coba mengirim permintaan penyediaan kontainer\relax }}{40}{table.5.8}
-\contentsline {table}{\numberline {5.9}{\ignorespaces Kondisi Awal Penggunaan Sumberdaya \textit {Docker Host} sebelum uji coba dijalankan\relax }}{41}{table.5.9}
-\contentsline {table}{\numberline {5.10}{\ignorespaces Hasil Skenario Uji Coba Sistem dapat melakukan Penghitungan AHP\relax }}{41}{table.5.10}
-\contentsline {table}{\numberline {5.11}{\ignorespaces Hasil Skenario Uji Coba \textit {Docker Host} dapat menerima perintah penyediaan kontainer\relax }}{42}{table.5.11}
-\contentsline {table}{\numberline {5.12}{\ignorespaces Hasil Skenario Uji Coba \textit {Docker Host} dapat Mengirim Data Resourcenya Masing-Masing\relax }}{45}{table.5.12}
-\contentsline {table}{\numberline {5.13}{\ignorespaces Kondisi Awal Ketersediaan Sumberdaya \textit {Docker Host} sebelum uji coba dijalankan\relax }}{48}{table.5.13}
-\contentsline {table}{\numberline {5.14}{\ignorespaces Hasil Uji Coba Performa sistem dengan \textit {Image Docker} httpd dan nginx menggunakan AHP\relax }}{48}{table.5.14}
-\contentsline {table}{\numberline {5.15}{\ignorespaces Rata-rata Kondisi Akhir Ketersediaan Sumberdaya \textit {Docker Host} Setelah Uji Coba Dijalankan\relax }}{49}{table.5.15}
-\contentsline {table}{\numberline {5.16}{\ignorespaces Kondisi Awal Ketersediaan Sumberdaya \textit {Docker Host} Sebelum Uji Coba Dijalankan\relax }}{49}{table.5.16}
-\contentsline {table}{\numberline {5.17}{\ignorespaces Hasil Uji Coba Performa Sistem dengan \textit {Image Docker} httpd dan nginx Menggunakan \textit {Round Robin}\relax }}{49}{table.5.17}
-\contentsline {table}{\numberline {5.18}{\ignorespaces Kondisi Akhir Ketersediaan Sumberdaya \textit {Docker Host} Setelah Uji Coba Dijalankan\relax }}{50}{table.5.18}
-\contentsline {table}{\numberline {5.19}{\ignorespaces Kondisi Awal Ketersediaan Sumberdaya \textit {Docker Host} Sebelum Uji Coba Dijalankan\relax }}{50}{table.5.19}
-\contentsline {table}{\numberline {5.20}{\ignorespaces Hasil Uji Coba Performa Sistem dengan \textit {Docker Image} httpd dan nginx Menggunakan AHP\relax }}{51}{table.5.20}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Komputer sebagai \textit {Docker Host}\relax }}{35}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Komputer sebagai \textit {Server} dari Halaman \textit {Login}\relax }}{36}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces \textit {Client} 1\relax }}{36}{table.5.3}
+\contentsline {table}{\numberline {5.4}{\ignorespaces \textit {Client} 2\relax }}{37}{table.5.4}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Skenario Uji Coba User dapat \textit {Login} ke Dalam Sistem\relax }}{38}{table.5.5}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Skenario Uji Coba User dapat \textit {Login} ke Dalam Sistem\relax }}{39}{table.5.6}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Skenario Uji Coba \textit {Docker Host} dapat Menerima Perintah Penyediaan Kontainer \textit {Docker}\relax }}{40}{table.5.7}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Hasil Skenario Uji Coba mengirim permintaan penyediaan kontainer\relax }}{42}{table.5.8}
+\contentsline {table}{\numberline {5.9}{\ignorespaces Kondisi Awal Penggunaan Sumberdaya \textit {Docker Host} sebelum uji coba dijalankan\relax }}{43}{table.5.9}
+\contentsline {table}{\numberline {5.10}{\ignorespaces Hasil Skenario Uji Coba Sistem dapat melakukan Penghitungan AHP\relax }}{43}{table.5.10}
+\contentsline {table}{\numberline {5.11}{\ignorespaces Hasil Skenario Uji Coba \textit {Docker Host} dapat menerima perintah penyediaan kontainer\relax }}{44}{table.5.11}
+\contentsline {table}{\numberline {5.12}{\ignorespaces Hasil Skenario Uji Coba \textit {Docker Host} dapat Mengirim Data Resourcenya Masing-Masing\relax }}{47}{table.5.12}
+\contentsline {table}{\numberline {5.13}{\ignorespaces Kondisi Awal Ketersediaan Sumberdaya \textit {Docker Host} sebelum uji coba dijalankan\relax }}{50}{table.5.13}
+\contentsline {table}{\numberline {5.14}{\ignorespaces Hasil Uji Coba Performa sistem dengan \textit {Image Docker} httpd dan nginx menggunakan AHP\relax }}{50}{table.5.14}
+\contentsline {table}{\numberline {5.15}{\ignorespaces Rata-rata Kondisi Akhir Ketersediaan Sumberdaya \textit {Docker Host} Setelah Uji Coba Dijalankan\relax }}{51}{table.5.15}
+\contentsline {table}{\numberline {5.16}{\ignorespaces Kondisi Awal Ketersediaan Sumberdaya \textit {Docker Host} Sebelum Uji Coba Dijalankan\relax }}{51}{table.5.16}
+\contentsline {table}{\numberline {5.17}{\ignorespaces Hasil Uji Coba Performa Sistem dengan \textit {Image Docker} httpd dan nginx Menggunakan \textit {Round Robin}\relax }}{51}{table.5.17}
+\contentsline {table}{\numberline {5.18}{\ignorespaces Kondisi Akhir Ketersediaan Sumberdaya \textit {Docker Host} Setelah Uji Coba Dijalankan\relax }}{52}{table.5.18}
+\contentsline {table}{\numberline {5.19}{\ignorespaces Kondisi Awal Ketersediaan Sumberdaya \textit {Docker Host} Sebelum Uji Coba Dijalankan\relax }}{52}{table.5.19}
+\contentsline {table}{\numberline {5.20}{\ignorespaces Hasil Uji Coba Performa Sistem dengan \textit {Docker Image} httpd dan nginx Menggunakan AHP\relax }}{53}{table.5.20}
 \addvspace {10\p@ }

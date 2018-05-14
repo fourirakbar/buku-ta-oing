@@ -5,18 +5,18 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Perbandingan \textit {docker} dan virtual machine\relax }}{12}{figure.caption.6}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Digram Kasus Penggunaan\relax }}{16}{figure.caption.7}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Arsitektur Komponen Sistem\relax }}{19}{figure.caption.8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arsitektur Komponen Sistem\relax }}{20}{figure.caption.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Arsitektur Pengujian Performa\relax }}{39}{figure.caption.9}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Gambar Hasil Uji Sistem dapat melakukan Penghitungan AHP \relax }}{42}{figure.caption.10}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Web Service Mengrimkan perintah penyediaan kontainer\relax }}{44}{figure.caption.11}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces \emph {Docker Host} berhasil membuat kontainer \emph {docker}\relax }}{45}{figure.caption.12}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Data CPU Setiap Docker Host pada InfluxDB\relax }}{47}{figure.caption.13}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Data RAM Setiap Docker Host pada InfluxDB\relax }}{47}{figure.caption.14}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Data Penyimpanan File Setiap Docker Host pada InfluxDB\relax }}{47}{figure.caption.15}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Grafik Kondisi Akhir Ketersediaan Rata-Rata CPU\relax }}{51}{figure.caption.16}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Grafik Kondisi Akhir Ketersediaan Memori\relax }}{52}{figure.caption.17}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Grafik Kondisi Akhir Ketersedian Penyimpaanan FIle\relax }}{52}{figure.caption.18}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Grafik Waktu Pendistribusian Docker oleh Sistem Berdasarkan Jumlah Kontainer\relax }}{53}{figure.caption.19}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Arsitektur Pengujian Performa\relax }}{41}{figure.caption.9}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Gambar Hasil Uji Sistem dapat melakukan Penghitungan AHP \relax }}{44}{figure.caption.10}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Web Service Mengrimkan perintah penyediaan kontainer\relax }}{46}{figure.caption.11}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \emph {Docker Host} berhasil membuat kontainer \emph {docker}\relax }}{47}{figure.caption.12}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Data CPU Setiap Docker Host pada InfluxDB\relax }}{49}{figure.caption.13}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Data RAM Setiap Docker Host pada InfluxDB\relax }}{49}{figure.caption.14}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Data Penyimpanan File Setiap Docker Host pada InfluxDB\relax }}{49}{figure.caption.15}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Grafik Kondisi Akhir Ketersediaan Rata-Rata CPU\relax }}{53}{figure.caption.16}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Grafik Kondisi Akhir Ketersediaan Memori\relax }}{54}{figure.caption.17}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Grafik Kondisi Akhir Ketersedian Penyimpaanan FIle\relax }}{54}{figure.caption.18}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Grafik Waktu Pendistribusian Docker oleh Sistem Berdasarkan Jumlah Kontainer\relax }}{55}{figure.caption.19}
 \addvspace {10\p@ }

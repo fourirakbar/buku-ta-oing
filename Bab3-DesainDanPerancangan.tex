@@ -1,12 +1,12 @@
 \chapter{DESAIN DAN PERANCANGAN}
   Pada bab ini dibahas mengenai analisis dan perancangan dari sistem. 
   \section{Deskripsi Umum Sistem}    
-    Sistem yang akan dibuat adalah sebuah sebuah sistem yang dapat membuat sebuah kontainer secara otomatis untuk setiap satu \textit{user} yang telah \textit{login} ke dalam sistem. Saat \textit{user} belum \textit{login} ke dalam sistem, maka \textit{user} tersebut akan diarahkan ke halaman \textit{login} dari sistem. Saat \textit{user} mencoba untuk \textit{login} ke dalam sistem, maka sistem akan melakukan pengecekan di dalam basis data apakah \textit{username} dan \textit{password} yang di\textit{input}kan sudah benar atau salah. 
+    Sistem yang akan dibuat adalah sebuah sebuah sistem yang dapat membuat sebuah kontainer \textit{docker} secara otomatis untuk setiap satu \textit{client} yang telah \textit{login} ke dalam sistem. Saat \textit{client} belum \textit{login} ke dalam sistem, maka \textit{client} tersebut akan diarahkan ke halaman \textit{login} dari sistem. Saat \textit{client} mencoba untuk \textit{login} ke dalam sistem, maka sistem akan melakukan pengecekan di dalam basis data apakah \textit{username} dan \textit{password} yang di\textit{input}kan sudah benar atau salah. 
     
-    Setelah \textit{user} berhasil \textit{login} ke dalam sistem, sistem akan mengirimkan perintah untuk membuat kontainer \textit{docker} yang berisikan \textit{mitmproxy} ke \textit{docker host}. Setelah berhasil membuat kontainer \textit{docker} untuk user tersebut, maka \textit{traffic} internet dari \textit{user} tersebut akan diarahkan ke kontainer \textit{docker} berisikan \textit{mitmproxy} yang baru saja dibuat. Setelah itu akan user baru dapat untuk mengakses internet.
+    Setelah \textit{client} berhasil \textit{login} ke dalam sistem, sistem akan mengirimkan perintah untuk membuat kontainer \textit{docker} yang berisikan \textit{mitmproxy} ke \textit{docker host}. Setelah berhasil membuat kontainer \textit{docker} untuk client tersebut, maka \textit{traffic} internet dari \textit{client} tersebut akan diarahkan ke kontainer \textit{docker} berisikan \textit{mitmproxy} yang baru saja dibuat. Setelah itu akan client baru dapat untuk mengakses internet.
   
   \section{Kasus Penggunaan}
-  Terdapat dua aktor dalam sistem yang akan dibuat yaitu \textit{User} dan \textit{Docker Host}. \textit{User} adalah aktor yang melakukan permintaan penyediaan kontainer, sedangkan \textit{docker host} adalah aktor yang akan menjadi tempat penyedia kontainer dan menerima perintah penyediaan kontainer. Diagram kasus penggunaan menggambarkan kebutuhan-kebutuhan yang harus dipenuhi sistem. Diagram kasus penggunaan digambarkan pada Gambar \ref{gambarDiagramKasusPenggunaan}.
+  Terdapat empat aktor dalam sistem yang akan dibuat yaitu \textit{Client}, \textit{Server Login}, \textit{Administrator}, dan \textit{Docker Host}. \textit{Client} adalah aktor yang melakukan proses \textit{login} ke dalam sistem, \textit{server login} adalah aktor yang melakukan proses permintaan penyediaan kontainer \textit{docker}, \textit{administrator} adalah aktor yang melakukan monitoring kontainer \textit{docker} yang sedang berjalan, sedangkan \textit{docker host} adalah aktor yang akan menjadi tempat penyedia kontainer dan menerima perintah penyediaan kontainer. Diagram kasus penggunaan menggambarkan kebutuhan - kebutuhan yang harus dipenuhi sistem. Diagram kasus penggunaan digambarkan pada Gambar \ref{gambarDiagramKasusPenggunaan}.
   \begin{figure}[!h] % h = pasti berada di bawah teks yang ada di atas
   \centering
   \includegraphics[width=\linewidth]{images/bab3/usecase}
@@ -28,10 +28,11 @@
 \endlastfoot
 
 % Isi Tabel
-UC-0001 & Login & User dapat login ke dalam sistem. \\ \hline
-UC-0002 & Mengirim Permintaan Penyediaan Kontainer & User dapat mengirimkan permintaan penyediaan kontainer pada web service yang ada. \\ \hline
-UC-0003 & Menerima Perintah Penyediaan Kontainer  &  Proses dimana \textit{docker host} akan menerima perintah dari sistem, untuk menyediakan kontainer secara otomatis.\\ \hline
-UC-0004 & Membaca Log File dari \textit{Client}  &  Proses dimana \textit{administrator} dari sebuah jaringan dapat membaca \textit{log file} dari client secara \textit{live} ataupun juga ketika \textit{client} telah selesai menggunakannya.\\ \hline
+UC-0001 & \textit{Login} & \textit{Client} dapat \textit{login} ke dalam sistem. \\ \hline
+UC-0002 & Mengirim Permintaan Penyediaan Kontainer \textit{Docker} & \textit{Server login} dapat mengirimkan permintaan penyediaan kontainer \textit{docker} pada \textit{docker host}. \\ \hline
+UC-0003 & Menerima Perintah Penyediaan Kontainer \textit{Docker}  &  Proses dimana \textit{docker host} akan menerima perintah dari sistem, untuk menyediakan kontainer secara otomatis.\\ \hline
+UC-0004 & Membuat Aturan untuk Mengarahkan \textit{Traffic Client}  &  Proses dimana \textit{docker host} akan membuat aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem atau untuk membuat aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client}. \\ \hline
+UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \textit{administrator} dari sebuah jaringan dapat membaca \textit{log file} dari client secara \textit{live} ataupun juga ketika \textit{client} telah selesai menggunakannya.\\ \hline
 \end{longtable}
 
   \section{Arsitektur Sistem}
@@ -40,6 +41,8 @@ UC-0004 & Membaca Log File dari \textit{Client}  &  Proses dimana \textit{admini
       \indent Berdasarkan deskripsi umum sistem yang telah ditulis diatas, dapat diperoleh kebutuhan sistem ini, diantaranya :
         \begin{enumerate}
         \item Pemeriksaan data kontainer yang sudah dibuat pada \textit{docker host}.
+        \item Pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem.
+        \item Pembuatan aturan untuk mengarhakn \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client}.
         \item Pemasangan kontainer pada \textit{docker host}.
         \item Pembacaan \textit{log file} dari \textit{client}.
         \end{enumerate} 
@@ -48,13 +51,17 @@ UC-0004 & Membaca Log File dari \textit{Client}  &  Proses dimana \textit{admini
       \begin{enumerate} 
 	  \item Pemeriksaan data kontainer yang sudah dibuat pada \textit{docker host}.\\
 		  Berfungsi agar sistem mengetahui apakah \textit{client} dengan IP tersebut diperbolehkan mengakses internet atau tidak.
+	  \item Pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem.\\
+		  Berfungsi untuk mengarahkan tiap \textit{client} yang belum \textit{login} ke dalam sistem ke halaman \textit{login} dari sistem. Hal ini dilakukan dengan menjalankan sebuah \textit{script} dengan menggunakan \textit{iptables} pada \textit{docker host}.
+	  \item Pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client}.\\
+		  Berfungsi untuk mengarahkan tiap \textit{client} yang telah berhasil \textit{login} ke kontainer \textit{docker} dari tiap-tiap \textit{client}. Hal ini dilakukan dengan menjalankan sebuah \textit{script} dengan menggunakan \textit{iptables} pada \textit{docker host}.
 	  \item Pemasangan kontainer pada \textit{docker host}.\\
 		  Berfungsi untuk memasangkan kontainer \textit{docker} pada \textit{docker host} secara otomatis. Hal ini dilakukan dengan menjalankan sebuah perintah penyediaan kontainer pada \textit{docker host}.
 	  \item Pembacaan \textit{log file} dari \textit{client}.
 		  Berfungsi untuk melihat apa saja yang telak diakses oleh \textit{client}. \textit{Log} yang tersimpan terdapat \textit{log} HTTP maupun \textit{log} HTTPS. Hal ini dilakukan dengan menjalankan sebuah perintah untuk melihat \textit{log file} dari suatu \textit{client}.
         
       \end{enumerate}
-      \indent Pada pada Gambar \ref{Arsitektur Komponen Sistem} ditujunkkan arsitektur sistem secara umum dengan detail-detail dari kompenen yang terdapat didalamnya. Setiap komponen tersebut akan diimplementasikan dengan teknologi pendukung yang dibutuhkan.\\
+      \indent Pada pada Gambar \ref{Arsitektur Komponen Sistem} ditunjukkan arsitektur sistem secara umum dengan detail-detail dari kompenen yang terdapat didalamnya. Setiap komponen tersebut akan diimplementasikan dengan teknologi pendukung yang dibutuhkan.\\
       
       \begin{figure}[H]
         \centering
@@ -63,14 +70,14 @@ UC-0004 & Membaca Log File dari \textit{Client}  &  Proses dimana \textit{admini
         \label{Arsitektur Komponen Sistem}
       \end{figure} 
     \subsection{Perancangan Pemeriksaan Data Kontainer yang Sudah Dibuat pada \textit{docker host}.}
-    Pemeriksaan data kontainer yang sudah dibuat pada \textit{docker host} adalah komponen yang bertugas untuk melakukan pemeriksaan pada setiap kontainer \textit{docker} pada \textit{docker host} yang sudah dibuat. Jika pada saat dilakukan pemeriksaan ternyata belum dibuatkan kontainer \textit{docker} pada \textit{docker host}, maka \textit{client} akan diarahkan menuju ke halaman \textit{login} sistem. Setelah \textit{} tersebut berhasil login, maka sistem akan membuat secara otomatis kontainer \textit{docker} pada \textit{docker host}. Jika pada saat dilakukan pemeriksaan ternyata sudah dibuatkan kontainer \textit{docker} pada \textit{docker host}, maka \textit{user} tersebut akan dibuatkan sebuah \textit{rules} menggunakan iptables yang berfungsi untuk mengijinkan \textit{user} tersebut mengakses internet.
+    Pemeriksaan data kontainer yang sudah dibuat pada \textit{docker host} adalah komponen yang bertugas untuk melakukan pemeriksaan pada setiap kontainer \textit{docker} pada \textit{docker host} yang sudah dibuat. Jika pada saat dilakukan pemeriksaan ternyata belum dibuatkan kontainer \textit{docker} pada \textit{docker host}, maka \textit{client} akan diarahkan menuju ke halaman \textit{login} sistem. Setelah \textit{} tersebut berhasil login, maka sistem akan membuat secara otomatis kontainer \textit{docker} pada \textit{docker host}. Jika pada saat dilakukan pemeriksaan ternyata sudah dibuatkan kontainer \textit{docker} pada \textit{docker host}, maka \textit{client} tersebut akan dibuatkan sebuah \textit{rules} menggunakan iptables yang berfungsi untuk mengijinkan \textit{client} tersebut mengakses internet.
     
     Dikarenakan ada beberapa kebutuhan yang harus dipenuhi, komponen pada pemeriksaan data kontainer \textit{docker} yang sudah dibuat pada \textit{docker host} dibagi lagi menadji 2 sub komponen, yaitu:
    	\begin{enumerate}
    		\item Basis Data \\
    		Basis data berfungsi sebagai tempat penyimpanan data \textit{username} dan \textit{password} yang digunakan untuk \textit{login} ke dalam sistem. Basis data juga berfungsi sebagai tempat penyimpanan data kontainer \textit{docker} yang sudah dibuat.
    		\item \textit{Web Service} \\
-   		\textit{Web service} berfungsi sebagai antarmuka untuk \textit{user} ketika \textit{user} akan \textit{login} ke dalam sistem. Selain itu \textit{web service} juga berfungsi sebagai penerima permintaan dari \textit{user}, yang nantinya akan membuat sebuah kontainer \textit{docker} secara otomatis pada \textit{docker host}.
+   		\textit{Web service} berfungsi sebagai antarmuka untuk \textit{client} ketika \textit{client} akan \textit{login} ke dalam sistem. Selain itu \textit{web service} juga berfungsi sebagai penerima permintaan dari \textit{client}, yang nantinya akan membuat sebuah kontainer \textit{docker} secara otomatis pada \textit{docker host}.
    	\end{enumerate}
    	
    	Pada tugas akhir ini, bahasa Python dipilih sebagai bahasa pemrograman yang digunakan untuk mengimplementasikannya. Lalu, pada bagian penyimpanan data atau basis data, MySQL dipilih sebagai RDBMS untuk tugas akhir ini.
@@ -104,9 +111,15 @@ UC-0004 & Membaca Log File dari \textit{Client}  &  Proses dimana \textit{admini
    	\end{ltabulary}
 	   
    	\subsubsection{Desain Web Service}
-	Komponen web service berfungsi untuk menyediakan antarmuka halaman \textit{login} untuk \textit{user} dan untuk menerima permintaan pembuatan kontainer \textit{docker} secara otomatis pada \textit{docker host} setelah terdapat \textit{user} yang berhasil \textit{login} ke dalam sistem.
+	Komponen web service berfungsi untuk menyediakan antarmuka halaman \textit{login} untuk \textit{client} dan untuk menerima permintaan pembuatan kontainer \textit{docker} secara otomatis pada \textit{docker host} setelah terdapat \textit{client} yang berhasil \textit{login} ke dalam sistem.
+	
+	\subsection{Pembuatan Aturan untuk Mengarahkan \textit{Traffic Client} ke Halaman \textit{Login} dari Sistem}
+	asd
+	
+	\subsection{Pembuatan Aturan untuk Mengarahkan \textit{Traffic Client} ke Kontainer \textit{Docker} dari Tiap-Tiap \textit{Client}}
+	asd
    	
-    \subsection{Perancangan Pemasangan Kontainer pada \textit{docker host}.}
-	Pemasangan kontainer adalah kompenen yang berfungsi untuk memasangkan kontainer \textit{docker} yang berisikan \textit{mitmproxy} pada \textit{docker host} setelah ada permintaan dari \textit{user} yang telah berhasil \textit{login} ke dalam sistem. Proses ini dilakukan secara otomatis, dan nama dari kontainer \textit{docker} tersebut akan sesuai dengan IP dari \textit{user} yang telah berhasil \textit{login} ke dalam sistem.   
+    \subsection{Perancangan Pemasangan Kontainer pada \textit{Docker Host}}
+	Pemasangan kontainer adalah kompenen yang berfungsi untuk memasangkan kontainer \textit{docker} yang berisikan \textit{mitmproxy} pada \textit{docker host} setelah ada permintaan dari \textit{client} yang telah berhasil \textit{login} ke dalam sistem. Proses ini dilakukan secara otomatis, dan nama dari kontainer \textit{docker} tersebut akan sesuai dengan IP dari \textit{client} yang telah berhasil \textit{login} ke dalam sistem.   
 
       
