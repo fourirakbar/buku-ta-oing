@@ -1,0 +1,20 @@
+\chapter{PENUTUP}
+  Bab ini membahas kesimpulan yang dapat diambil dari tujuan pembuatan sistem dan hubungannya dengan hasil uji coba dan evaluasi yang telah dilakukan. Selain itu, terdapat beberapa saran yang bisa dijadikan acuan untuk melakukan pengembangan dan penelitian lebih lanjut.
+  \section{Kesimpulan}
+  Dari proses perancangan, implementasi dan pengujian terhadap sistem, dapat diambil beberapa kesimpulan berikut:
+  \begin{enumerate}
+    \item Sistem dapat mendistribusikan 100\% penyediaan kontainer ke \textit{docker host} yang ada dengan multi kriteria dengan cara mendistirbusikan perintah penyediaan kontainer \textit{docker} melalui protokol ssh.  
+    \item Sistem dapat menentukan penyedia kontainer dengan menggunakan algoritma AHP dengan kriteria-kriteria seperti penggunaan CPU, RAM , dan Penyimpanan File pada masing-masing \textit{docker host} yang ada.
+    \item Dengan menggunakan AHP, dibandingkan dengan metode \textit{round robin}, sistem dapat menentukan \textit{docker host} yang akan menyediakan kontainer docker dengan efisien berdasarkan penggunaan CPU, RAM , dan File Storage pada masing-masing \textit{docker host} yang ada, dimana dengan menggunakan AHP ketersediaan akhir memori dari setiap \textit{docker host} lebih merata dengan rentang 628MB sampai 832MB, sedangkan dengan \textit{round robin} ketersediaan akhir memori sangat tidak merata, dengan rentang yang cukup jauh dimulai 95MB sampai 1.3GB. 
+    
+  \end{enumerate}
+  \section{Saran}
+  Berikut beberapa saran yang diberikan untuk pengembangan lebih lanjut:
+  \begin{itemize}
+    \item Sistem dapat dikembangkan dengan menambahkan kriteria-kriteria yang sesuai dengan lingkungan sistem yang ada, seperti jarak antara \textit{docker host} dan \textit{server} middleware atau kecepatan bandwith dari setiap \textit{docker host} merupakan kriteria yang lebih baik untuk sistem yang memasangkan kontainer yang tidak memiliki perkembangan penggunaan pada aplikasi yang terdapat pada kontainer. Sedangkan sumber daya seperti file storage dapat digunakan untuk sistem yang mengalami perkembangan penggunaan pada aplikasi yang terdapat pada kontainernya.
+    \item AHP merupakan algoritma MCDM yang paling umum digunakan dikarenakan proses yang tidak rumit dan memiliki unsur objektif dan subjektif dalam pengambilan keputusannya. Untuk pengembangan kedepannya sistem dapat diimplementasikan dengan menggunakan algortima MCDM lain untuk meningkatkan performa sistem, seperi algoritma Fuzzy AHP.
+  \end{itemize}
+
+% Daftar Pustaka
+\bibliography{Zotero}
+\bibliographystyle{ieeetr}

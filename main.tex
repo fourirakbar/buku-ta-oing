@@ -1,0 +1,31 @@
+\documentclass{ta-its}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\include{Metadata}
+\begin{document}
+% Ubah kode sumber romawi menjadi arabic
+\renewcommand{\thelstlisting}{\arabic{chapter}.\arabic{lstlisting}}
+  \frontmatter 
+    \maketitle
+    \legalityPaper
+    \include{Bab0-Abstrak}
+    \include{Bab0-KataPengantar}
+    \tableofcontents % Daftar isi
+    \listoftables % Daftar tabel
+    \listoffigures % Daftar gambar
+    \lstlistoflistings % Daftar source code 
+
+  \mainmatter % Halaman utama, dengan judul BAB X
+    \include{Bab1-Pendahuluan}
+    \include{Bab2-DasarTeori}
+    \include{Bab3-DesainDanPerancangan}
+    \include{Bab4-Implementasi}
+    \include{Bab5-PengujianDanEvaluasi}
+    \include{Contoh}
+    \include{Bab6-Penutup}
+    \appendix % Halaman lampiran, dengan judul LAMPIRAN X
+  	\include{Bab7-BiodataPenulis}
+\end{document}

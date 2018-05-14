@@ -1,0 +1,79 @@
+\chapter{PENDAHULUAN}
+  Pada bab ini akan dipaparkan mengenai garis besar Tugas Akhir yang meliputi latar belakang, tujuan, rumusan dan batasan permasalahan, metodologi pembuatan Tugas Akhir, dan sistematika penulisan.
+  
+  \section{Latar Belakang}
+    Saat ini penggunaan kontainer \textit{docker} dalam dunia tekonologi sangat banyak dilakukan. Kontainer \textit{docker} merupakan \textit{operating-system-level virtualization} untuk menjalankan beberapa sistem linux yang terisolasi (kontainer) pada sebuah \textit{host} atau \textit{server}. Kontainer berfungsi untuk mengisolasi aplikasi atau servis dan dependensinya.\\
+	\indent Untuk setiap servis atau aplikasi yang terisolasi, dibutuhkan satu kontainer pada \textit{server} host yang ada. Dalam kasus ini, setiap satu \textit{user} yang mengakses atau menggunakan jaringan ITS merupakan satu servis yang nantinya akan dibuatkan satu kontainer pada \textit{server host}. Hal ini dapat mempermudah manajemen dari masing-masing \textit{user}, contohnya manajemen bandwith, hak akses, waktu, maupun melihat \textit{access log} dan lain sebagainya. Jika \textit{user} telah selesai mengakses atau menggunakan jaringan ITS, maka kontainer pada \textit{user} tersebut akan di-\textit{destroy}, sehingga hal ini dapat meringankan beban \textit{server}.
+
+\section{Rumusan Masalah}
+	Berikut beberapa hal yang menjadi rumusan masalah dalam tugas akhir ini:
+	\begin{enumerate}
+	 \item Bagaimana cara membuat sebuah kontainer ketika terdapat \textit{user} yang terhubung dengan jaringan ITS?
+	 \item Bagaimana cara memonitor kontainer berdasarkan penggunaan \textit{bandiwth}, \textit{network}, dan waktu penggunaan pada \textit{server}?
+	 \item Bagaimana perbandingan performa antara IAM konvensional dengan IAM berbasi kontainer?
+	\end{enumerate}
+
+	\section{Batasan Masalah}
+	 Dari permasalahan yang telah diuraikan di atas, terdapat beberapa batasan masalah pada tugas akhir ini, yaitu:
+	\begin{enumerate}
+     \item Satu \textit{user} yang berhasil \textit{login} akan disediakan satu kontainer.
+     \item Kontainer yang digunakan adalah \textit{docker}.
+     \item Parameter untuk memonitor kontainer adalah penggunaan \textit{bandiwth}, \textit{network}, waktu, dan \textit{access log}.
+     \item Performa yang diukur adalah response time.
+	\end{enumerate}
+    
+   \section{Tujuan}
+	Tugas akhir dibuat dengan beberapa tujuan. Berikut beberapa tujuan dari pembuatan tugas akhir:
+	\begin{enumerate}
+	 \item Mengimplementasikan metode untuk membuat sebuah kontainer terhadap \textit{user} yang telah berhasil \textit{login} ke jaringan ITS.
+	 \item Mengetahui penggunaan \textit{bandwith}, \textit{network}, \textit{access log} dan waktu penggunaan pada kontainer pada \textit{server}/
+	 \item Mengetahui perbandingan performa antara IAM konvensional dengan IAM berbasis kontainer.
+	\end{enumerate}
+     
+     \section{Manfaat}
+	 Tugas akhir dibuat dengan beberapa manfaat. Berikut beberapa manfaat dari pembuatan tugas akhir:
+	 \begin{enumerate}
+	  \item Mengetahui penggunaan \textit{bandiwth}, \textit{network}, \textit{acces log} dan waktu dari \textit{user} yang telah berasil \textit{login} ke jaringan ITS.
+	  \item Meringankan beban dari penggunaan \textit{server} di ITS karena penggunaan kontainer lebih ringan.
+	 \end{enumerate}      
+     xy
+     \section{Metodologi}
+     Metodologi yang digunakan pada pengerjaan Tugas Akhir ini
+adalah sebagai berikut:
+     \subsection{Studi literatur}
+     Studi literatur merupakan langkah yang dilakukan untuk mendukung dan memastikan setiap tahap pengerjaan tugas akhir sesuai dengan standar dan konsep yang berlaku. Pada tahap studi literatur ini, akan dilakukan studi mendalam mengenai \textit{Analytical Hierarchy Process (AHP)} , kontainer \textit{docker}, pendistribusian beban kerja secara dinamis dan pengambilan keputusan berdasarkan multi kriteria. Adapun literatur yang dijadikan sumber berasal dari paper, buku, materi perkuliahan, forum serta artikel dari internet.
+
+\subsection{Desain dan Perancangan Sistem}
+Tahap ini meliputi perancangan sistem berdasarkan studi literatur dan pembelajaran konsep. Tahap ini merupakan tahap yang paling penting dimana bentuk awal aplikasi yang akan diimplementasikan didefinisikan. Pada tahapan ini dibuat kasus penggunaan yang ada pada sistem, arsitektur sistem, serta perencanaan implementasi pada sistem.
+\subsection{Implementasi Sistem}
+Implementasi merupakan tahap membangun implementasi rancangan sistem yang telah dibuat. Pada tahapan ini merealisasikan apa yang telah didesain dan dirancang pada tahapan sebelumnya, sehingga menjadi sebuah sistem yang sesuai dengan apa yang telah direncanakan.
+\subsection{Uji Coba dan Evaluasi}
+Pada tahapan ini dilakukan uji coba terhadap sistem yang telah dibuat. Pengujian dan evaluasi akan dilakukan dengan melihat kesesuaian dengan perencanaan. Selain itu, tahap ini juga akan melakukan uji performa sistem dan melakukan perbandingan dengan metode lain untuk mengetahui efisiensi penggunaan sumber daya serta evaluasi berdasarkan hasil uji performa tersebut. 
+
+\section{Sistematika Laporan}
+Buku tugas akhir ini bertujuan untuk mendapatkan gambaran dari pengerjaan tugas akhir ini. Selain itu, diharapkan dapat berguna bagi pembaca yang berminat melakukan pengambangan lebih lanjut. Secara garis besar, buku tugas akhir ini terdiri atas beberapa bagian seperti berikut:
+\begin{enumerate}
+
+\item \textbf{Bab I} \indent \textbf{Pendahuluan} \\        
+\indent \indent Bab yang berisi latar belakang, tujuan, manfaat, permasalahan, batasan masalah, metodologi yang digunakan dan sistematika laporan.
+\\
+\item \textbf{Bab II} \indent \textbf{Dasar Teori}
+\\
+\indent \indent Bab ini berisi penjelasan secara detail mengenai dasar-dasar penunjang dan teori-teori yang yang digunakan dalam pembuatan tugas akhir ini.
+\\\\
+\item \textbf{Bab II} \indent \textbf{Desain dan Perancangan}
+\\
+\indent \indent Bab ini berisi tentang analisis dan perancangan sistem yang dibuat, termasuk di dalamnya mengenai analisis kasus penggunaan, desain arsitektur sistem, dan perancangan implementasi sistem.
+\\
+\item \textbf{Bab IV} \indent \textbf{Implementasi}
+\\
+\indent \indent Bab ini membahas implementasi dari desain yang telah dibuat pada bab sebelumnya. Penjelasan berupa pemasangan alat dan kode program yang digunakan untuk mengimplementasikan sistem.
+\\
+\item \textbf{Bab V} \indent \textbf{Uji Coba dan Evaluasi}
+\\
+\indent \indent Bab ini membahas tahap-tahap uji coba serta melakukan evaluasi terhadap sistem yang dibuat.
+\\
+\item \textbf{Bab VI} \indent \textbf{Kesimpulan dan Saran}
+\\
+\indent \indent Bab ini merupakan bab terakhir yang memberikan kesimpulan dari hasil percobaan dan evaluasi yang telah dilakukan. Pada bab ini juga terdapat saran bagi pembaca yang berminat untuk melakukan pengembangan lebih lanjut.    
+\end{enumerate}

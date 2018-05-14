@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: Bab0-Abstrak.aux
+A level-1 auxiliary file: Bab0-KataPengantar.aux
+A level-1 auxiliary file: Bab1-Pendahuluan.aux
+A level-1 auxiliary file: Bab2-DasarTeori.aux
+A level-1 auxiliary file: Bab3-DesainDanPerancangan.aux
+A level-1 auxiliary file: Bab4-Implementasi.aux
+A level-1 auxiliary file: Bab5-PengujianDanEvaluasi.aux
+A level-1 auxiliary file: Contoh.aux
+A level-1 auxiliary file: Bab6-Penutup.aux
+The style file: ieeetr.bst
+A level-1 auxiliary file: Bab7-BiodataPenulis.aux
+Database file #1: Zotero.bib
+You've used 7 entries,
+            1876 wiz_defined-function locations,
+            530 strings with 4997 characters,
+and the built_in function-call counts, 2118 in all, are:
+= -- 219
+> -- 63
+< -- 0
++ -- 24
+- -- 17
+* -- 142
+:= -- 288
+add.period$ -- 8
+call.type$ -- 7
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 7
+duplicate$ -- 115
+empty$ -- 211
+format.name$ -- 17
+if$ -- 523
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 8
+newline$ -- 25
+num.names$ -- 7
+pop$ -- 27
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 79
+stack$ -- 0
+substring$ -- 163
+swap$ -- 47
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 25
+width$ -- 8
+write$ -- 74

@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{mohammad_automatic_2015}
+F.~Mohammad, V.~Yadav, and {others}, ``Automatic decision making for
+  multi-criteria load balancing in cloud environment using {AHP},'' in {\em
+  Computing, {Communication} \& {Automation} ({ICCCA}), 2015 {International}
+  {Conference} on}, pp.~569--576, IEEE, 2015.
+
+\bibitem{tilkov_node._2010}
+S.~Tilkov and S.~Vinoski, ``Node. js: {Using} {JavaScript} to build
+  high-performance network programs,'' {\em IEEE Internet Computing}, vol.~14,
+  no.~6, pp.~80--83, 2010.
+
+\bibitem{hochstein_ansible:_2014}
+L.~Hochstein, {\em Ansible: {Up} and {Running}}.
+\newblock " O'Reilly Media, Inc.", 2014.
+
+\bibitem{ward_self_2014}
+J.~S. Ward and A.~Barker, ``Self managing monitoring for highly elastic large
+  scale cloud deployments,'' in {\em Proceedings of the sixth international
+  workshop on {Data} intensive distributed computing}, pp.~3--10, ACM, 2014.
+
+\bibitem{leighton_best_2015}
+B.~Leighton, S.~J. Cox, N.~J. Car, M.~P. Stenson, J.~Vleeshouwer, and J.~Hodge,
+  ``A best of both worlds approach to complex, efficient, time series data
+  delivery,'' in {\em International {Symposium} on {Environmental} {Software}
+  {Systems}}, pp.~371--379, Springer, 2015.
+
+\bibitem{bernstein_containers_2014}
+D.~Bernstein, ``Containers and cloud: {From} lxc to docker to kubernetes,''
+  {\em IEEE Cloud Computing}, vol.~1, no.~3, pp.~81--84, 2014.
+
+\bibitem{shreedhar_efficient_1996}
+M.~Shreedhar and G.~Varghese, ``Efficient fair queuing using deficit
+  round-robin,'' {\em IEEE/ACM Transactions on networking}, vol.~4, no.~3,
+  pp.~375--385, 1996.
+
+\end{thebibliography}
