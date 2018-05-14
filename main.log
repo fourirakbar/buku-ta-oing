@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.3.17)  14 MAY 2018 23:41
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.3.17)  15 MAY 2018 00:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1328,67 +1328,70 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 BAB II.
-[7] [8]
+[7]
 LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/bx/it' will be
-(Font)              scaled to size 11.27493pt on input line 15.
- [9]
+(Font)              scaled to size 11.27493pt on input line 10.
+ [8] [9] [10]
 LaTeX Font Info:    Font shape `EU1/CourierNew(0)/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 21.
- [10]
+(Font)              scaled to size 9.85492pt on input line 31.
+ [11]
 File: images/bab2/docker-vm-container.png Graphic file (type QTm)
  <use  "images/bab2/docker-vm-container.png" >
 LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 9.22495pt on input line 34.
+(Font)              scaled to size 9.22495pt on input line 44.
 LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/bx/n' will be
-(Font)              scaled to size 9.22495pt on input line 34.
+(Font)              scaled to size 9.22495pt on input line 44.
 LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/m/it' will be
-(Font)              scaled to size 9.22495pt on input line 34.
- [11]) [12]
+(Font)              scaled to size 9.22495pt on input line 44.
+
+Underfull \vbox (badness 6032) has occurred while \output is active []
+
+ [12])
+[13]
 \openout2 = `Bab3-DesainDanPerancangan.aux'.
 
+ (./Bab3-DesainDanPerancangan.tex [14
 
-(./Bab3-DesainDanPerancangan.tex
+
+
+]
 BAB III.
 File: images/bab3/usecase.png Graphic file (type QTm)
 <use  "images/bab3/usecase.png" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13
-
-
-
-] [14]
+[15] [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
+ [17]
 File: images/bab3/arsitekttur_komponen.png Graphic file (type QTm)
 
 <use  "images/bab3/arsitekttur_komponen.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
-[17] [18]) [19]
+ [18]
+[19] [20]) [21]
 \openout2 = `Bab4-Implementasi.aux'.
 
- (./Bab4-Implementasi.tex [20
+ (./Bab4-Implementasi.tex [22
 
 
 
 ]
 BAB IV.
-[21]
+[23]
 LaTeX Font Info:    Font shape `EU1/CourierNew(0)/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 28.
- [22]
+ [24]
 Underfull \vbox (badness 1142) has occurred while \output is active []
 
- [23]
-[24] [25] [26] [27]
+ [25]
+[26] [27] [28] [29]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28])
-[29] [30]
+ [30])
+[31] [32]
 \openout2 = `Bab5-PengujianDanEvaluasi.aux'.
 
  (./Bab5-PengujianDanEvaluasi.tex
@@ -1396,12 +1399,12 @@ BAB V.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31
+ [33
 
 
 
 ]
-[32] [33]
+[34] [35]
 Overfull \hbox (4.92569pt too wide) in paragraph at lines 112--112
 []|\EU1/TimesNewRoman(0)/bx/n/10.95 No| 
  []
@@ -1444,7 +1447,7 @@ Overfull \hbox (3.11319pt too wide) in alignment at lines 119--122
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
+ [36]
 Overfull \hbox (4.92569pt too wide) in paragraph at lines 132--132
 []|\EU1/TimesNewRoman(0)/bx/n/10.95 No| 
  []
@@ -1514,11 +1517,11 @@ Overfull \hbox (3.11319pt too wide) in alignment at lines 159--162
  [] [] [] [] 
  []
 
-[35]
+[37]
 File: images/bab5/arsitekturujicoba.PNG Graphic file (type QTm)
- <use  "images/bab5/arsitekturujicoba.PNG" > [36] [37]
+ <use  "images/bab5/arsitekturujicoba.PNG" > [38] [39]
 
-LaTeX Warning: Reference `sUF1' on page 38 undefined on input line 181.
+LaTeX Warning: Reference `sUF1' on page 40 undefined on input line 181.
 
 
 Overfull \hbox (4.92569pt too wide) in paragraph at lines 188--188
@@ -1556,7 +1559,7 @@ Overfull \hbox (3.11319pt too wide) in alignment at lines 195--198
  []
 
 
-LaTeX Warning: Reference `sUF2' on page 38 undefined on input line 201.
+LaTeX Warning: Reference `sUF2' on page 40 undefined on input line 201.
 
 
 Overfull \hbox (9.6462pt too wide) in alignment at lines 204--210
@@ -1613,7 +1616,7 @@ Overfull \hbox (9.6462pt too wide) in alignment at lines 216--223
  [] [] [] [] [] 
  []
 
-[38]
+[40]
 Overfull \hbox (4.92569pt too wide) in paragraph at lines 230--230
 []|\EU1/TimesNewRoman(0)/bx/n/10.95 No| 
  []
@@ -1652,9 +1655,9 @@ File: images/bab5/Selection_005.png Graphic file (type QTm)
 <use  "images/bab5/Selection_005.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
+ [41]
 
-LaTeX Warning: Reference `sUF3' on page 40 undefined on input line 253.
+LaTeX Warning: Reference `sUF3' on page 42 undefined on input line 253.
 
 
 Overfull \hbox (9.6462pt too wide) in alignment at lines 255--261
@@ -1721,7 +1724,7 @@ Overfull \hbox (9.6462pt too wide) in alignment at lines 267--274
  [] [] [] [] [] 
  []
 
-[40] [41]
+[42] [43]
 File: images/bab5/Selection_006.png Graphic file (type QTm)
  <use  "images/bab5/Selection_006.png" >
 File: images/bab5/Selection_007.png Graphic file (type QTm)
@@ -1729,7 +1732,7 @@ File: images/bab5/Selection_007.png Graphic file (type QTm)
 <use  "images/bab5/Selection_007.png" >
 Underfull \vbox (badness 1902) has occurred while \output is active []
 
- [42]
+ [44]
 Overfull \hbox (4.92569pt too wide) in paragraph at lines 299--299
 []|\EU1/TimesNewRoman(0)/bx/n/10.95 No| 
  []
@@ -1764,17 +1767,17 @@ Overfull \hbox (3.11319pt too wide) in alignment at lines 306--312
  [] [] [] [] 
  []
 
-[43]
+[45]
 File: images/bab5/datacpu.png Graphic file (type QTm)
  <use  "images/bab5/datacpu.png" >
 Underfull \vbox (badness 1436) has occurred while \output is active []
 
- [44]
+ [46]
 File: images/bab5/dataram.png Graphic file (type QTm)
 
 <use  "images/bab5/dataram.png" >
 File: images/bab5/datadf.png Graphic file (type QTm)
- <use  "images/bab5/datadf.png" > [45]
+ <use  "images/bab5/datadf.png" > [47]
 Overfull \hbox (12.5797pt too wide) in alignment at lines 348--354
  [] [] [] [] [] 
  []
@@ -1819,7 +1822,7 @@ Overfull \hbox (16.1792pt too wide) in alignment at lines 370--381
  [] [] [] [] [] [] 
  []
 
-[46]
+[48]
 Overfull \hbox (12.5797pt too wide) in alignment at lines 384--390
  [] [] [] [] [] 
  []
@@ -1914,7 +1917,7 @@ Overfull \hbox (16.1792pt too wide) in alignment at lines 430--441
  [] [] [] [] [] [] 
  []
 
-[47]
+[49]
 Overfull \hbox (6.71718pt too wide) in alignment at lines 443--449
  [] [] [] [] [] 
  []
@@ -1987,7 +1990,7 @@ Overfull \hbox (12.5797pt too wide) in alignment at lines 478--485
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48]
+ [50]
 Overfull \hbox (0.92056pt too wide) in paragraph at lines 491--491
 []|[]| 
  []
@@ -2008,19 +2011,19 @@ File: images/bab5/memori.PNG Graphic file (type QTm)
  <use  "images/bab5/memori.PNG" >
 File: images/bab5/Storage.PNG Graphic file (type QTm)
 
-<use  "images/bab5/Storage.PNG" > [49]
+<use  "images/bab5/Storage.PNG" > [51]
 File: images/bab5/waktu.PNG Graphic file (type QTm)
  <use  "images/bab5/waktu.PNG" >
 Underfull \vbox (badness 1360) has occurred while \output is active []
 
- [50])
-[51]
+ [52])
+[53]
 \openout2 = `Contoh.aux'.
 
  (./Contoh.tex)
 \openout2 = `Bab6-Penutup.aux'.
 
- (./Bab6-Penutup.tex [52
+ (./Bab6-Penutup.tex [54
 
 
 
@@ -2031,49 +2034,49 @@ BAB VI.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
-(./main.bbl [54])) [55
+ [55]
+(./main.bbl [56])) [57
 
 ]
 \openout2 = `Bab7-BiodataPenulis.aux'.
 
- (./Bab7-BiodataPenulis.tex [56
+ (./Bab7-BiodataPenulis.tex [58
 
 
 
 ]
 Lampiran A.
-[57] [58]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [59]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [60]
+[59] [60]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
-[62]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63]
+[64]
 Lampiran B.
-[63
+[65
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [65]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [66]
-[67] [68
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [68]
+[69] [70
 
 ]
 File: images/cover/pic.jpg Graphic file (type QTm)
  <use  "images/cover/pic.jpg" >
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 458.
- [69
+ [71
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 458.
@@ -2097,10 +2100,10 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  27054 strings out of 493638
  470277 string characters out of 6146796
- 694844 words of memory out of 5000000
+ 694971 words of memory out of 5000000
  30067 multiletter control sequences out of 15000+600000
  7051 words of font info for 63 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  55i,13n,63p,10396b,1750s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (93 pages).
+Output written on main.pdf (95 pages).
