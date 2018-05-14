@@ -3,40 +3,44 @@
   
   \section{Latar Belakang}
     Saat ini penggunaan kontainer \textit{docker} dalam dunia tekonologi sangat banyak dilakukan. Kontainer \textit{docker} merupakan \textit{operating-system-level virtualization} untuk menjalankan beberapa sistem linux yang terisolasi (kontainer) pada sebuah \textit{host} atau \textit{server}. Kontainer berfungsi untuk mengisolasi aplikasi atau servis dan dependensinya.\\
-	\indent Untuk setiap servis atau aplikasi yang terisolasi, dibutuhkan satu kontainer pada \textit{server} host yang ada. Dalam kasus ini, setiap satu \textit{user} yang mengakses atau menggunakan jaringan ITS merupakan satu servis yang nantinya akan dibuatkan satu kontainer pada \textit{server host}. Hal ini dapat mempermudah manajemen dari masing-masing \textit{user}, contohnya manajemen bandwith, hak akses, waktu, maupun melihat \textit{access log} dan lain sebagainya. Jika \textit{user} telah selesai mengakses atau menggunakan jaringan ITS, maka kontainer pada \textit{user} tersebut akan di-\textit{destroy}, sehingga hal ini dapat meringankan beban \textit{server}.
+	\indent Untuk setiap servis atau aplikasi yang terisolasi, dibutuhkan satu kontainer pada \textit{server} host yang ada. Dalam kasus ini, setiap satu \textit{client} yang mengakses atau menggunakan jaringan ITS merupakan satu servis yang nantinya akan dibuatkan satu kontainer pada \textit{server host}. Hal ini dapat mempermudah manajemen dari masing-masing \textit{client}, contohnya manajemen bandwith, hak akses, waktu, maupun melihat \textit{access log} dan lain sebagainya. Jika \textit{client} telah selesai mengakses atau menggunakan jaringan ITS, maka kontainer pada \textit{client} tersebut akan di-\textit{destroy}, sehingga hal ini dapat meringankan beban \textit{server}.
 
 \section{Rumusan Masalah}
 	Berikut beberapa hal yang menjadi rumusan masalah dalam tugas akhir ini:
 	\begin{enumerate}
-	 \item Bagaimana cara membuat sebuah kontainer ketika terdapat \textit{user} yang terhubung dengan jaringan ITS?
-	 \item Bagaimana cara memonitor kontainer berdasarkan penggunaan \textit{bandiwth}, \textit{network}, dan waktu penggunaan pada \textit{server}?
+	 \item Bagaimana cara mengarahkan \textit{traffic} dari \textit{client} ke halaman \textit{login}?
+	 \item Bagaimana cara membuat sebuah kontainer \textit{docker} secara otomatis ketika terdapat \textit{client} yang terhubung dengan jaringan ITS?
+	 \item Bagaimana cara mengetahui apa saja yang diakses oleh \textit{client}?
 	 \item Bagaimana perbandingan performa antara IAM konvensional dengan IAM berbasi kontainer?
 	\end{enumerate}
 
 	\section{Batasan Masalah}
 	 Dari permasalahan yang telah diuraikan di atas, terdapat beberapa batasan masalah pada tugas akhir ini, yaitu:
 	\begin{enumerate}
-     \item Satu \textit{user} yang berhasil \textit{login} akan disediakan satu kontainer.
+     \item Satu \textit{client} yang berhasil \textit{login} akan disediakan satu kontainer \textit{docker}.
      \item Kontainer yang digunakan adalah \textit{docker}.
-     \item Parameter untuk memonitor kontainer adalah penggunaan \textit{bandiwth}, \textit{network}, waktu, dan \textit{access log}.
+	 \item Parameter untuk mengetahui apa saja yang diakses oleh \textit{client} adalah \textit{access log} dari \textit{client} tersebut.
+	 \item Setiap \textit{client} mendapatkan IP \textit{private}.
      \item Performa yang diukur adalah response time.
+     \item Bahaasa pemrograman yang digunakan adalah Python.
 	\end{enumerate}
     
    \section{Tujuan}
 	Tugas akhir dibuat dengan beberapa tujuan. Berikut beberapa tujuan dari pembuatan tugas akhir:
 	\begin{enumerate}
-	 \item Mengimplementasikan metode untuk membuat sebuah kontainer terhadap \textit{user} yang telah berhasil \textit{login} ke jaringan ITS.
-	 \item Mengetahui penggunaan \textit{bandwith}, \textit{network}, \textit{access log} dan waktu penggunaan pada kontainer pada \textit{server}/
+	 \item Mengimplementasikan metode untuk membuat sebuah kontainer terhadap \textit{client} yang telah berhasil \textit{login} ke jaringan ITS.
+	 \item Mengetahui apa saja yang diakses oleh \textit{client}.
 	 \item Mengetahui perbandingan performa antara IAM konvensional dengan IAM berbasis kontainer.
 	\end{enumerate}
      
      \section{Manfaat}
 	 Tugas akhir dibuat dengan beberapa manfaat. Berikut beberapa manfaat dari pembuatan tugas akhir:
 	 \begin{enumerate}
-	  \item Mengetahui penggunaan \textit{bandiwth}, \textit{network}, \textit{acces log} dan waktu dari \textit{user} yang telah berasil \textit{login} ke jaringan ITS.
-	  \item Meringankan beban dari penggunaan \textit{server} di ITS karena penggunaan kontainer lebih ringan.
+	  \item Mempermudah pengecekan \textit{access log} dari setiap \textit{client}.
+	  \item Mengetahui apa saja yang diakses oleh \textit{client} yang menggunakan jaringan TIS.
+	  \item Meringankan beban dari penggunaan \textit{server} di ITS karena penggunaan kontainer \textit{docker} lebih ringan.
 	 \end{enumerate}      
-     xy
+     
      \section{Metodologi}
      Metodologi yang digunakan pada pengerjaan Tugas Akhir ini
 adalah sebagai berikut:
