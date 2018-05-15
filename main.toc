@@ -22,13 +22,12 @@
 \contentsline {section}{\numberline {2.1}Python}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Flask}{7}{section.2.2}
 \contentsline {section}{\numberline {2.3}\textit {Iptables}}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}\textit {VIM}}{9}{section.2.4}
-\contentsline {section}{\numberline {2.5}MySQL}{9}{section.2.5}
-\contentsline {section}{\numberline {2.6}\textit {Mitmproxy}}{10}{section.2.6}
-\contentsline {section}{\numberline {2.7}\textit {VirtualBox}}{11}{section.2.7}
-\contentsline {section}{\numberline {2.8}\textit {Docker}}{12}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}\textit {Docker Container}}{13}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}\textit {Docker Images}}{13}{subsection.2.8.2}
+\contentsline {section}{\numberline {2.4}MySQL}{9}{section.2.4}
+\contentsline {section}{\numberline {2.5}\textit {Mitmproxy}}{10}{section.2.5}
+\contentsline {section}{\numberline {2.6}\textit {VirtualBox}}{11}{section.2.6}
+\contentsline {section}{\numberline {2.7}\textit {Docker}}{12}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}\textit {Docker Container}}{12}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}\textit {Docker Images}}{13}{subsection.2.7.2}
 \contentsline {chapter}{\numberline {III}DESAIN DAN PERANCANGAN}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Deskripsi Umum Sistem}{15}{section.3.1}
 \contentsline {section}{\numberline {3.2}Kasus Penggunaan}{15}{section.3.2}
@@ -36,25 +35,25 @@
 \contentsline {subsection}{\numberline {3.3.1}Desain Umum Sistem}{18}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Perancangan Pemeriksaan Data Kontainer yang Sudah Dibuat pada \textit {docker host}.}{20}{subsection.3.3.2}
 \contentsline {subsubsection}{\numberline {3.3.2.1}Desain Basis Data}{21}{subsubsection.3.3.2.1}
-\contentsline {subsubsection}{\numberline {3.3.2.2}Desain Web Service}{22}{subsubsection.3.3.2.2}
-\contentsline {subsection}{\numberline {3.3.3}Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Halaman \textit {Login} dari Sistem}{22}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Perancangan Pemasangan Kontainer pada \textit {Docker Host}}{22}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Kontainer \textit {Docker} dari Tiap-Tiap \textit {Client}}{23}{subsection.3.3.5}
+\contentsline {subsubsection}{\numberline {3.3.2.2}Desain \textit {Web Service}}{23}{subsubsection.3.3.2.2}
+\contentsline {subsection}{\numberline {3.3.3}Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Halaman \textit {Login} dari Sistem}{23}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Perancangan Pemasangan Kontainer pada \textit {Docker Host}}{24}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Kontainer \textit {Docker} dari Tiap-Tiap \textit {Client}}{24}{subsection.3.3.5}
 \contentsline {chapter}{\numberline {IV}IMPLEMENTASI}{25}{chapter.4}
 \contentsline {section}{\numberline {4.1}Lingkungan Implementasi}{25}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Perangkat Keras}{25}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Perangkat Lunak}{25}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Implementasi Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Halaman \textit {Login} dari Sistem}{26}{section.4.2}
-\contentsline {section}{\numberline {4.3}Implementasi Pembuatan Halaman \textit {Login}}{26}{section.4.3}
-\contentsline {section}{\numberline {4.4}Implementasi \textit {Middleware}}{27}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Implementasi Basis Data}{27}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Implementasi \textit {Web Service}}{28}{subsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.2.1}Rute \textit {Web Service}}{28}{subsubsection.4.4.2.1}
-\contentsline {subsection}{\numberline {4.4.3}\textit {Pseduocode Web Service}}{29}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Implementasi Pemasangan Kontainer \textit {Docker} pada \textit {Docker Host}}{30}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Menambahkan dan Memperbarui Kontainer \textit {Docker} yang Berisikan Mitmproxy}{31}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Menggunakan \textit {Image} Kontainer \textit {Docker} yang Sudah Dibuat}{34}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}Implementasi Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Kontainer \textit {Docker} dari Tiap-Tiap \textit {Client}}{34}{section.4.6}
+\contentsline {section}{\numberline {4.3}Implementasi Pembuatan Halaman \textit {Login}}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Implementasi \textit {Middleware}}{28}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Implementasi Basis Data}{28}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Implementasi \textit {Web Service}}{29}{subsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.2.1}Rute \textit {Web Service}}{29}{subsubsection.4.4.2.1}
+\contentsline {subsection}{\numberline {4.4.3}\textit {Pseduocode Web Service}}{30}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Implementasi Pemasangan Kontainer \textit {Docker} pada \textit {Docker Host}}{31}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Menambahkan dan Memperbarui Kontainer \textit {Docker} yang Berisikan Mitmproxy}{32}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Menggunakan \textit {Image} Kontainer \textit {Docker} yang Sudah Dibuat}{35}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Implementasi Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Kontainer \textit {Docker} dari Tiap-Tiap \textit {Client}}{35}{section.4.6}
 \contentsline {chapter}{\numberline {V}PENGUJIAN DAN EVALUASI}{37}{chapter.5}
 \contentsline {section}{\numberline {5.1}Lingkungan Uji Coba}{37}{section.5.1}
 \contentsline {section}{\numberline {5.2}Skenario Uji Coba}{39}{section.5.2}
@@ -76,4 +75,4 @@
 \contentsline {chapter}{\numberline {VI}PENUTUP}{59}{chapter.6}
 \contentsline {section}{\numberline {6.1}Kesimpulan}{59}{section.6.1}
 \contentsline {section}{\numberline {6.2}Saran}{60}{section.6.2}
-\contentsline {chapter}{DAFTAR PUSTAKA}{61}{chapter*.20}
+\contentsline {chapter}{DAFTAR PUSTAKA}{61}{chapter*.22}

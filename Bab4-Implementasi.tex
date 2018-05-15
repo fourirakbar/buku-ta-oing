@@ -34,7 +34,14 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   	\end{lstlisting}
   \end{minipage}
   
-  \textit{Rules} pertama berfungsi untuk tidak memperbolehkan semua \textit{client} untuk melewati \textit{router}. Lalu \textit{rules} kedua berfungsi untuk memperbolehkan semua \textit{client} untuk membuka halaman \textit{login}. Lalu \textit{rules} ketiga berfungsi untuk mengarahkan semua \textit{traffic client} ke halaman \textit{login}.
+  \textit{Rules} pertama berfungsi untuk tidak memperbolehkan semua \textit{client} untuk melewati \textit{router}. Lalu \textit{rules} kedua berfungsi untuk memperbolehkan semua \textit{client} untuk membuka halaman \textit{login}. Lalu \textit{rules} ketiga berfungsi untuk mengarahkan semua \textit{traffic client} ke halaman \textit{login}. Pada gambar \ref{diagram2} ditunjukkan arsitektur sistem saat \textit{traffic} dari salah satu \textit{client} diarahkan ke halaman \textit{login} dari sebuah sistem.
+  
+  \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=\linewidth]{images/bab4/DIAGRAM2}
+  	\caption{Arsitektur saat \textit{Traffic} dari \textit{Client} Diarahkan ke Halaman \textit{Login}}
+  	\label{diagram2}
+  \end{figure} 
   
   \section{Implementasi Pembuatan Halaman \textit{Login}}
   Pada implementasi pembuatan halaman \textit{login}, dibutuhkan beberapa persiapan lingkungan implementasi yang perlu dilakukan, meliputi langkah-langkah berikut:
@@ -66,9 +73,9 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   	\begin{lstlisting}[language=python, caption=\textit{Query} untuk membuat tabel testing,label=entitastesting]
   	CREATE TABLE testing (
 	  	id int(11) PRIMARY KEY AUTO_INCREMENT,
-	  	nrp VARCHAR(50)
+	  	username VARCHAR(50)
 	  	ip VARCHAR(50)
-	  	created_at DATETIME
+	  	createdAt DATETIME
   	);
   	\end{lstlisting}
   \end{minipage}
@@ -80,8 +87,7 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
     	id int(11) PRIMARY KEY AUTO_INCREMENT,
     	nrp VARCHAR(50)
     	password VARCHAR(50)
-    	created_at DATETIME
-    	update_at DATETIME
+    	isLogin int(11)
     );
     \end{lstlisting}
     \end{minipage}
@@ -245,4 +251,11 @@ Pada implementasi pembuatan aturan untuk mengarahkan \textit{traffic client} ke 
 \end{lstlisting}
 \end{minipage}
 
-Pada \textit{rules} pertama berfungsi untuk mengijinkan atau memperbolehkan \textit{traffic} dari \textit{client} melewati \textit{router}. Lalu \textit{rules} kedua dan ketgia berfungsi untuk mengarahkan \textit{traffic cleint} ke kontainer \textit{docker} yang sudah dibuat dengan satu port khusus untuk \textit{client} tersebut Lalu \textit{rules} keempat berfungsi untuk mengijinkan atau memperbolehkan \textit{client} untuk mengakses internet.
+Pada \textit{rules} pertama berfungsi untuk mengijinkan atau memperbolehkan \textit{traffic} dari \textit{client} melewati \textit{router}. Lalu \textit{rules} kedua dan ketgia berfungsi untuk mengarahkan \textit{traffic cleint} ke kontainer \textit{docker} yang sudah dibuat dengan satu port khusus untuk \textit{client} tersebut Lalu \textit{rules} keempat berfungsi untuk mengijinkan atau memperbolehkan \textit{client} untuk mengakses internet. Pada gambar \ref{diagram3} ditunjukkan arsitektur sistem saat \textit{traffic} dari salah satu \textit{client} diarahkan ke kontainer \textit{docker} dari tiap-tiap \textit{client}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{images/bab4/DIAGRAM3}
+	\caption{Arsitektur saat \textit{Traffic} dari \textit{Client} Diarahkan ke Halaman \textit{Login}}
+	\label{diagram3}
+\end{figure} 

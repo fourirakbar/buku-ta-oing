@@ -61,14 +61,18 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
 		  Berfungsi untuk melihat apa saja yang telak diakses oleh \textit{client}. \textit{Log} yang tersimpan terdapat \textit{log} HTTP maupun \textit{log} HTTPS. Hal ini dilakukan dengan menjalankan sebuah perintah untuk melihat \textit{log file} dari suatu \textit{client}.
         
       \end{enumerate}
-      \indent Pada pada Gambar \ref{Arsitektur Komponen Sistem} ditunjukkan arsitektur sistem secara umum dengan detail-detail dari kompenen yang terdapat didalamnya. Setiap komponen tersebut akan diimplementasikan dengan teknologi pendukung yang dibutuhkan.\\
       
       \begin{figure}[H]
         \centering
-        \includegraphics[width=\linewidth]{images/bab3/arsitekttur_komponen}
+        \includegraphics[width=\linewidth]{images/bab3/DIAGRAM1}
         \caption{Arsitektur Komponen Sistem}
         \label{Arsitektur Komponen Sistem}
-      \end{figure} 
+      \end{figure}
+      
+    \indent Pada pada Gambar \ref{Arsitektur Komponen Sistem} ditunjukkan arsitektur sistem secara umum dengan detail-detail dari kompenen yang terdapat didalamnya. Setiap komponen tersebut akan diimplementasikan dengan teknologi pendukung yang dibutuhkan.
+    
+    Nantinya tiap \textit{client}  akan mempunyai satu kontainer \textit{docker} dan satu \textit{port} secara pribadi. \textit{Traffic} dari \textit{client} tersebut akan diarahkan menuju ke kontainer \textit{docker}nya dari tiap-tiap \textit{client}, setelah itu \textit{client} baru dapat mengakses itnernet.
+    
     \subsection{Perancangan Pemeriksaan Data Kontainer yang Sudah Dibuat pada \textit{docker host}.}
     Pemeriksaan data kontainer yang sudah dibuat pada \textit{docker host} adalah komponen yang bertugas untuk melakukan pemeriksaan pada setiap kontainer \textit{docker} pada \textit{docker host} yang sudah dibuat. Jika pada saat dilakukan pemeriksaan ternyata belum dibuatkan kontainer \textit{docker} pada \textit{docker host}, maka \textit{client} akan diarahkan menuju ke halaman \textit{login} sistem. Setelah \textit{client} tersebut berhasil login, maka sistem akan membuat secara otomatis kontainer \textit{docker} pada \textit{docker host}. Jika pada saat dilakukan pemeriksaan ternyata sudah dibuatkan kontainer \textit{docker} pada \textit{docker host}, maka \textit{client} tersebut akan dibuatkan sebuah \textit{rules} menggunakan iptables yang berfungsi untuk mengijinkan \textit{client} tersebut mengakses internet.
     
@@ -82,36 +86,37 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
    	
    	Pada tugas akhir ini, bahasa Python dipilih sebagai bahasa pemrograman yang digunakan untuk mengimplementasikannya. Lalu, pada bagian penyimpanan data atau basis data, MySQL dipilih sebagai RDBMS untuk tugas akhir ini.
    	\subsubsection{Desain Basis Data}
-   	Komponen basis data berfungsi sebagai tempat penyimpanan data \textit{username} dan \textit{password} yang digunakan untuk \textit{login} ke dalam sistem. Dalam basis data ini terdapat satu entitas dan dua atribut, ditunjukkan pada Tabel \ref{atributdb}
-   	\begin{ltabulary}{|L|L|} 
-   		\caption{Atribut basis data NRP mahasiswa} \label{atributdb} \\
+   	Komponen basis data berfungsi sebagai tempat penyimpanan data \textit{username} dan \textit{password} yang digunakan untuk \textit{login} ke dalam sistem. Dalam basis data ini terdapat satu entitas dan dua atribut, ditunjukkan pada Tabel \ref{tabelnrpmahasiswa}
+   	\begin{longtable}{|p{0.03\textwidth}|p{0.20\textwidth}|p{0.20\textwidth}|p{0.41\textwidth}|}
+   		\caption{Atribut basis data nrp-mahasiswa} \label{tabelnrpmahasiswa} \\
    		\hline
-   		\textbf{Nama} & \textbf{Tujuan} \\ \hline
+   		\textbf{No} & \textbf{Kolom} & \textbf{Tipe} & \textbf{Keterangan} \\ \hline
    		\endhead
    		\endfoot
    		\endlastfoot
-   		% Isi Tabel
-   		\textbf{ID} & ID \textit{server}\\ \hline
-   		\textbf{Name} & Hostname \textit{server} \\ \hline
-   		%         \textbf{Status} & Status sensor(aktif/tidak aktif) \\ \hline
-   	\end{ltabulary}
+   		1 & id & int(11) & Sebagai primary key pada tabel, nilai awal adalah \texttt{AUTO\_INCREMENT}. \\ \hline
+   		2 & username & varchar(50) & Menunjukkan NRP dari mahasiswa yang telah terdaftar. \\ \hline
+   		3 & password & varchar(50) & Menunjukkan password dari NRP mahasiswa yang telah terdaftar. \\ \hline
+   		4 & isLogin & int(11) & Status apakah nrp tersebut sedang digunakan (1), atau sedang tidak digunakan (0). \\ \hline
+   	\end{longtable}
    	
-   	Selain itu, komponen basis data juga berfungsi sebagai tempat penyimpanan data kontainer \textit{docker} yang sudah dibuat. Dalam basis data ini terdapat satu entitas dan tiga atribut, ditunjukan pada Tabel \ref{atributdb}
-   	\begin{ltabulary}{|L|L|} 
-   		\caption{Atribut basis data kontainer} \label{atributdb} \\
+   	Selain itu, komponen basis data juga berfungsi sebagai tempat penyimpanan data kontainer \textit{docker} yang sudah dibuat. Dalam basis data ini terdapat satu entitas dan tiga atribut, ditunjukan pada Tabel \ref{tabelkontainer}
+   	\begin{longtable}{|p{0.03\textwidth}|p{0.20\textwidth}|p{0.20\textwidth}|p{0.41\textwidth}|}
+   		\caption{Atribut basis data nrp-mahasiswa} \label{tabelkontainer} \\
    		\hline
-   		\textbf{Nama} & \textbf{Tujuan} \\ \hline
+   		\textbf{No} & \textbf{Kolom} & \textbf{Tipe} & \textbf{Keterangan} \\ \hline
    		\endhead
    		\endfoot
    		\endlastfoot
-   		% Isi Tabel
-   		\textbf{ID} & ID \textit{server}\\ \hline
-   		\textbf{Name} & Hostname \textit{server} \\ \hline
-   		%         \textbf{Status} & Status sensor(aktif/tidak aktif) \\ \hline
-   	\end{ltabulary}
+   		1 & id & int(11) & Sebagai primary key pada tabel, nilai awal adalah \texttt{AUTO\_INCREMENT}. \\ \hline
+   		2 & username & varchar(50) & Menunjukkan NRP dari mahasiswa yang telah berhasil dibuatkan satu kontainer \textit{docker}. \\ \hline
+   		3 & ip & varchar(50) & Menunjukkan IP dari \textit{client} yang telah berhasil satu kontainer \textit{docker}. \\ \hline
+   		4 & createdAt & datetime & Menunjukkan waktu pertama kali kontainer \textit{docker} tersebut dibuat. \\ \hline
+   		
+   	\end{longtable}
 	   
-   	\subsubsection{Desain Web Service}
-	Komponen web service berfungsi untuk menyediakan antarmuka halaman \textit{login} untuk \textit{client} dan untuk menerima permintaan pembuatan kontainer \textit{docker} secara otomatis pada \textit{docker host} setelah terdapat \textit{client} yang berhasil \textit{login} ke dalam sistem.
+   	\subsubsection{Desain \textit{Web Service}}
+	Komponen \textit{web service} berfungsi untuk menyediakan antarmuka halaman \textit{login} untuk \textit{client} dan untuk mengirimkan permintaan pembuatan kontainer \textit{docker} secara otomatis pada \textit{docker host} setelah terdapat \textit{client} yang berhasil \textit{login} ke dalam sistem. Halaman \textit{login} akan menggunakan Material UI untuk mendapatkan tampilan yang sederhana dan nyaman untuk digunakan.
 	
 	\subsection{Pembuatan Aturan untuk Mengarahkan \textit{Traffic Client} ke Halaman \textit{Login} dari Sistem}
 	Pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem adalah komponen yang bertugas untuk membelokkan \textit{traffic} dari \textit{client} yang akan menuju ke internet. Awalnya semua \textit{traffic} dari satu \textit{subnet client} tersebut akan diarahkan ke halaman \textit{login} dari sistem dengan membuat sebuah aturan menggunakan \textit{iptables}, karena asumsinya adalah belum ada \textit{client} yang berhasil \textit{login} ke dalam sistem.
