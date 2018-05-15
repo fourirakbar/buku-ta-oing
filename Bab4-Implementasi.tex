@@ -22,10 +22,10 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
     \item \textit{VIM} versi 7.4.1 sebagai \textit{text editor}.
     \end{enumerate}
   
-  \section{Implementasi Mengarahkan \textit{Client} ke Halaman \textit{Login}}
-  Pada implementasi mengarahkan \textit{client} ke halaman \textit{login} diasumsikan bahwa belum ada \textit{client} yang telah \textit{login} ke dalam sistem. Lalu dibuatkan beberapa \textit{rules} dengan menggunakan \textit{iptables} seperti Kode Sumber \\
+  \section{Implementasi Pembuatan Aturan untuk Mengarahkan \textit{Traffic Client} ke Halaman \textit{Login} dari Sistem}
+  Pada implementasi pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{Login} dari sistem diasumsikan bahwa belum ada \textit{client} yang telah \textit{login} ke dalam sistem. Lalu dibuatkan beberapa \textit{rules} dengan menggunakan \textit{iptables} seperti Kode Sumber \ref{iptablesbeforelogin}. \\
   \begin{minipage}{\linewidth}
-  	\begin{lstlisting}[caption=Command untuk mengarahkan \textit{client} ke halaman \textit{login},language=Python,label=installcollectd]
+  	\begin{lstlisting}[caption=Command untuk mengarahkan \textit{client} ke halaman \textit{login},language=Python,label=iptablesbeforelogin]
   	iptables -I FORWARD 1 -s 192.168.99.0/24 -j REJECT
   	iptables -I FORWARD 1 -s 192.168.99.0/24 -p tcp d 10.151.36.130
   	--dport 4000 -j ACCEPT
@@ -42,16 +42,16 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   	\item Instalasi \textit{Python} versi 3.5.2
   	\item Instalasi \textit{Flask} versi 1.0.2
   \end{enumerate}
-  \textit{Python} akan berfungsi sebagai komponen dasar pembangunan sistem, salah satunya adalah sebagai komponen dasar pembuatan halaman \textit{login}, sedangkan \textit{Flask} akan berfungsi sebagai kerangka kerja untuk pembuatan halaman \textit{lgin}. Untuk melakukan pemasangan \textit{Python} versi 3.5.2 pada sistem operasi Ubuntu, lalu jalankan \textit{command} pada terminal seperti Kode Sumber.\\
+  \textit{Python} akan berfungsi sebagai komponen dasar pembangunan sistem, salah satunya adalah sebagai komponen dasar pembuatan halaman \textit{login}, sedangkan \textit{Flask} akan berfungsi sebagai kerangka kerja untuk pembuatan halaman \textit{lgin}. Untuk melakukan pemasangan \textit{Python} versi 3.5.2 pada sistem operasi Ubuntu, lalu jalankan \textit{command} pada terminal seperti Kode Sumber \ref{installpython3}.\\
   \begin{minipage}{\linewidth}
-  	\begin{lstlisting}[caption=Command untuk installasi Python,language=Python,label=installcollectd]
+  	\begin{lstlisting}[caption=Command untuk installasi Python,language=Python,label=installpython3]
   	sudo apt-get update
   	sudo apt-get install python3
   	\end{lstlisting}
   \end{minipage}
-  Lalu, untuk melakukan pemasangan \textit{Flask} versi 1.0.2 pada sistem operasi ubuntu jalankan \textit{command} pada terminal seperti Kode Sumber.\\
+  Lalu, untuk melakukan pemasangan \textit{Flask} versi 1.0.2 pada sistem operasi ubuntu jalankan \textit{command} pada terminal seperti Kode Sumber \ref{installflask}.\\
 	\begin{minipage}{\linewidth}
-	   	\begin{lstlisting}[caption=Command untuk installasi Flask,language=Python,label=installcollectd]
+	   	\begin{lstlisting}[caption=Command untuk installasi Flask,language=Python,label=installflask]
 	   	sudo apt-get install python3-pip
 	   	sudo pip install flask
 	   	\end{lstlisting}
@@ -126,14 +126,15 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   \newline
   \begin{minipage}{\linewidth}  
   	\begin{lstlisting}[numbers=left, frame=single,tabsize=2,breaklines,caption={Pseudocode Web Service},label=pseudocodeoing]
-  	Get Number Of Server 
+  	Check whether the client is already login or not yet
   	
-  	for i=0; i<Number Of Server; i++
-  	get Data Resource    
-  	Decision Making with AHP
-  	Result = Server Hostname
-  	command = ansible command + Result
-  	
+  	if login
+	  	add new rules
+  	else
+	  	add new rules
+	  	client open page login
+	  	client login
+	  	return  	
   	\end{lstlisting}
   \end{minipage}
   
@@ -183,6 +184,7 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
 	sudo pip3 install mitmproxy
 	\end{lstlisting}
 	\end{minipage}
+	
 	\textit{Mitmproxy} versi 3.0.4 membutuhkan \textit{Python} minimal versi 3.5, maka dari itu penulis memasang \textit{Python} versi 3.5.2. \textit{Mitmproxy} juga membutuhkan modul \textit{cryptography} yang berguna untuk melakukan enkripsi maupun dekripsi yang dibutuhkan oleh \textit{mitmproxy} ketika \textit{mitmproxy} sedang berjalan. Lalu aktifkan \texttt{ipv4.forwarding} dengan menjalankan perintah berikut pada Kode Sumber \ref{ipv4forwarding}\\
 	\newline
 	\begin{minipage}{\linewidth}
@@ -228,3 +230,19 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   fourirakbar/mitmproxy-oing:version1
   \end{lstlisting}
   \end{minipage}
+  
+\section{Implementasi Pembuatan Aturan untuk Mengarahkan \textit{Traffic Client} ke Kontainer \textit{Docker} dari Tiap-Tiap \textit{Client}}
+Pada implementasi pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap client dibuat ketka terdapat \textit{client} yang telah berhasil \textit{login} ke dalam sistem. Setelah \textit{client} berhasil \textit{login} ke dalam sistem, maka akan dibuatkan beberapa \textit{rules} dengan menggunakan \textit{iptables} seperti Kode Sumber \ref{iptablesafterlogin}. \\
+\begin{minipage}{\linewidth}
+	\begin{lstlisting}[caption=Command untuk mengarahkan \textit{client} ke halaman \textit{login},language=Python,label=iptablesafterlogin]
+	iptables -I FORWARD 1 -s [IP_CLIENT] -j ACCEPT
+	iptables -t nat -I PREROUTING 1 -s [IP_CLIENT] -p tcp --dport 80
+		-j REDIRECT --to-ports [PORTS_CLIENT]
+	iptables -t nat -I PREROUTING 1 -s [IP_CLIENT] -p tcp --dport 443
+		-j REDIRECT --to-ports [PORTS_CLIENT]
+	iptables -t nat -I POSTROUTING 1 -o wlp3s0 -j MASQUERADE 
+		-s [IP_CLIENT]
+\end{lstlisting}
+\end{minipage}
+
+Pada \textit{rules} pertama berfungsi untuk mengijinkan atau memperbolehkan \textit{traffic} dari \textit{client} melewati \textit{router}. Lalu \textit{rules} kedua dan ketgia berfungsi untuk mengarahkan \textit{traffic cleint} ke kontainer \textit{docker} yang sudah dibuat dengan satu port khusus untuk \textit{client} tersebut Lalu \textit{rules} keempat berfungsi untuk mengijinkan atau memperbolehkan \textit{client} untuk mengakses internet.
