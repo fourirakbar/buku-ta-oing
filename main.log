@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.3.17)  15 MAY 2018 21:34
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.3.17)  17 MAY 2018 15:48
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1326,28 +1326,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 BAB II.
 [7]
 LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/bx/it' will be
-(Font)              scaled to size 11.27493pt on input line 10.
+(Font)              scaled to size 11.27493pt on input line 16.
  [8] [9] [10]
 LaTeX Font Info:    Font shape `EU1/CourierNew(0)/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 28.
-
-Underfull \vbox (badness 1259) has occurred while \output is active []
-
+(Font)              scaled to size 9.85492pt on input line 34.
  [11]
 File: images/bab2/docker-vm-container.png Graphic file (type QTm)
-
-<use  "images/bab2/docker-vm-container.png" >
+ <use  "images/bab2/docker-vm-container.png" >
 LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 9.22495pt on input line 41.
+(Font)              scaled to size 9.22495pt on input line 47.
 LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/bx/n' will be
-(Font)              scaled to size 9.22495pt on input line 41.
+(Font)              scaled to size 9.22495pt on input line 47.
 LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/m/it' will be
-(Font)              scaled to size 9.22495pt on input line 41.
- [12]) [13]
+(Font)              scaled to size 9.22495pt on input line 47.
+
+Underfull \vbox (badness 1688) has occurred while \output is active []
+
+ [12])
+[13]
 \openout2 = `Bab3-DesainDanPerancangan.aux'.
 
-
-(./Bab3-DesainDanPerancangan.tex [14
+ (./Bab3-DesainDanPerancangan.tex [14
 
 
 
