@@ -1,17 +1,33 @@
 \chapter{LANDASAN TEORI}
 
  \section{Python}
-	 Python adalah bahasa pemrograman interpretatif multiguna dengan prinsip agar sumber kode yang dihasilkan memiliki tingkat keterbacaan yang baik. Python diklaim sebagai bahasa yang menggabungkan kapabilitas, kemampuan, dengan sintaksis kode yang sangat jelas, dan dilengkapi dengan fungsionalitas pustaka standar yang besar serta komprehensif. Python mendukung beragam paradigma pemrograman, seperti pemrograman berorientasi objek, pemrograman imperatif, dan pemrograman fungsional. Python dapat digunakan untuk berbagai keperluan pengembangan perangkat lunak dan dapat berjalan di berbagai platform sistem operasi \\
+	 Python adalah bahasa pemrograman interpretatif multiguna dengan prinsip agar sumber kode yang dihasilkan memiliki tingkat keterbacaan yang baik. Python diklaim sebagai bahasa yang menggabungkan kapabilitas, kemampuan, dengan sintaksis kode yang sangat jelas, dan dilengkapi dengan fungsionalitas pustaka standar yang besar serta komprehensif. Python mendukung beragam paradigma pemrograman, seperti pemrograman berorientasi objek, pemrograman imperatif, dan pemrograman fungsional. Python dapat digunakan untuk berbagai keperluan pengembangan perangkat lunak dan dapat berjalan di berbagai platform sistem operasi \cite{bab2-python} \\
 
  \section{Flask}
 	 Flask adalah sebuah kerangka kerja web. Artinya, Flask menyediakan perangkat, pustaka, dan teknologi yang memungkinkan seorang pengembang untuk membangun aplikasi berbasis web. Aplikasi web yang bisa dibangun bisa berupa sebuah halaman web, blog, wiki, bahkan untuk web komersial. Flask dibangun berbasiskan pada Werkzeug, Jinja 2, dan MarkupSafe yang mana menggunakan bahasa pemrograman Python sebagai basisnya. Flask sendiri pertama kali dikembangkan pada tahun 2010 dan didistribusikan dengan lisensi BSD \\
 	 \indent Flask termasuk sebagai perangkat kerja mikro karena tidak membutuhkan banyak perangkat atau pustaka tertentu agar bisa bekerja. Flask tidak menyediakan fungsi untuk melakukan interaksi dengan basis data, tidak mempunya validasi \textit{form} atau fungsi lain yang umumnya bisa digunakan dan disediakan pada sebuah kerangka kerja web. Meskipun memiliki kemampuan yang minim, tapi Flask mendukung dan memberikan kemudahan bagi pengembang untuk menambahkan pustaka sendiri untuk mendukung aplikasinya. Berbagai pustaka seperti validasi \textit{form}, mengunggah file, berbagai macam teknologi autentifikasi bisa digunakan dan tersedia untuk Flask. Bahkan pustaka-pustaka pendukung tersebut lebih sering diperbarui dibandingkan dengan Flasknya sendiri.
 	 
- \section{Gunicorn}
+ \section{\textit{Gunicorn}}
+ \textit{Gunicorn} atau '\textit{Green Unicorn}' adalah \textit{Python} WSGI HTTP \textit{Server} untuk UNIX. Fungsi dari \textit{Gunicorn} ini adalah sebagai pelayan sebuah aplikasi atau sebagai server dari sebuah perangkat lunak yang dikembangkan oleh pengembang.
  
- \section{Supervisor}
+ \textit{Gunicorn} sendiri merupakan salah satu dari sekian banyak \textit{WSGI Server}. Keunggulan dari \textit{Gunicorn} sendiri adalah, \textit{Gunicorn} mampu menangani atau kompatibel dengan berbagai macam kerangka kerja web, sangat mudah untuk diimplementasikan, hanya membutuhkan sedikit sumber daya dari \textit{server} yang terpasang \textit{Gunicorn}, dan juga kerja dari \textit{Gunicorn} yang sangat cepat.
  
- \section{Nginx}
+ \textit{Gunicorn} mengimplementasikan spesifikasi standar \textit{server WSGI PEP3333} sehingga dapat menjalankan perangkat lunak berbasis \textit{web} yang dikembangkan dengan bahasa pemrograman \textit{python}. Sebagai contoh, perangkat lunak berbasis web yang digunakan oleh penulis menggunakan kerangka kerja \textit{flask}, maka \textit{Gunicorn} dapat menanganinya.
+ 
+ \section{\textit{Supervisor}}
+ \textit{Supervisor} adalah sistem yang berbasis \textit{client} atau server, yang memungkinkan penggunanya utuk memantau dan juga mengontrol sejumlah proses pada sistem operasi untuk UNIX. Beberapa faktor terbentuknya \textit{supervisor} antara lain adalah, kenyamanan, ketepatan, delegasi, dan proses grup dalam menggunakan perangkat lunak \textit{supervisor}. Beberapa keunggulan dari perangkat lunak \textit{supervisor} antara lain, konfigurasi yang sederhana, proses yang terpusat, efisien, dapat diperluas penggunaannya, dan juga kompatibel dengan berbagai macam sistem operasi. Komponen dari \textit{supervisor} terbagi menjadi dua, antara lain sebagai berikut.
+ 
+ \subsection{\textit{Supervisord}}
+ \textit{Supervisord} merupakan bagian dari \textit{supervisor} yang bertanggung jawab untuk memulai \textit{child programs} atas permintaannya sendiri, menanggapi perintah dari \textit{client}, melakukan \textit{restart} secara otomatis ketika terjadi kerusakan pada proses, mencatat bagian dari proses \texttt{stdout} dan \texttt{stderr} \textit{output}, juga menghasilan dan menangani \textit{events} yang berhubungan dengan bagian-bagian yang digunakan selama \textit{subprocess} tersebut berjalan.
+ 
+ \subsection{\textit{Supervisorctl}}
+ \textit{Supervisorctl} merupakan bagian dari \textit{command-line} yang digunakan oleh \textit{client}. \textit{Supervisorctl} menyediakan antarmuka yang mirip dengan fitur \textit{shell} yang disediakan oleh \textit{supervisord}. Dari \textit{supervisorctl}, pengguna dapat terhubung dengan proses \textit{supervisord} yang berbeda satu per satu, mendapatkan status dari \textit{subprocess} yang telah dikontrol, menghentikan atau memulai \textit{subprocess} yang telah dikontrol, dan juga mendapatkan semua daftar proses yang berjalan pada \textit{supervisord}.
+ 
+ \textit{Command-line} dari \textit{client} berhubungan ke \textit{server} melalui \textit{socket domain} UNIX atau melalui \textit{socker internet} (TCP). \textit{Server} dapat menyatakan bahwa \textit{client} harus memberikan \textit{autentifikasi} sebelum mengizinkannya untuk melakukan sebuah perintah. Proses \textit{client} biasanya menggunakan \textit{file} konfigurasi yang sama dengan \textit{server}. 
+ 
+ \section{\textit{Nginx}}
+ Nginx adalah sebuah perangkat lunak yang bisa digunakan untuk \textit{web server}, \textit{load balancer}, dan \textit{reverse proxy}. Nginx terkenal karena stabil, memiliki tingkat performa tinggi dan konsumsi sumber daya yang minim. Pada kasus saat terjadi koneksi dalam jumlah yang banyak secara bersamaan, penggunaan \textit{memory}, CPU, dan sumber daya sistem yang lain sangat kecil dan stabil. \cite{chi_web_2012}\\
+ \indent Nginx bisa digunakan untuk menyajikan kontent HTTP yang dinamis menggunakan FastCGI, SCGI untuk menangani scripts, aplikasi WSGI , dan bisa juga digunakan sebagai sebuah \textit{load balancer}. Nginx menggunakan \textit{asynchronous event-driven} untuk menangani permintaan. Dengan menggunakan model ini bisa, pengembang bisa melakukan predeksi kinerja Nginx saat terjadi jumlah permintaan yang banyak.
 	 
  \section{\textit{Iptables}} 
  \textit{Firewall} merupakan sebuah mekanisme wajib \textit{access} kontrol antar jaringan ataupun antar sistem. \textit{Firewall} ini sangat penting karena bertujuan untuk memastikan keamanan dari sebuah jaringan. \textit{Firewall} dapat menjadi \textit{filter} yang sangat sederhana dan mudah digunakan, tetapi \textit{firewall} juga dapat menjadi \textit{filter} yang sangat penting bagi sebuah jalan keluar suatu jaringan. Prinsip dari penggunaan \textit{firewall} tetaplah sama, dimana penggunaannya untuk \textit{monitoring} dan \textit{filtering} semua pertukaran informasi di jaringan \textit{internal} dan juga di jaringan \textit{external}.
@@ -53,4 +69,7 @@
 	
 	\subsection{\textit{Docker Images}}
 	\textit{Docker images} adalah sebuah \textit{blueprint} atau rancangan dasar dari sebuah perangkat lunak berbasis \textit{docker} yang bersifat \textit{read-only}. \textit{Blueprint} ini sendiri merpakan sebuah sistem operasi atau sistem operasi yang telah dipasang berbagai perangkat lunak dan pustaka pendukung. \textit{Docker iamges} berfungsi untuk membuat kontainer \textit{docker}, dimana dengan menggunakan satu \textit{docker iamge} dapat dibuat lebih dari satu kontainer \textit{docker}. \textit{Docker image} sendiri dapat menyelesaikan permasalahan yang dikenal dengan "\textit{dependency hell}", dimana sulitnya untuk melengkapi dependensi sebuah perangkat lunak. Permasalahan tersebut dapat diselesaikan karena semua kebutuhan perangkat lunak sudah berada di dalamnya.
+	
+	\subsection{\textit{Docker Registry}}
+	\textit{Docker Registry} adalah kumpulan dari berbagai macam \textit{docker image} yang bersifat tertutup maupun terbuka yang dapat diakses di \texttt{https://hub.docker.com/} atau dapat diakses pada \textit{server} sendiri. Dengan menggunakan \textit{docker registry}, seseorang dapat menggunakan \textit{docker image} yang telah dibuat oleh orang lainnya. Hal seperti ini dapat mempermudah seseorang untuk melakukan pengembangan dan jugatransfer aplikasi.
 	
