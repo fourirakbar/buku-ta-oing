@@ -3,7 +3,7 @@
   \section{Deskripsi Umum Sistem}    
     Sistem yang akan dibuat adalah sebuah sebuah sistem yang dapat membuat sebuah kontainer \textit{docker} secara otomatis untuk setiap satu \textit{client} yang telah \textit{login} ke dalam sistem. Saat \textit{client} belum \textit{login} ke dalam sistem, maka \textit{client} tersebut akan diarahkan ke halaman \textit{login} dari sistem. Saat \textit{client} mencoba untuk \textit{login} ke dalam sistem, maka sistem akan melakukan pengecekan di dalam basis data apakah \textit{username} dan \textit{password} yang di\textit{input}kan sudah benar atau salah. 
     
-    Setelah \textit{client} berhasil \textit{login} ke dalam sistem, sistem akan mengirimkan perintah untuk membuat kontainer \textit{docker} yang berisikan \textit{mitmproxy} ke \textit{docker host}. Setelah berhasil membuat kontainer \textit{docker} untuk client tersebut, maka \textit{traffic} internet dari \textit{client} tersebut akan diarahkan ke kontainer \textit{docker} berisikan \textit{mitmproxy} yang baru saja dibuat. Setelah itu akan client baru dapat untuk mengakses internet.
+    Setelah \textit{client} berhasil \textit{login} ke dalam sistem, sistem akan mengirimkan perintah untuk membuat kontainer \textit{docker} yang berisikan \textit{mitmproxy} ke \textit{docker host}. Setelah berhasil membuat kontainer \textit{docker} untuk client tersebut, maka \textit{traffic} internet dari \textit{client} tersebut akan diarahkan ke kontainer \textit{docker} berisikan \textit{mitmproxy} yang baru saja dibuat. Setelah itu client dapat mengakses internet.
   
   \section{Kasus Penggunaan}
   Terdapat empat aktor dalam sistem yang akan dibuat yaitu \textit{Client}, \textit{Server Login}, \textit{Administrator}, dan \textit{Docker Host}. \textit{Client} adalah aktor yang melakukan proses \textit{login} ke dalam sistem, \textit{server login} adalah aktor yang melakukan proses permintaan penyediaan kontainer \textit{docker}, \textit{administrator} adalah aktor yang melakukan monitoring kontainer \textit{docker} yang sedang berjalan, sedangkan \textit{docker host} adalah aktor yang akan menjadi tempat penyedia kontainer dan menerima perintah penyediaan kontainer. Diagram kasus penggunaan menggambarkan kebutuhan - kebutuhan yang harus dipenuhi sistem. Diagram kasus penggunaan digambarkan pada Gambar \ref{gambarDiagramKasusPenggunaan}.
@@ -42,7 +42,7 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
         \begin{enumerate}
         \item Pemeriksaan data kontainer yang sudah dibuat pada \textit{docker host}.
         \item Pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem.
-        \item Pembuatan aturan untuk mengarhakn \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client}.
+        \item Pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client}.
         \item Pemasangan kontainer pada \textit{docker host}.
         \item Pembacaan \textit{log file} dari \textit{client}.
         \end{enumerate} 

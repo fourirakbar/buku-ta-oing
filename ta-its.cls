@@ -391,7 +391,7 @@
         Memperoleh Gelar \gelar \\*%
         pada \\*%
         Bidang Studi \bidangStudi \\*%
-        Program Studi \prodi  Jurusan \jurusan \\*%
+        Program Studi \prodi  Departemen \jurusan \\*%
         Fakultas \fakultas \\*%
         Institut Teknologi Sepuluh Nopember \\*[10pt]%
         Oleh : \\*%
