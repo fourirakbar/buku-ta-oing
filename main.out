@@ -39,8 +39,8 @@
 \BOOKMARK [1][-]{section.3.3}{Arsitektur\040Sistem}{chapter.3}% 39
 \BOOKMARK [2][-]{subsection.3.3.1}{Desain\040Umum\040Sistem}{section.3.3}% 40
 \BOOKMARK [2][-]{subsection.3.3.2}{Pembuatan\040halaman\040login\040dari\040sebuah\040sistem.}{section.3.3}% 41
-\BOOKMARK [2][-]{subsection.3.3.3}{Perancangan\040Pemeriksaan\040Data\040Kontainer\040yang\040Sudah\040Dibuat\040pada\040docker\040host.}{section.3.3}% 42
-\BOOKMARK [2][-]{subsection.3.3.4}{Perancangan\040Pembuatan\040Aturan\040untuk\040Mengarahkan\040Traffic\040Client\040ke\040Halaman\040Login\040dari\040Sistem}{section.3.3}% 43
+\BOOKMARK [2][-]{subsection.3.3.3}{Perancangan\040Pembuatan\040Aturan\040untuk\040Mengarahkan\040Traffic\040Client\040ke\040Halaman\040Login\040dari\040Sistem}{section.3.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.4}{Pembuatan\040Middleware\040untuk\040Menerima\040Permintaan\040dari\040Client}{section.3.3}% 43
 \BOOKMARK [2][-]{subsection.3.3.5}{Perancangan\040Pemasangan\040Kontainer\040pada\040Docker\040Host}{section.3.3}% 44
 \BOOKMARK [2][-]{subsection.3.3.6}{Pembuatan\040Aturan\040untuk\040Mengarahkan\040Traffic\040Client\040ke\040Kontainer\040Docker\040dari\040Tiap-Tiap\040Client}{section.3.3}% 45
 \BOOKMARK [0][-]{chapter.4}{IMPLEMENTASI}{}% 46
@@ -68,11 +68,11 @@
 \BOOKMARK [0][-]{chapter.6}{PENUTUP}{}% 68
 \BOOKMARK [1][-]{section.6.1}{Kesimpulan}{chapter.6}% 69
 \BOOKMARK [1][-]{section.6.2}{Saran}{chapter.6}% 70
-\BOOKMARK [0][-]{chapter*.22}{DAFTAR\040PUSTAKA}{}% 71
+\BOOKMARK [0][-]{chapter*.25}{DAFTAR\040PUSTAKA}{}% 71
 \BOOKMARK [0][-]{appendix.A}{File\040Konfigurasi}{}% 72
 \BOOKMARK [1][-]{section.A.1}{File\040Konfigurasi\040Collectd}{appendix.A}% 73
 \BOOKMARK [1][-]{section.A.2}{File\040Konfigurasi\040InfluxDB}{appendix.A}% 74
 \BOOKMARK [1][-]{section.A.3}{File\040Inventory\040Ansible}{appendix.A}% 75
 \BOOKMARK [0][-]{appendix.B}{Kode\040Sumber}{}% 76
 \BOOKMARK [1][-]{section.B.1}{Web\040Service}{appendix.B}% 77
-\BOOKMARK [0][-]{appendix*.23}{BIODATA\040PENULIS}{}% 78
+\BOOKMARK [0][-]{appendix*.26}{BIODATA\040PENULIS}{}% 78
