@@ -40,8 +40,9 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
     \subsection{Desain Umum Sistem}
       \indent Berdasarkan deskripsi umum sistem yang telah ditulis diatas, dapat diperoleh kebutuhan sistem ini, diantaranya :
         \begin{enumerate}
-        \item Pemeriksaan data kontainer yang sudah dibuat pada \textit{docker host}.
+        \item Pembuatan halaman \textit{login} dari sebuah sistem.
         \item Pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem.
+        \item Pembuatan \textit{middleware} untuk menerima permintaan dari \textit{client}.
         \item Pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client}.
         \item Pemasangan kontainer pada \textit{docker host}.
         \item Pembacaan \textit{log file} dari \textit{client}.
@@ -49,10 +50,12 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
       
       \indent Untuk memenuhi kebutuhan sistem tersebut, penulis membagi sistem menjadi beberapa komponen. Komponen yang akan dibangun antara lain: 
       \begin{enumerate} 
-	  \item Pemeriksaan data kontainer yang sudah dibuat pada \textit{docker host}.\\
-		  Berfungsi agar sistem mengetahui apakah \textit{client} dengan IP tersebut diperbolehkan mengakses internet atau tidak.
+      \item Pembuatan halaman \textit{login} dari sebuah sistem.\\
+	      Berfungsi sebagai tampilan antarmuka dari halaman \textit{login} sebuah sistem untuk \textit{client}. Selain itu juga berfungsi untuk mengirimkan permintaan penyediaan kontainer \textit{docker} ke \textit{docker host}.
 	  \item Pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem.\\
 		  Berfungsi untuk mengarahkan tiap \textit{client} yang belum \textit{login} ke dalam sistem ke halaman \textit{login} dari sistem. Hal ini dilakukan dengan menjalankan sebuah \textit{script} dengan menggunakan \textit{iptables} pada \textit{docker host}.
+	  \item Pembuatan \textit{middleware} untuk menerima permintaan dari \textit{client}.
+		  Berfungsi untuk menerima permintaan pembuatan kontainer \textit{docker} dari \textit{client}. Selain itu juga berfungsi untuk membuat kontainer \textit{docker} secara otomatis.
 	  \item Pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client}.\\
 		  Berfungsi untuk mengarahkan tiap \textit{client} yang telah berhasil \textit{login} ke kontainer \textit{docker} dari tiap-tiap \textit{client}. Hal ini dilakukan dengan menjalankan sebuah \textit{script} dengan menggunakan \textit{iptables} pada \textit{docker host}.
 	  \item Pemasangan kontainer pada \textit{docker host}.\\
@@ -73,6 +76,39 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
     
     Nantinya tiap \textit{client}  akan mempunyai satu kontainer \textit{docker} dan satu \textit{port} secara pribadi. \textit{Traffic} dari \textit{client} tersebut akan diarahkan menuju ke kontainer \textit{docker}nya dari tiap-tiap \textit{client}, setelah itu \textit{client} baru dapat mengakses itnernet.
     
+    \subsection{Pembuatan halaman \textit{login} dari sebuah sistem.}
+    Pembuatan halaman \textit{login} dari sebuah sistem adalah komponen yang bertugas untuk menyediakan tampilan antarmuka dari halaman \textit{login} untuk \textit{client}. Awalnya semua \textit{traffic} diarahkan menuju ke halaman \textit{login} dari sebuah sistem, karena diasumsikan bahwa semua \textit{client} diamsumsikan belum \textit{login} ke dalam sistem. Supaya \textit{client} dapat mengakses internet, maka \textit{client} harus \textit{login} ke dalam sistem terlebih dahulu dengan memasukkan \textit{username} dan \textit{password} dari \textit{client} tersebut.
+    
+    Dikarenakan ada beberapa kebutuhan yang harus dipenuhi, komponen pada pembuatan halaman \textit{login} dari sebuah sistem dibagi lagi menjadi dua sub komponen, yaitu:
+   	\begin{enumerate}
+   		\item Basis Data \\
+   		Basis data pada komponen pembuatan halaman \textit{login} dari sebuah sistem berfungsi sebagai tempat penyimpanan data \textit{username} dan \textit{password} yang digunakan untuk \textit{login} ke dalam sistem. Basis data juga berfungsi sebagai tempat penyimpanan data kontainer \textit{docker} yang sudah dibuat.
+   		\item \textit{Web Service} \\
+   		\textit{Web service} berfungsi sebagai antarmuka untuk \textit{client} ketika \textit{client} akan \textit{login} ke dalam sistem. Selain itu \textit{web service} juga berfungsi untuk mengirimkan permintaan penyediaan kontainer \textit{docker} ke \textit{docker host}. Selain itu \textit{web service} juga berfungsi sebagai penerima permintaan dari \textit{client}, yang nantinya akan membuat sebuah kontainer \textit{docker} secara otomatis pada \textit{docker host}.
+   	\end{enumerate}
+   	
+	Pada tugas akhir ini, bahasa Python dipilih sebagai bahasa pemrograman yang digunakan untuk mengimplementasikannya. Lalu, pada bagian penyimpanan data atau basis data, MySQL dipilih sebagai RDBMS untuk tugas akhir ini.
+	
+	\subsubsection{Desain Basis Data}
+	Komponen basis data berfungsi sebagai tempat penyimpanan data \textit{username} dan \textit{password} yang digunakan untuk \textit{login} ke dalam sistem. Dalam basis data ini terdapat satu entitas dan empat atribut, ditunjukkan pada Tabel \ref{tabelnrpmahasiswa}
+	\begin{longtable}{|p{0.03\textwidth}|p{0.20\textwidth}|p{0.20\textwidth}|p{0.41\textwidth}|}
+		\caption{Atribut basis data nrp-mahasiswa} \label{tabelnrpmahasiswa} \\
+		\hline
+		\textbf{No} & \textbf{Kolom} & \textbf{Tipe} & \textbf{Keterangan} \\ \hline
+		\endhead
+		\endfoot
+		\endlastfoot
+		1 & id & int(11) & Sebagai primary key pada tabel, nilai awal adalah \texttt{AUTO\_INCREMENT}. \\ \hline
+		2 & username & varchar(50) & Menunjukkan NRP dari mahasiswa yang telah terdaftar. \\ \hline
+		3 & password & varchar(50) & Menunjukkan password dari NRP mahasiswa yang telah terdaftar. \\ \hline
+		4 & isLogin & int(11) & Status apakah nrp tersebut sedang digunakan (1), atau sedang tidak digunakan (0). \\ \hline
+	\end{longtable}
+	
+	\subsubsection{Desain \textit{Web Service}}
+	Komponen \textit{web service} berfungsi untuk menyediakan antarmuka halaman \textit{login} untuk \textit{client} dan untuk mengirimkan permintaan pembuatan kontainer \textit{docker} secara otomatis pada \textit{docker host} setelah terdapat \textit{client} yang berhasil \textit{login} ke dalam sistem. Halaman \textit{login} akan menggunakan Material UI untuk mendapatkan tampilan yang sederhana dan nyaman untuk digunakan. Desain \textit{web service} untuk halaman \textit{login} dari sistem dapat dilihat pada Gambar xx.
+	
+	Lalu untuk desain \textit{backend} dari \textit{web serive} untuk halaman login akan menggunakan bahasa pemrograman Python degan kerangka kerja \textit{flask} yang akan dijalankan dengan \textit{gunicorn}. Kemudian \textit{gunicorn} akan dijalankan dengan \textit{supervisor} sebagai \textit{service}. Lalu akan digunakan \textit{nginx} sebagai \textit{web server} dari halaman \textit{login} dari sebuah sistem.
+	       
     \subsection{Perancangan Pemeriksaan Data Kontainer yang Sudah Dibuat pada \textit{docker host}.}
     Pemeriksaan data kontainer yang sudah dibuat pada \textit{docker host} adalah komponen yang bertugas untuk melakukan pemeriksaan pada setiap kontainer \textit{docker} pada \textit{docker host} yang sudah dibuat. Jika pada saat dilakukan pemeriksaan ternyata belum dibuatkan kontainer \textit{docker} pada \textit{docker host}, maka \textit{client} akan diarahkan menuju ke halaman \textit{login} sistem. Setelah \textit{client} tersebut berhasil login, maka sistem akan membuat secara otomatis kontainer \textit{docker} pada \textit{docker host}. Jika pada saat dilakukan pemeriksaan ternyata sudah dibuatkan kontainer \textit{docker} pada \textit{docker host}, maka \textit{client} tersebut akan dibuatkan sebuah \textit{rules} menggunakan iptables yang berfungsi untuk mengijinkan \textit{client} tersebut mengakses internet.
     
@@ -117,6 +153,19 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
 	   
    	\subsubsection{Desain \textit{Web Service}}
 	Komponen \textit{web service} berfungsi untuk menyediakan antarmuka halaman \textit{login} untuk \textit{client} dan untuk mengirimkan permintaan pembuatan kontainer \textit{docker} secara otomatis pada \textit{docker host} setelah terdapat \textit{client} yang berhasil \textit{login} ke dalam sistem. Halaman \textit{login} akan menggunakan Material UI untuk mendapatkan tampilan yang sederhana dan nyaman untuk digunakan.
+	
+	\subsection{Pembuatan \textit{Middleware} untuk Menerima Permintaan dari \textit{Client}}
+	Pembuatan \textit{middleware} untuk menerima permintaan dari \textit{client} adalah komponen yang bertugas untuk menerima permintaan dari \textit{client} yang telah berhasil \textit{login} ke dalam sistem. Permintaan yang dikirimkan oleh \textit{client} adalah permintaan untuk membuat kontainer \textit{docker} secara otomatis. Nantinya setiap satu \textit{client} yang berhasil \textit{login} ke dalam sistem akan dibuatkan satu kontainer \textit{docker}.
+	
+	Dikarenakan ada beberapa kebutuhan yang harus dipenuhi, komponen pada pembuatan \textit{middleware} untuk menerima permintaan dari \textit{client} dibagi lagi menjadi dua buah komponen, yaitu:
+	
+   	\begin{enumerate}
+   		\item Basis Data \\
+   		Basis data  berfungsi sebagai tempat penyimpanan data kontainer \textit{docker} yang sudah dibuat.
+   		\item \textit{Web Service} \\
+   		\textit{Web service} berfungsi sebagai antarmuka untuk \textit{client} ketika \textit{client} akan \textit{login} ke dalam sistem. Selain itu \textit{web service} juga berfungsi sebagai penerima permintaan dari \textit{client}, yang nantinya akan membuat sebuah kontainer \textit{docker} secara otomatis pada \textit{docker host}.
+   	\end{enumerate}
+	
 	
 	\subsection{Perancangan Pembuatan Aturan untuk Mengarahkan \textit{Traffic Client} ke Halaman \textit{Login} dari Sistem}
 	Pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem adalah komponen yang bertugas untuk membelokkan \textit{traffic} dari \textit{client} yang akan menuju ke internet. Awalnya semua \textit{traffic} dari satu \textit{subnet client} tersebut akan diarahkan ke halaman \textit{login} dari sistem dengan membuat sebuah aturan menggunakan \textit{iptables}, karena asumsinya adalah belum ada \textit{client} yang berhasil \textit{login} ke dalam sistem.

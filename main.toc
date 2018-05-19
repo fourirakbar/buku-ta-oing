@@ -39,12 +39,13 @@
 \contentsline {section}{\numberline {3.2}Kasus Penggunaan}{17}{section.3.2}
 \contentsline {section}{\numberline {3.3}Arsitektur Sistem}{20}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Desain Umum Sistem}{20}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Perancangan Pemeriksaan Data Kontainer yang Sudah Dibuat pada \textit {docker host}.}{22}{subsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.2.1}Desain Basis Data}{23}{subsubsection.3.3.2.1}
-\contentsline {subsubsection}{\numberline {3.3.2.2}Desain \textit {Web Service}}{25}{subsubsection.3.3.2.2}
-\contentsline {subsection}{\numberline {3.3.3}Perancangan Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Halaman \textit {Login} dari Sistem}{25}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Perancangan Pemasangan Kontainer pada \textit {Docker Host}}{26}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Kontainer \textit {Docker} dari Tiap-Tiap \textit {Client}}{26}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.2}Pembuatan halaman \textit {login} dari sebuah sistem.}{22}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Perancangan Pemeriksaan Data Kontainer yang Sudah Dibuat pada \textit {docker host}.}{23}{subsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.1}Desain Basis Data}{24}{subsubsection.3.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.3.2}Desain \textit {Web Service}}{25}{subsubsection.3.3.3.2}
+\contentsline {subsection}{\numberline {3.3.4}Perancangan Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Halaman \textit {Login} dari Sistem}{25}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Perancangan Pemasangan Kontainer pada \textit {Docker Host}}{26}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Pembuatan Aturan untuk Mengarahkan \textit {Traffic Client} ke Kontainer \textit {Docker} dari Tiap-Tiap \textit {Client}}{26}{subsection.3.3.6}
 \contentsline {chapter}{\numberline {IV}IMPLEMENTASI}{27}{chapter.4}
 \contentsline {section}{\numberline {4.1}Lingkungan Implementasi}{27}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Perangkat Keras}{27}{subsection.4.1.1}

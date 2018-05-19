@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.3.17)  19 MAY 2018 00:34
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.3.16)  19 MAY 2018 13:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1379,52 +1379,52 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
 [22] [23]
-Overfull \hbox (4.92569pt too wide) in paragraph at lines 93--93
+Overfull \hbox (4.92569pt too wide) in paragraph at lines 96--96
 []|\EU1/TimesNewRoman(0)/bx/n/10.95 No| 
  []
 
 
-Overfull \hbox (3.1087pt too wide) in alignment at lines 90--94
+Overfull \hbox (3.1087pt too wide) in alignment at lines 93--97
  [] [] [] [] 
  []
 
 
-Overfull \hbox (3.1087pt too wide) in alignment at lines 94--95
+Overfull \hbox (3.1087pt too wide) in alignment at lines 97--98
  [] [] [] [] 
  []
 
 
-Overfull \hbox (3.1087pt too wide) in alignment at lines 95--96
+Overfull \hbox (3.1087pt too wide) in alignment at lines 98--99
  [] [] [] [] 
  []
 
 
-Overfull \hbox (3.1087pt too wide) in alignment at lines 96--101
+Overfull \hbox (3.1087pt too wide) in alignment at lines 99--104
  [] [] [] [] 
  []
 
 
-Overfull \hbox (4.92569pt too wide) in paragraph at lines 107--107
+Overfull \hbox (4.92569pt too wide) in paragraph at lines 110--110
 []|\EU1/TimesNewRoman(0)/bx/n/10.95 No| 
  []
 
 
-Overfull \hbox (3.1087pt too wide) in alignment at lines 104--108
+Overfull \hbox (3.1087pt too wide) in alignment at lines 107--111
  [] [] [] [] 
  []
 
 
-Overfull \hbox (3.1087pt too wide) in alignment at lines 108--109
+Overfull \hbox (3.1087pt too wide) in alignment at lines 111--112
  [] [] [] [] 
  []
 
 
-Overfull \hbox (3.1087pt too wide) in alignment at lines 109--110
+Overfull \hbox (3.1087pt too wide) in alignment at lines 112--113
  [] [] [] [] 
  []
 
 
-Overfull \hbox (3.1087pt too wide) in alignment at lines 110--116
+Overfull \hbox (3.1087pt too wide) in alignment at lines 113--119
  [] [] [] [] 
  []
 
@@ -2180,7 +2180,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  27048 strings out of 493638
  470273 string characters out of 6146796
- 696295 words of memory out of 5000000
+ 696415 words of memory out of 5000000
  30058 multiletter control sequences out of 15000+600000
  7051 words of font info for 63 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
