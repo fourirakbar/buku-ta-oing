@@ -4,25 +4,25 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Perbandingan \textit {docker} dan virtual machine\relax }}{15}{figure.caption.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Digram Kasus Penggunaan\relax }}{18}{figure.caption.7}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Arsitektur Komponen Sistem\relax }}{22}{figure.caption.8}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Desain Halaman \textit {Login}\relax }}{25}{figure.caption.9}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Desain \textit {Backend} dari Halaman \textit {Login}\relax }}{26}{figure.caption.10}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Desain Mengarahkan \textit {Traffic Client} ke Halaman \textit {Login}\relax }}{27}{figure.caption.11}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Alur kerja dari \textit {mitmproxy transparent} HTTP\relax }}{30}{figure.caption.12}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Alur kerja dari \textit {mitmproxy transparent} HTTPS\relax }}{31}{figure.caption.13}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Desain pembuatan aturan untuk mengarahkan \textit {traffic client} ke kontainer \textit {docker}\relax }}{32}{figure.caption.14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Digram Kasus Penggunaan\relax }}{20}{figure.caption.7}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arsitektur Komponen Sistem\relax }}{24}{figure.caption.8}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Desain Halaman \textit {Login}\relax }}{27}{figure.caption.9}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Desain \textit {Backend} dari Halaman \textit {Login}\relax }}{27}{figure.caption.10}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Desain Mengarahkan \textit {Traffic Client} ke Halaman \textit {Login}\relax }}{28}{figure.caption.11}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Alur kerja dari \textit {mitmproxy transparent} HTTP\relax }}{31}{figure.caption.12}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Alur kerja dari \textit {mitmproxy transparent} HTTPS\relax }}{32}{figure.caption.13}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Desain pembuatan aturan untuk mengarahkan \textit {traffic client} ke kontainer \textit {docker}\relax }}{33}{figure.caption.14}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Arsitektur Pengujian Performa\relax }}{57}{figure.caption.15}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Gambar Hasil Uji Sistem dapat melakukan Penghitungan AHP \relax }}{60}{figure.caption.16}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Web Service Mengrimkan perintah penyediaan kontainer\relax }}{62}{figure.caption.17}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces \emph {Docker Host} berhasil membuat kontainer \emph {docker}\relax }}{63}{figure.caption.18}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Data CPU Setiap Docker Host pada InfluxDB\relax }}{65}{figure.caption.19}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Data RAM Setiap Docker Host pada InfluxDB\relax }}{65}{figure.caption.20}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Data Penyimpanan File Setiap Docker Host pada InfluxDB\relax }}{65}{figure.caption.21}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Grafik Kondisi Akhir Ketersediaan Rata-Rata CPU\relax }}{69}{figure.caption.22}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Grafik Kondisi Akhir Ketersediaan Memori\relax }}{70}{figure.caption.23}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Grafik Kondisi Akhir Ketersedian Penyimpaanan FIle\relax }}{70}{figure.caption.24}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Grafik Waktu Pendistribusian Docker oleh Sistem Berdasarkan Jumlah Kontainer\relax }}{71}{figure.caption.25}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Arsitektur Pengujian Performa\relax }}{59}{figure.caption.15}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Gambar Hasil Uji Sistem dapat melakukan Penghitungan AHP \relax }}{62}{figure.caption.16}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Web Service Mengrimkan perintah penyediaan kontainer\relax }}{64}{figure.caption.17}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \emph {Docker Host} berhasil membuat kontainer \emph {docker}\relax }}{65}{figure.caption.18}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Data CPU Setiap Docker Host pada InfluxDB\relax }}{67}{figure.caption.19}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Data RAM Setiap Docker Host pada InfluxDB\relax }}{67}{figure.caption.20}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Data Penyimpanan File Setiap Docker Host pada InfluxDB\relax }}{67}{figure.caption.21}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Grafik Kondisi Akhir Ketersediaan Rata-Rata CPU\relax }}{71}{figure.caption.22}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Grafik Kondisi Akhir Ketersediaan Memori\relax }}{72}{figure.caption.23}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Grafik Kondisi Akhir Ketersedian Penyimpaanan FIle\relax }}{72}{figure.caption.24}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Grafik Waktu Pendistribusian Docker oleh Sistem Berdasarkan Jumlah Kontainer\relax }}{73}{figure.caption.25}
 \addvspace {10\p@ }

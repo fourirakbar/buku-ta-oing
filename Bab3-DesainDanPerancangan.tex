@@ -103,9 +103,10 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
 		3 & password & varchar(50) & Menunjukkan password dari NRP mahasiswa yang telah terdaftar. \\ \hline
 		4 & isLogin & int(11) & Status apakah nrp tersebut sedang digunakan (1), atau sedang tidak digunakan (0). \\ \hline
 	\end{longtable}
-	
 	\subsubsection{Desain \textit{Web Service}}
-	Komponen \textit{web service} berfungsi untuk menyediakan antarmuka halaman \textit{login} untuk \textit{client} dan untuk mengirimkan permintaan pembuatan kontainer \textit{docker} secara otomatis pada \textit{docker host} setelah terdapat \textit{client} yang berhasil \textit{login} ke dalam sistem. Halaman \textit{login} akan menggunakan Material UI untuk mendapatkan tampilan yang sederhana dan nyaman untuk digunakan. Desain \textit{web service} untuk halaman \textit{login} dari sistem dapat dilihat pada Gambar \ref{mockuplogin}.
+	Komponen \textit{web service} berfungsi untuk menyediakan antar muka halaman \textit{login} untuk \textit{client} dan untuk mengirimkan permintaan pembuatan kontainer \textit{docker} secara otomatis pada \textit{docker host} setelah terdapat \textit{client} yang berhasil \textit{login} ke dalam sistem. Halaman \textit{login} akan menggunakan Material UI untuk mendapatkan tampilan yang sederhana dan nyaman untuk digunakan. Desain \textit{web service} untuk halaman \textit{login} dari sistem dapat dilihat pada Gambar \ref{mockuplogin}.
+	
+	Lalu untuk desain \textit{backend} dari \textit{web serive} untuk halaman \textit{login} akan menggunakan bahasa pemrograman Python degan kerangka kerja \textit{flask} yang akan dijalankan dengan \textit{gunicorn}. Kemudian \textit{gunicorn} akan dijalankan dengan \textit{supervisor} sebagai \textit{service}. Lalu akan digunakan \textit{nginx} sebagai \textit{web server} dari halaman \textit{login} dari sebuah sistem. Desain \textit{backend} dari \textit{web service} untuk halaman \textit{login} dapat dilihat pada Gambar \ref{desainbackendhalamanlogin}.
 	
 	\begin{figure}[H]
 		\centering
@@ -113,8 +114,6 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
 		\caption{Desain Halaman \textit{Login}}
 		\label{mockuplogin}
 	\end{figure}
-	
-	Lalu untuk desain \textit{backend} dari \textit{web serive} untuk halaman \textit{login} akan menggunakan bahasa pemrograman Python degan kerangka kerja \textit{flask} yang akan dijalankan dengan \textit{gunicorn}. Kemudian \textit{gunicorn} akan dijalankan dengan \textit{supervisor} sebagai \textit{service}. Lalu akan digunakan \textit{nginx} sebagai \textit{web server} dari halaman \textit{login} dari sebuah sistem. Desain \textit{backend} dari \textit{web service} untuk halaman \textit{login} dapat dilihat pada Gambar \ref{desainbackendhalamanlogin}.
 	
 	\begin{figure}[H]
 		\centering
@@ -189,6 +188,9 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
 		\caption{Alur kerja dari \textit{mitmproxy transparent} HTTPS}
 		\label{mitmproxyhttps}
 	\end{figure}
+	
+	\subsection{Pembacaan \textit{Log File} dari \textit{Client}}
+	Pembacaan \textit{log file} dari \textit{client} adalah komponen yang bertugas untuk mengetahui apa saja yang telah diakses oleh \textit{client}. \textit{Log} yang dapat dibaca adalah \textit{log} HTTP maupun \textit{log} HTTPS. \textit{Log file} nantinya akan dibuat semudah mungkin untuk dibaca oleh manusia.
 
    	\subsection{Pembuatan Aturan untuk Mengarahkan \textit{Traffic Client} ke Kontainer \textit{Docker} dari Tiap-Tiap \textit{Client}}
    	Pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client} adalah komponen yang bertugas untuk mengarahkan satu client ke satu kontainer \textit{docker} yang sesuai. Setelah \textit{client} berhasil \textit{login} ke dalam sistem, maka aturan ini akan dibuat menggunakan \textit{iptables}. Lalu \textit{client} juga akan diberikan sebuah aturan dengan menggunakan \textit{iptables} yang memperbolehkan \textit{client} tersebut mengakses internet. Desain dari pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client} dapat dilihat pada Gambar \ref{mengarahkankontainerdocker}.
@@ -199,3 +201,6 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
 		\caption{Desain pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker}}
 		\label{mengarahkankontainerdocker}
 	\end{figure}
+	
+
+	
