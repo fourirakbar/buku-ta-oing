@@ -76,7 +76,7 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
     
     Nantinya tiap \textit{client}  akan mempunyai satu kontainer \textit{docker} dan satu \textit{port} secara pribadi. \textit{Traffic} dari \textit{client} tersebut akan diarahkan menuju ke kontainer \textit{docker}nya dari tiap-tiap \textit{client}, setelah itu \textit{client} baru dapat mengakses itnernet.
     
-    \subsection{Pembuatan halaman \textit{login} dari sebuah sistem.}
+    \subsection{Pembuatan Halaman \textit{Login} dari Sebuah Sistem.}
     Pembuatan halaman \textit{login} dari sebuah sistem adalah komponen yang bertugas untuk menyediakan tampilan antarmuka dari halaman \textit{login} untuk \textit{client}. Awalnya semua \textit{traffic} diarahkan menuju ke halaman \textit{login} dari sebuah sistem, karena diasumsikan bahwa semua \textit{client} diamsumsikan belum \textit{login} ke dalam sistem. Supaya \textit{client} dapat mengakses internet, maka \textit{client} harus \textit{login} ke dalam sistem terlebih dahulu dengan memasukkan \textit{username} dan \textit{password} dari \textit{client} tersebut.
     
     Dikarenakan ada beberapa kebutuhan yang harus dipenuhi, komponen pada pembuatan halaman \textit{login} dari sebuah sistem dibagi lagi menjadi dua sub komponen, yaitu:
@@ -150,7 +150,7 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
 	Komponen basis data berfungsi sebagai tempat penyimpanan data kontainer \textit{docker} yang sudah dibuat. Dalam basis data ini terdapat satu entitas dan empat atribut, ditunjukkan pada Tabel \ref{tabelkontainer}.
 	
 	\begin{longtable}{|p{0.03\textwidth}|p{0.20\textwidth}|p{0.20\textwidth}|p{0.41\textwidth}|}
-		\caption{Atribut basis data nrp-mahasiswa} \label{tabelkontainer} \\
+		\caption{Atribut basis data kontainer} \label{tabelkontainer} \\
 		\hline
 		\textbf{No} & \textbf{Kolom} & \textbf{Tipe} & \textbf{Keterangan} \\ \hline
 		\endhead
@@ -168,27 +168,34 @@ UC-0005 & Membaca \textit{Log File} dari \textit{Client}  &  Proses dimana \text
 	Komponen \textit{web service} berfungsi untuk menerima permintaan dari \textit{client} untuk membuat satu kontainer \textit{docker} pada \textit{docker host}. Kontainer \textit{docker} yang akan dibuat pada \textit{docker host} akan dibuat secara otomatis oelh sistem, dan kontainer \textit{docker} yang dibuat akan memiliki nama sesuai dengan IP dari \textit{client} yang telah berhasil \textit{login} ke dalam sistem. Setelah menerima permintaan dari \textit{client}, maka sistem akan mengirimkan perintah untuk membuat kontainer \textit{docker} khusus untuk satu \textit{client}. 
    	
     \subsection{Perancangan Pemasangan Kontainer pada \textit{Docker Host}}
-	Pemasangan kontainer adalah kompenen yang berfungsi untuk memasangkan kontainer \textit{docker} yang berisikan \textit{mitmproxy} pada \textit{docker host} setelah ada permintaan dari \textit{client} yang telah berhasil \textit{login} ke dalam sistem. Proses ini dilakukan secara otomatis, dan nama dari kontainer \textit{docker} tersebut akan sesuai dengan IP dari \textit{client} yang telah berhasil \textit{login} ke dalam sistem.
+	Pemasangan kontainer adalah kompenen yang berfungsi untuk memasang kontainer \textit{docker} yang berisi \textit{mitmproxy} pada \textit{docker host} setelah ada permintaan dari \textit{client} yang telah berhasil \textit{login} ke dalam sistem. Proses ini dilakukan secara otomatis, dan nama dari kontainer \textit{docker} tersebut akan sesuai dengan IP dari \textit{client} yang telah berhasil \textit{login} ke dalam sistem.
 	
 	Saat kontainer \textit{docker} telah berhasil dibuat, maka kontainer \textit{docker} tersebut akan mempunyai satu port khusus yang sama dengan \textit{client} yang baru saja \textit{login}. Port khusus nantinya akan digunakan untuk mengarahkan \textit{traffic} dari \textit{client} yang akan mengakses internet.
 	
-	\textit{Image mitmproxy} dipilih sebagai \textit{image} pada kontainer \textit{docker} karena \textit{mitmproxy} merupakan sebuah perangkat lunak yang interaktif dimana \textit{mitmproxy} memungkinkan dapat memotong dan memodifikasi HTTP \textit{requests} atau \textit{response} dengan sangat cepat. \textit{Mitmproxy} sendiri juga dapat berjalan dengan \textit{transparent mode} sehingga \textit{client} tidak mengetahui jika \textit{traffic} dari \textit{client} tersebut ternyata melalui \textit{mitmproxy}. Gambar alur kerja dari \textit{mitmproxy} dengan \textit{transparent mode} untuk HTTP dapat dilihat pada Gambar xx.
+	\textit{Image mitmproxy} dipilih sebagai \textit{image} pada kontainer \textit{docker} karena \textit{mitmproxy} merupakan sebuah perangkat lunak yang interaktif dimana \textit{mitmproxy} memungkinkan dapat memotong dan memodifikasi HTTP \textit{requests} atau \textit{response} dengan sangat cepat. \textit{Mitmproxy} sendiri juga dapat berjalan dengan \textit{transparent mode} sehingga \textit{client} tidak mengetahui jika \textit{traffic} dari \textit{client} tersebut ternyata melalui \textit{mitmproxy}. Gambar alur kerja dari \textit{mitmproxy} dengan \textit{transparent mode} untuk HTTP dapat dilihat pada Gambar \ref{mitmproxyhttp}.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\linewidth]{images/bab3/DIAGRAM2}
-		\caption{Desain Mengarahkan \textit{Traffic Client} ke Halaman \textit{Login}}
-		\label{dessainmengarahkankehalamanlogin}
+		\includegraphics[width=\linewidth]{images/bab3/mitmproxyhttp}
+		\caption{Alur kerja dari \textit{mitmproxy transparent} HTTP}
+		\label{mitmproxyhttp}
 	\end{figure}
 	
-	Sedangkan gambar alur kerja dari \textit{mitmproxy} dengan \textit{transparent mode} untuk HTTPS dapat dilihat pada Gambar xx.
+	Sedangkan gambar alur kerja dari \textit{mitmproxy} dengan \textit{transparent mode} untuk HTTPS dapat dilihat pada Gambar \ref{mitmproxyhttps}.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\linewidth]{images/bab3/DIAGRAM2}
-		\caption{Desain Mengarahkan \textit{Traffic Client} ke Halaman \textit{Login}}
-		\label{dessainmengarahkankehalamanlogin}
+		\includegraphics[width=\linewidth]{images/bab3/mitmproxyhttps}
+		\caption{Alur kerja dari \textit{mitmproxy transparent} HTTPS}
+		\label{mitmproxyhttps}
 	\end{figure}
 
    	\subsection{Pembuatan Aturan untuk Mengarahkan \textit{Traffic Client} ke Kontainer \textit{Docker} dari Tiap-Tiap \textit{Client}}
-   	Pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainter \textit{docker} dari tiap-tiap \textit{client} adalah komponen yang bertugas untuk mengarahkan satu client ke satu kontainer \textit{docker} yang sesuai. Setelah \textit{client} berhasil \textit{login} ke dalam sistem, maka aturan ini akan dibuat menggunakan \textit{iptables}. Lalu \textit{client} juga akan dibuatkan sebuah aturan dengan menggunakan \textit{iptables} yang memperbolehkan \textit{client} tersebut mengakses internet.
+   	Pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client} adalah komponen yang bertugas untuk mengarahkan satu client ke satu kontainer \textit{docker} yang sesuai. Setelah \textit{client} berhasil \textit{login} ke dalam sistem, maka aturan ini akan dibuat menggunakan \textit{iptables}. Lalu \textit{client} juga akan diberikan sebuah aturan dengan menggunakan \textit{iptables} yang memperbolehkan \textit{client} tersebut mengakses internet. Desain dari pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker} dari tiap-tiap \textit{client} dapat dilihat pada Gambar \ref{mengarahkankontainerdocker}.
+   	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\linewidth]{images/bab3/DIAGRAM3}
+		\caption{Desain pembuatan aturan untuk mengarahkan \textit{traffic client} ke kontainer \textit{docker}}
+		\label{mengarahkankontainerdocker}
+	\end{figure}
