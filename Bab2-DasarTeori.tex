@@ -54,10 +54,17 @@
 	
 	Berdasarkan jenis VMM yang ada, \textit{VirtualBox} merpakan jenis \textit{hypervisor type 2}. \textit{VirtualBox} sendiri memiliki berbagai macam kegunaan, diantaranya \textit{VirtualBox} dapat memainkan semua sistem  operasi baik itu menggunakan windows, linux, atau turunan linux lainnya. \textit{VirtualBox} juga dapat dipergunakan untuk mengujicoba OS baru. \textit{VirtualBox} juga dapat digunakan sebgai media untuk membaut simulasi jaringan.
 	
-	\section{\textit{Proxmos VE}}
-	\textit{Proxmox VE} adalah proyek \textit{open source}, dikembangkan dan dikelola oleh Proxmox Server Solutions GmbH. \textit{Proxmox VE} dilisensikan di bawah GPLv3. Fungionalitas dari \textit{Proxmox VE} dapat dijalankan pada \textit{browser}, salah satunya adalah mengintegrasikan tampilan console dari \textit{virtual machine}, integrasi dan manajemen \textit{cluster Proxmox VE}, teknologi AJAX untuk pembaruan sumber daya secara dinamis, dan mengamankan akses untuk semua \textit{virtual machine} dengan menggunakan enkripsi SSL.
+	\section{\textit{Framework} Laravel}
 	
-	\textit{Proxmox VE} adalah \textit{tweak} dari distribusi Debain yang telah terinstall fitur manajemen berbasis web, dan mempunyai \textit{kernel} yang telah dioptimalkan. \textit{Proxmox VE} menawarkan dua solusi untuk melakuakn virtualisasi, antara lain \textit{full-orparavirtualization} dengan menggunakan KVM dan OpenVZ virtualisasi berbasis kontainer.
+	Laravel adalah sebuah \textit{framework} PHP yang dibangun dengan konsep MVC (\textit{Model View Controller}). MVC adalah sebuah pendekatan perangkat lunak yang memisahkan aplikasi logika dari presentasi. MVC memisahkan aplikasi berdasarkan komponen-komponen aplikasi, seperti: manipulasi data, \textit{controller}, dan \textit{user interface}.
+	\begin{enumerate}
+	\item \textit{Model} berisi fungsi-fungsi yang membantu seseorang dalam pengelolaan data, dan lain-lain.
+	\item \textit{View} adalah bagian yang mengatur tampilan ke pengguna. Bisa dikatakan berupa halaman web.
+	\item \textit{Controller} merupakan bagian yang menjembatani \textit{model} dan \textit{view}.
+	\end{enumerate}
+	Rancang Bangun Perangkat Lunak Internet \textit{Access Management} Berbasis Kontainer
+	Dalam pembangunan perangkat lunak internet \textit{access management} berbasis kontainer, Laravel digunakan sebagai \textit{framework} untuk pembangunan web sebagai halaman \textit{administrator}. Salah satu fitur yang mendukung proses pengembangan dari Laravel adalah Eloquent ORM. Misalkan, dibutuhkan untuk mengambil semua data yang ada pada tabel \texttt{Kontainer}, maka yang perlu dilakukan hanya membuat sebuah \textit{class model} bernama \textit{Kontainer}. Laravel sendiri dikembangkan secara khusus untuk PHP 7.0. Jadi \textit{framework} ini bisa memanfaatkan berbagai macam kelebihan yang dimiliki PHP versi terbaru tersebut. Tidak ada \textit{backward compatibility} dengan PHP versi sebelumnya.
+	
 		
 	\section{\textit{Docker}}
 	Docker adalah sebuah aplikasi yang bersifat \textit{open source} yang berfungsi sebagai wadah untuk memasukkan sebuah perangkat lunak secara lengkap beserta semua hal yang dibutuhkan oelh perangkat lunak tersebut agar dapat berfungsi sebagaimana mestinya. \textit{Docker} dapat dijalankan di berbagai sistem operasi, pengembang dapat dengan mudah menggunakan layanan \textit{docker} melalui \texttt{https://hub.docker.com} untuk mengunduh \textit{imaes} ataupun membuat \textit{images} yang diinginkan. Perbedaan antara \textit{docker} dan \textit{virtual machine} ditunjukkan pada gambar \ref{contohDocker}

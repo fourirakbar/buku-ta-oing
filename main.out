@@ -29,7 +29,7 @@
 \BOOKMARK [1][-]{section.2.7}{MySQL}{chapter.2}% 29
 \BOOKMARK [1][-]{section.2.8}{Mitmproxy}{chapter.2}% 30
 \BOOKMARK [1][-]{section.2.9}{VirtualBox}{chapter.2}% 31
-\BOOKMARK [1][-]{section.2.10}{Proxmos\040VE}{chapter.2}% 32
+\BOOKMARK [1][-]{section.2.10}{Framework\040Laravel}{chapter.2}% 32
 \BOOKMARK [1][-]{section.2.11}{Docker}{chapter.2}% 33
 \BOOKMARK [2][-]{subsection.2.11.1}{Docker\040Container}{section.2.11}% 34
 \BOOKMARK [2][-]{subsection.2.11.2}{Docker\040Images}{section.2.11}% 35
@@ -43,7 +43,7 @@
 \BOOKMARK [2][-]{subsection.3.3.3}{Perancangan\040Pembuatan\040Aturan\040untuk\040Mengarahkan\040Traffic\040Client\040ke\040Halaman\040Login\040dari\040Sistem}{section.3.3}% 43
 \BOOKMARK [2][-]{subsection.3.3.4}{Pembuatan\040Middleware\040untuk\040Menerima\040Permintaan\040dari\040Client}{section.3.3}% 44
 \BOOKMARK [2][-]{subsection.3.3.5}{Perancangan\040Pemasangan\040Kontainer\040pada\040Docker\040Host}{section.3.3}% 45
-\BOOKMARK [2][-]{subsection.3.3.6}{Pembacaan\040Log\040File\040dari\040Client}{section.3.3}% 46
+\BOOKMARK [2][-]{subsection.3.3.6}{Pembuatan\040Halaman\040Administrator\040untuk\040Membaca\040dan\040Mengunduh\040Log\040File\040dari\040Client}{section.3.3}% 46
 \BOOKMARK [2][-]{subsection.3.3.7}{Pembuatan\040Aturan\040untuk\040Mengarahkan\040Traffic\040Client\040ke\040Kontainer\040Docker\040dari\040Tiap-Tiap\040Client}{section.3.3}% 47
 \BOOKMARK [0][-]{chapter.4}{IMPLEMENTASI}{}% 48
 \BOOKMARK [1][-]{section.4.1}{Lingkungan\040Implementasi}{chapter.4}% 49
@@ -72,11 +72,11 @@
 \BOOKMARK [0][-]{chapter.6}{PENUTUP}{}% 72
 \BOOKMARK [1][-]{section.6.1}{Kesimpulan}{chapter.6}% 73
 \BOOKMARK [1][-]{section.6.2}{Saran}{chapter.6}% 74
-\BOOKMARK [0][-]{chapter*.26}{DAFTAR\040PUSTAKA}{}% 75
+\BOOKMARK [0][-]{chapter*.28}{DAFTAR\040PUSTAKA}{}% 75
 \BOOKMARK [0][-]{appendix.A}{File\040Konfigurasi}{}% 76
 \BOOKMARK [1][-]{section.A.1}{File\040Konfigurasi\040Collectd}{appendix.A}% 77
 \BOOKMARK [1][-]{section.A.2}{File\040Konfigurasi\040InfluxDB}{appendix.A}% 78
 \BOOKMARK [1][-]{section.A.3}{File\040Inventory\040Ansible}{appendix.A}% 79
 \BOOKMARK [0][-]{appendix.B}{Kode\040Sumber}{}% 80
 \BOOKMARK [1][-]{section.B.1}{Web\040Service}{appendix.B}% 81
-\BOOKMARK [0][-]{appendix*.27}{BIODATA\040PENULIS}{}% 82
+\BOOKMARK [0][-]{appendix*.29}{BIODATA\040PENULIS}{}% 82
