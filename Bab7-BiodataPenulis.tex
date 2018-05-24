@@ -1,8 +1,65 @@
 \renewcommand\chaptername{LAMPIRAN}
-\chapter{File Konfigurasi}
-\section{File Konfigurasi Collectd}
-\label{lampiranpushnotif}
-  Berikut File Konfigurasi Keseluruhan untuk perangkat lunak Collectd.
+\chapter{Lampiran Halaman \textit{Login}}
+\section{Pemasangan Perangkat Lunak}
+\label{lampiranisntalasihalamanlogin}
+Berikut adalah perangkat lunak yang dibutuhkan agar halaman \textit{login} dapat digunakan, antara lain:
+\begin{enumerate}
+	\item \textit{Python} versi 3.5.2.
+	\item \textit{Flask} versi 1.0.2.
+	\item \textit{Gunicorn} versi 19.8.1.
+	\item \textit{Supervisor} versi 3.2.0.
+	\item \textit{Nginx} versi 1.10.3.
+\end{enumerate}
+
+\subsection{Pemasangan Perangkat Lunak Python}
+Berikut adalah langkah-langkah untuk memasang perangkat lunak Python versi 3.5.2 pada \textit{server} yang akan digunakan untuk membangun halaman \textit{login}.\\
+\begin{minipage}{\linewidth}
+	\begin{lstlisting}[caption=Command untuk installasi Python,language=Python,label=installpython3diserverlogin]
+	sudo apt-get update
+	sudo apt-get install python3
+	\end{lstlisting}
+\end{minipage}
+
+\subsection{Pemasangan Perangkat Lunak Flask}
+Berikut adalah langkah-langkah untuk memasang perangkat lunak Flask versi 1.0.2 pada \textit{server} yang akan digunakan untuk membangun halaman \textit{login}.\\
+\begin{minipage}{\linewidth}
+	\begin{lstlisting}[caption=Command untuk installasi Flask,language=Python,label=installflaskdiserverlogin]
+	sudo apt-get install python3-pip
+	sudo pip install flask
+	\end{lstlisting}
+\end{minipage}
+
+\subsection{Pemasangan Perangkat Lunak Gunicorn}
+Berikut adalah langkah-langkah untuk memasang perangkat lunak Gunicorn versi 19.8.1 pada \textit{server} yang akan digunakan untuk membangun halaman \textit{login}.\\
+\begin{minipage}{\linewidth}
+ 	\begin{lstlisting}[caption=Command untuk installasi Gunicorn,language=Python,label=installgunicorndiserverlogin]
+ 	sudo pip install gunicorn
+ 	\end{lstlisting}
+\end{minipage}
+
+\subsection{Pemasangan Perangkat Lunak Supervisor}
+Berikut adalah langkah-langkah untuk memasang perangkat lunak Supervisor versi 3.2.0 pada \textit{server} yang akan digunakan untuk membangun halaman \textit{login}.\\
+\begin{minipage}{\linewidth}
+ 	\begin{lstlisting}[caption=Command untuk installasi Supervisor,language=Python,label=installsupervisordiserverlogin]
+ 	sudo apt-get install python-setuptools
+ 	sudo apt-get install supervisor
+ 	\end{lstlisting}
+\end{minipage}
+
+\subsection{Pemasangan Perangkat Lunak Nginx}
+Berikut adalah langkah-langkah untuk memasang perangkat lunak Nginx versi 1.10.3 pada \textit{server} yang akan digunakan untuk membangun halaman \textit{login}.\\
+\begin{minipage}{\linewidth}
+ 	\begin{lstlisting}[caption=Command untuk installasi Nginx,language=Python,label=installnginx]
+ 	sudo apt-get install nginx
+ 	\end{lstlisting}
+\end{minipage}
+
+\section{Konfigurasi Perangkat Lunak}
+Beberapa perangkat lunak pada \textit{server} yang akan digunakan untuk membangun halaman \textit{login} harus dikonfigurasi terlebih dahulu agar dapat digunakan.
+
+\subsection{File Konfigurasi Supervisor}
+Berikut adalah file konfigurasi keseluruhan untuk perangkat lunak Supervisor.
+
   
   \begin{lstlisting}[numbers=left, frame=single,tabsize=2,breaklines,caption={Kode sumber Model Auth},label=modelAuth, language=python]
 FQDNLookup true

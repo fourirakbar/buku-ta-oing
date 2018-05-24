@@ -15,7 +15,7 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
     \item Sistem Operasi Ubuntu 14.04 LTS 64 Bit sebagai \textit{client}.
     \item Sistem Operasi Ubuntu Server 16.04 LTS 64 Bit sebagai \textit{server login}.
     \item \textit{Python} versi 3.5.2 untuk pengembangan web service. 
-    \item \textit{Flask} versi 1.0.2 sebagai Kerangka Kerja \textit{Python}.
+    \item \textit{Flask} versi 1.0.2 sebagai kerangka kerja \textit{Python}.
     \item \textit{Gunicorn} versi 19.8.1
     \item \textit{Supervisor} versi 3.2.0
     \item \textit{Nginx} versi 1.10.3
@@ -23,11 +23,12 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
     \item MySQL versi 5.7.18 untuk Sistem Manajemen Basis Data.
     \item \textit{Docker} versi 1.13.1 sebagai kontainer yang akan di pasangkan pada \textit{server}.
     \item \textit{Iptables} versi 1.6.0 untuk membuat aturan terhadap \textit{client}.
+    \item \textit{Laravel} versi 5.4 sebagai kerangka kerja untuk halaman \textit{administrator}. 
     \item \textit{VIM} versi 7.4.1 sebagai \textit{text editor}.
     \end{enumerate}
     
   \section{Implementasi Pembuatan Halaman \textit{Login} dari Sebuah Sistem}
-  Pada implementasi pembuatan halaman \textit{login} dari sebuah sistem menggunakan perangkat lunak antara lain:
+  Halaman \textit{login} dibangun pada sebuah \textit{server} dengan IP \texttt{10.151.36.173} dengan menggunakan sistem operasi Ubuntu Server 16.04 LTS 64 Bit. Pada implementasi pembuatan halaman \textit{login} dari sebuah sistem menggunakan perangkat lunak antara lain:
   \begin{enumerate}
   \item \textit{Python} versi 3.5.2.
   \item \textit{Flask} versi 1.0.2.
@@ -36,7 +37,7 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   \item \textit{Nginx} versi 1.10.3.
   \end{enumerate}
 
-  Lalu sistem operasi yang digunakan adalah sistem operasi Ubuntu Server 16.04 LTS 64 BIT, yang akan dipasang pada \textit{virtual machine} di \textit{Proxmox}. \textit{Python} akan berfungsi sebagai komponen dasar pembangunan sistem yang akan dibangun dengan menggunakan kerangka kerja \textit{Flask} dan dijalankan dengan \textit{Gunicorn} pada \texttt{IP SERVER} dengan \textit{port} 4000. Lalu \textit{Supervisor} akan berfungsi sebagai sebuah \textit{service} yang akan selalu menajalankan \textit{Gunicorn}. Sedangkan \textit{Nginx} akan berfungsi sebagai \textit{web server} untuk perangkat lunak halaman \textit{login} yang dijalankan oleh \textit{Gunicorn} pada \texttt{IP SERVER} dengan \textit{port} 4000 supaya bisa diakses oleh \textit{client}. Implementasi pembuatan halaman \textit{login} dari sebuah sistem akan terbagi menjadi implementasi \textit{web service} dan implementasi basis data.
+  Lalu sistem operasi yang digunakan adalah sistem operasi Ubuntu Server 16.04 LTS 64 Bit, yang akan dipasang pada \textit{virtual machine} di \textit{Proxmox}. \textit{Python} akan berfungsi sebagai komponen dasar pembangunan sistem yang akan dibangun dengan menggunakan kerangka kerja \textit{Flask} dan dijalankan dengan \textit{Gunicorn} pada \texttt{IP SERVER} dengan \textit{port} 4000. Lalu \textit{Supervisor} akan berfungsi sebagai sebuah \textit{service} yang akan selalu menajalankan \textit{Gunicorn}. Sedangkan \textit{Nginx} akan berfungsi sebagai \textit{web server} untuk perangkat lunak halaman \textit{login} yang dijalankan oleh \textit{Gunicorn} pada \texttt{IP SERVER} dengan \textit{port} 4000 supaya bisa diakses oleh \textit{client}. Implementasi pembuatan halaman \textit{login} dari sebuah sistem akan terbagi menjadi implementasi \textit{web service} dan implementasi basis data.
   
   \subsection{Implementasi \textit{Web Service} pada Halaman \textit{Login}}
   Diperlukan beberapa tahap, antara lain pemasangan perangkat lunak dan tahap konfigurasi. Untuk melakukan pemasangan \textit{Python} versi 3.5.2 pada sistem operasi Ubuntu \textit{Server}, jalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{installpython3diserverlogin}.\\

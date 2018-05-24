@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.3.16)  24 MAY 2018 16:23
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.3.16)  24 MAY 2018 16:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -932,10 +932,22 @@ LaTeX Warning: Label `DockerHost1' multiply defined.
 
 ) (./Contoh.aux) (./Bab6-Penutup.aux) (./Bab7-BiodataPenulis.aux
 
-LaTeX Warning: Label `modelAuth' multiply defined.
+LaTeX Warning: Label `installpython3diserverlogin' multiply defined.
 
 
-LaTeX Warning: Label `lampiranpushnotif' multiply defined.
+LaTeX Warning: Label `installflaskdiserverlogin' multiply defined.
+
+
+LaTeX Warning: Label `installgunicorndiserverlogin' multiply defined.
+
+
+LaTeX Warning: Label `installsupervisordiserverlogin' multiply defined.
+
+
+LaTeX Warning: Label `installnginx' multiply defined.
+
+
+LaTeX Warning: Label `konfigurasisupervisor' multiply defined.
 
 
 LaTeX Warning: Label `modelAuth' multiply defined.
@@ -1469,14 +1481,14 @@ File: images/bab3/DIAGRAM3.png Graphic file (type QTm)
 BAB IV.
 [37] [38]
 LaTeX Font Info:    Font shape `EU1/CourierNew(0)/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 44.
+(Font)              scaled to size 7.19995pt on input line 45.
 
-Overfull \hbox (0.6971pt too wide) in paragraph at lines 79--80
+Overfull \hbox (0.6971pt too wide) in paragraph at lines 80--81
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.0171pt too wide) in paragraph at lines 119--121
+Overfull \hbox (5.0171pt too wide) in paragraph at lines 120--122
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1484,22 +1496,15 @@ Overfull \hbox (5.0171pt too wide) in paragraph at lines 119--121
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-[41]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42]
-Overfull \hbox (17.0pt too wide) in paragraph at lines 176--189
+ [41]
+[42]
+Overfull \hbox (17.0pt too wide) in paragraph at lines 177--190
 []$[]$ 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44]
-[45] [46] [47] [48] [49]
+[43] [44] [45] [46] [47] [48] [49]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [50]
@@ -1507,7 +1512,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51]
 [52]
-Overfull \hbox (5.0171pt too wide) in paragraph at lines 433--434
+Overfull \hbox (5.0171pt too wide) in paragraph at lines 434--435
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2175,47 +2180,63 @@ LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 ]
 Lampiran A.
-[81] [82]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [83]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [84]
+[81] [82] [83] [84]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [85]
-[86]
-Lampiran B.
-[87
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+ [86]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [87]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [88]
+[89] [90
+
+]
+Lampiran B.
+[91]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [89]
+ [92]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [90]
-[91] [92
+ [93]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [94]
+[95] [96
 
 ]
 File: images/cover/pic.jpg Graphic file (type QTm)
  <use  "images/cover/pic.jpg" >
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 458.
- [93
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 535.
+ [97
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 458.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 535.
  (./main.aux (./Bab0-Abstrak.aux)
 (./Bab0-KataPengantar.aux) (./Bab1-Pendahuluan.aux) (./Bab2-DasarTeori.aux)
 (./Bab3-DesainDanPerancangan.aux) (./Bab4-Implementasi.aux)
 (./Bab5-PengujianDanEvaluasi.aux) (./Contoh.aux) (./Bab6-Penutup.aux)
-(./Bab7-BiodataPenulis.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 458.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 458.
+(./Bab7-BiodataPenulis.aux)
+Runaway argument?
+{\contentsline {chapter}{BIODATA PENULIS}{97} 
+! File ended while scanning use of \@writefile.
+<inserted text> 
+                \par 
+l.38 \@input{Bab7-BiodataPenulis.aux}
+                                     
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 535.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 535.
 
 
 LaTeX Warning: There were undefined references.
@@ -2227,12 +2248,12 @@ LaTeX Warning: There were multiply-defined labels.
 (\end occurred when \iftrue on line 30 was incomplete)
 (\end occurred when \ifnum on line 30 was incomplete) 
 Here is how much of TeX's memory you used:
- 27081 strings out of 493638
- 471053 string characters out of 6146796
- 698496 words of memory out of 5000000
- 30086 multiletter control sequences out of 15000+600000
+ 27084 strings out of 493638
+ 471110 string characters out of 6146796
+ 699277 words of memory out of 5000000
+ 30089 multiletter control sequences out of 15000+600000
  7051 words of font info for 63 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  55i,13n,63p,10396b,1750s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (117 pages).
+Output written on main.pdf (121 pages).
