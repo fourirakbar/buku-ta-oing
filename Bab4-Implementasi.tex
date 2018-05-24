@@ -37,62 +37,12 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   \item \textit{Nginx} versi 1.10.3.
   \end{enumerate}
 
-  Lalu sistem operasi yang digunakan adalah sistem operasi Ubuntu Server 16.04 LTS 64 Bit, yang akan dipasang pada \textit{virtual machine} di \textit{Proxmox}. \textit{Python} akan berfungsi sebagai komponen dasar pembangunan sistem yang akan dibangun dengan menggunakan kerangka kerja \textit{Flask} dan dijalankan dengan \textit{Gunicorn} pada \texttt{IP SERVER} dengan \textit{port} 4000. Lalu \textit{Supervisor} akan berfungsi sebagai sebuah \textit{service} yang akan selalu menajalankan \textit{Gunicorn}. Sedangkan \textit{Nginx} akan berfungsi sebagai \textit{web server} untuk perangkat lunak halaman \textit{login} yang dijalankan oleh \textit{Gunicorn} pada \texttt{IP SERVER} dengan \textit{port} 4000 supaya bisa diakses oleh \textit{client}. Implementasi pembuatan halaman \textit{login} dari sebuah sistem akan terbagi menjadi implementasi \textit{web service} dan implementasi basis data.
+  Lalu sistem operasi yang digunakan adalah sistem operasi Ubuntu Server 16.04 LTS 64 Bit, yang akan dipasang pada \textit{virtual machine} di \textit{Proxmox}. \textit{Python} akan berfungsi sebagai komponen dasar pembangunan sistem yang akan dibangun dengan menggunakan kerangka kerja \textit{Flask} dan dijalankan dengan \textit{Gunicorn} pada \textit{server} dengan IP \texttt{10.151.36.173} dengan \textit{port} 4000. Lalu \textit{Supervisor} akan berfungsi sebagai sebuah \textit{service} yang akan selalu menajalankan \textit{Gunicorn}. Sedangkan \textit{Nginx} akan berfungsi sebagai \textit{web server} untuk perangkat lunak halaman \textit{login} yang dijalankan oleh \textit{Gunicorn} pada \textit{server} dengan IP \texttt{10.151.36.173} dengan \textit{port} 4000 supaya bisa diakses oleh \textit{client}. Implementasi pembuatan halaman \textit{login} dari sebuah sistem akan terbagi menjadi implementasi \textit{web service} dan implementasi basis data.
   
   \subsection{Implementasi \textit{Web Service} pada Halaman \textit{Login}}
-  Diperlukan beberapa tahap, antara lain pemasangan perangkat lunak dan tahap konfigurasi. Untuk melakukan pemasangan \textit{Python} versi 3.5.2 pada sistem operasi Ubuntu \textit{Server}, jalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{installpython3diserverlogin}.\\
-  \begin{minipage}{\linewidth}
-	\begin{lstlisting}[caption=Command untuk installasi Python,language=Python,label=installpython3diserverlogin]
-	sudo apt-get update
-	sudo apt-get install python3
-	\end{lstlisting}
-  \end{minipage}
+  Diperlukan beberapa tahap, antara lain pemasangan perangkat lunak dan tahap konfigurasi. Tahap pemasangan perangkat lunak dan tahap konfigurasi pada \textit{server} untuk halaman \textit{login} dijelaskan pada Lampiran A. 
   
-  Lalu untuk melakukan pemasangan \textit{Flask} versi 1.0.2 pada sistem operasi Ubuntu \textit{Server}, jalankan \textit{command} pada teminal seperti pada Kode Sumber \ref{installflaskdiserverlogin}.\\  
-  \begin{minipage}{\linewidth}
-	\begin{lstlisting}[caption=Command untuk installasi Flask,language=Python,label=installflaskdiserverlogin]
-	sudo apt-get install python3-pip
-	sudo pip install flask
-	\end{lstlisting}
-  \end{minipage}
-  
-  Kemudian untuk melakukan pemasangan \textit{Gunicorn} versi 19.8.1 pada sistem operasi Ubuntu \textit{Server}, jalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{installgunicorndiserverlogin}.\\
-  \begin{minipage}{\linewidth}
-  \begin{lstlisting}[caption=Command untuk installasi Gunicorn,language=Python,label=installgunicorndiserverlogin]
-  sudo pip install gunicorn
-  \end{lstlisting}
-  \end{minipage}
-
-  Setelah itu untuk melakukan pemasangan \textit{Supervisor} versi 3.2.0 pada sistem operasi Ubuntu \textit{Server}, jalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{installsupervisordiserverlogin}.\\
-  \begin{minipage}{\linewidth}
-  \begin{lstlisting}[caption=Command untuk installasi Supervisor,language=Python,label=installsupervisordiserverlogin]
-  sudo apt-get install python-setuptools
-  sudo apt-get install supervisor
-  \end{lstlisting}
-  \end{minipage}
-  Lalu agar \textit{Supervisor} dapat selalu menjalankan perangkat lunak \textit{Gunicorn}, perlu dilakukan konfigurasi tambahan dengan menambahkan Kode Sumber \ref{konfigurasisupervisor} pada file \texttt{/etc/supervisor/conf.d/app.conf}.\\
-  \begin{minipage}{\linewidth}
-  \begin{lstlisting}[caption=Konfigurasi tambahan Supervisor,language=Python,label=konfigurasisupervisor]
-  [program:flask-loginpage]
-  
-  command = 
-   /home/fourirakbar/flask-loginpage/flask-loginpageenv/bin/python 
-   /home/fourirakbar/flask-loginpage/flask-loginpageenv/bin/gunicorn 
-     -b 0.0.0.0:400 app:app
-  directory = /home/fourirakbar/flask-loginpage
-  user = fourirakbar
-  stdout_logfile = 
-   /home/fourirakbar/flask-loginpage/logs/app_stdout.log
-  stderr_logfile =
-   /home/fourirakbar/flask-loginpage/logs/app_stderr.log
-  redirect_stderr = True
-  autostart = True
-  enviroment = PATH = 
-   "/home/fourirakbar/flask-loginpage/flask-loginpageenv/bin", 
-   PRODUCTION=1
-  \end{lstlisting}
-  \end{minipage}
-  Setelah selesai menambah konfigurasi seperti pada Kode Sumber \ref{konfigurasisupervisor}, \textit{reload Supervisor} dengan menjalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{reloadsupervisor}.\\ 
+  Perlu diperhatikan ketika menambahkan atau mengubah konfigurasi \textit{Supervisor} pada \texttt{/etc/supervisor/conf.d/} di \textit{server} untuk halaman \textit{login}, perlu dilakukan \textit{reload Supervisor} dengan menjalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{reloadsupervisor}.\\ 
   \begin{minipage}{\linewidth}
   \begin{lstlisting}[caption=Command untuk Reload Supervisor,language=Python,label=reloadsupervisor]
   sudo supervisorctl reread
@@ -100,40 +50,8 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   sudo supervisorctl status
   \end{lstlisting}
   \end{minipage}
-  \indent Lalu untuk melakukan pemasangan \textit{Nginx} versi 1.10.3 pada sistem operasi Ubuntu \textit{Server}, jalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{installnginx}.\\
-  \begin{minipage}{\linewidth}
-  \begin{lstlisting}[caption=Command untuk installasi Supervisor,language=Python,label=installnginx]
-  sudo apt-get install nginx
-  \end{lstlisting}
-  \end{minipage}
-  Lalu agar \textit{Nginx} dapat dijalankan sebagai \textit{web server} dari perangkat lunak halaman \textit{login}, perlu dilakukan konfigurasi tambahan dengan menambahkan Kode Sumber \ref{konfigurasinginx} pada file \texttt{/etc/nginx/sites-available/app}.
-  \begin{minipage}{\linewidth}
-  \begin{lstlisting}[caption=Konfigurasi tambahan untuk Nginx,language=Python,label=konfigurasinginx]
-  server {
-	  listen 80;
-	  server_name 10.151.36.120;
-	  
-	  add_header X-Frame-Options SAMEORIGIN;
-	  add_header X-Content-Type-Options nosniff;
-	  add_header X-XSS-Protection "1; mode=block";
-	  
-	  access_log /home/fourirakbar/flask-loginpage/logs/app_access.log;
-	  
-	  location / {
-		  proxy_pass       http://127.0.0.1:4000;
-		  proxy_set_header Host        $host;
-		  proxy_set_header X-Real-IP   $remote_addr;
-		  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	  }
-	  
-	  location ^~ /static/  {
-		  include     /etc/nginx/mime.types;
-		  alias       /home/fourirakbar/flask-loginpage/static/;
-	  }  
-  }
-  \end{lstlisting}
-  \end{minipage}
-  Setelah itu, aktifkan konfigurasi diatas dengan menjalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{aktifasikonfigurasinginx}.\\
+
+  Perlu diperhatikan pula ketika menambahkan atau mengubah konfigurasi \textit{Nginx} pada \texttt{/etc/nginx/sites-available/} di \textit{server} untuk halaman \textit{login}, perlu dilakukan aktifasi konfigurasi \textit{Nginx} dengan menjalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{aktifasikonfigurasinginx}.\\
   \begin{minipage}{\linewidth}
   \begin{lstlisting}[caption=Command untuk mengaktifkan konfigurasi Nginx,language=Python,label=aktifasikonfigurasinginx]
   sudo ln -s /etc/nginx/sites-available/app 
@@ -146,6 +64,16 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   sudo service nginx restart
   \end{lstlisting}
   \end{minipage}
+  
+  \subsubsection{Implementasi Tampilan Antarmuka Halaman \textit{Login}}
+  Halaman \textit{login} merupakan halaman utama yang menampilkan sebuah \textit{form input} untuk \textit{client}. Pada halaman ini terdapat dua \textit{form input}, yaitu \textit{form input} untuk \texttt{Username} atau NRP dari \textit{client} dan juga \textit{form input} untuk \texttt{Password} dari \textit{client}. Implementasi antarmuka halaman \textit{login} dapat dilihat pada Gambar \ref{implementasihalamanlogin}.
+  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{images/bab4/halamanlogin}
+	\caption{Halaman \textit{Login}}
+	\label{implementasihalamanlogin}
+\end{figure}
   
   \subsubsection{Rute \textit{Web Service} pada Halaman \textit{Login}}
   Pada halaman \textit{login} diperlukan adanya rute-rute yang bisa diakses untuk melayani \textit{client}, supaya \textit{client} dapat membuka tampilan antar muka dari halaman \textit{login} dan juga supaya \textit{client} dapat mengirimkan permintaan untuk membuat kontainer \textit{docker} pada \textit{docker host}. Daftar rute yang disediakan oleh halaman \textit{loign} tertera pada Tabel \ref{tabelRuteWebServiceHalamnLogin}.\\
@@ -203,20 +131,20 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   \end{minipage}
     
   \section{Implementasi Pembuatan Aturan untuk Mengarahkan \textit{Traffic Client} ke Halaman \textit{Login} dari Sistem}
-  Pada implementasi pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem diasumsikan bahwa belum ada \textit{client} yang telah \textit{login} ke dalam sistem. Karena diasumsikan bahwa belum ada \textit{client} yang telah berhasil \textit{login} ke dalam sistem, maka semua \textit{client} tidak diperbolehkan untuk mengakses internet. Kemudian untuk mengarahkan \textit{traffic} dari \textit{client} dibuatkan beberapa \textit{rules} dengan menggunakan \textit{iptables} seperti Kode Sumber \ref{iptablesbeforelogin}. \\
+  Pada implementasi pembuatan aturan untuk mengarahkan \textit{traffic client} ke halaman \textit{login} dari sistem diasumsikan bahwa belum ada \textit{client} yang telah \textit{login} ke dalam sistem. Karena diasumsikan bahwa belum ada \textit{client} yang telah berhasil \textit{login} ke dalam sistem, maka semua \textit{client} tidak diperbolehkan untuk mengakses internet. Kemudian untuk mengarahkan \textit{traffic} dari \textit{client} dibuatkan beberapa \textit{rules} dengan menggunakan \textit{iptables} pada \textit{Docker Host} dengan IP \texttt{10.151.36.134}. seperti Kode Sumber \ref{iptablesbeforelogin}. \\
   \begin{minipage}{\linewidth}
   	\begin{lstlisting}[caption=Command untuk mengarahkan \textit{client} ke halaman \textit{login},language=Python,label=iptablesbeforelogin]
   	iptables -I FORWARD 1 -s 192.168.99.0/24 -j REJECT
-  	iptables -I FORWARD 1 -s 192.168.99.0/24 -p tcp d 10.151.36.130
+  	iptables -I FORWARD 1 -s 192.168.99.0/24 -p tcp d 10.151.36.173
   	--dport 4000 -j ACCEPT
   	iptables -t nat -I PREROUTING 1 -p tcp -s 192.168.99.0/24
-  	--dport 80 -j DNAT --to 10.151.36.130:4000
+  	--dport 80 -j DNAT --to 10.151.36.173:4000
   	\end{lstlisting}
   \end{minipage}  
   \indent \textit{Rules} pertama berfungsi untuk melarang semua \textit{client} untuk melewati \textit{router}. \textit{Rules} kedua berfungsi untuk mengizinkan semua \textit{client} membuka halaman \textit{login}. Sedangkan \textit{rules} ketiga berfungsi untuk mengarahkan semua \textit{traffic client} ke halaman \textit{login}.
 	
   \section{Implementasi Pembuatan \textit{Middleware}}
-  \textit{Middleware} merupakan komponen yang akan menerima permintaan dari \textit{client}, mengirimkan perintah untuk membuat kontainer \textit{docker} secara otomatis pada \textit{docker host}, dan menentukan rute \textit{traffic} dari \textit{client} menuju ke internet sesuai kontainer \textit{docker} masing-masing user. Implementasi \textit{middleware} akan terbagi menjadi implementasi basis data dan implementasi \textit{web service}.
+  \textit{Middleware} dibangun pada \textit{Docker Host} dengan IP \texttt{10.151.36.134} dengan menggunakan sistem operasi Linux Mint 18.03 64 Bit. \textit{Middleware} merupakan komponen yang akan menerima permintaan dari \textit{client}, mengirimkan perintah untuk membuat kontainer \textit{docker} secara otomatis pada \textit{docker host}, dan menentukan rute \textit{traffic} dari \textit{client} menuju ke internet sesuai kontainer \textit{docker} masing-masing user. Implementasi \textit{middleware} akan terbagi menjadi implementasi basis data dan implementasi \textit{web service}.
   
   Pada implementasi pembuatan \textit{middleware} menggunakan perangkat unak antara lain:
   \begin{enumerate}
@@ -225,39 +153,19 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
 	\item \textit{Docker} versi 1.13.1.
   \end{enumerate}
   
-  Lalu sistem operasi yang digunakan adalah sistem operasi Linux Mint 18.03 64 Bit yang akan digunakan sebagai \textit{docker host}. \textit{Python} akan berfungsi sebagai komponen dasar pembangunan sistem, salah satunya adalah sebagai komponen dasar pembuatan \textit{middleware}, sedangkan \textit{Flask} akan berfungsi sebagai kerangka kerja untuk pembuatan \textit{middleware}. Implementasi pembuatan \textit{middleware} akan terbagi menjadi implementasi \textit{web service} dan implementasi basis data dan.
+  \textit{Python} akan berfungsi sebagai komponen dasar pembangunan sistem, salah satunya adalah sebagai komponen dasar pembuatan \textit{middleware}, sedangkan \textit{Flask} akan berfungsi sebagai kerangka kerja untuk pembuatan \textit{middleware}. Implementasi pembuatan \textit{middleware} akan terbagi menjadi implementasi \textit{web service} dan implementasi basis data dan.
   
   \subsection{Implementasi \textit{Web Service} pada \textit{Middleware}}
-  Diperlukan beberapa tahap, antara lain pemasangan perangkat lunak dan tahap konfigurasi. Untuk melakukan pemasangan \textit{Python} versi 3.5.2 pada \textit{docker host}, jalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{installpython3didockerhost}.\\
-  \begin{minipage}{\linewidth}
-  \begin{lstlisting}[caption=Command untuk installasi Python,language=Python,label=installpython3didockerhost]
-  sudo apt-get update
-  sudo apt-get install python3
-  \end{lstlisting}
-  \end{minipage}
-  
-  Lalu untuk melakukan pemasangan \textit{Flask} versi 1.0.2 pada \textit{docker host}, jalankan \textit{command} pada teminal seperti pada Kode Sumber \ref{installflaskdidockerhost}.\\  
-  \begin{minipage}{\linewidth}
-  \begin{lstlisting}[caption=Command untuk installasi Flask,language=Python,label=installflaskdidockerhost]
-  sudo apt-get install python3-pip
-  sudo pip install flask
-  \end{lstlisting}
-  \end{minipage} 
-  
-  Lalu untuk melakukan pemasangan \textit{Docker} versi 1.13.1 pada \textit{docker host}, jalankan \textit{command} pada terminal seperti pada Kode Sumber \ref{installdocker}.\\
-  \begin{minipage}{\linewidth}
-  \begin{lstlisting}[caption=Command untuk installasi Flask,language=Python,label=installdocker]
-  sudo apt-get install docker-ce
-  \end{lstlisting}
-  \end{minipage} 
-  Setelah itu jalankan Kode Sumber \ref{systemctldocker} supaya \textit{docker} dapat dijalankan ketika \textit{docker host} menyala.\\
+  Diperlukan beberapa tahap, antara lain pemasangan perangkat lunak dan tahap konfigurasi. Tahap pemasangan perangkat lunak dan tahap konfigurasi pada \textit{middleware} di \textit{Docker Host} dijelaskan pada Lampiran B.
+   
+  Perlu diperhatikan supaya \textit{docker} dapat dijalankan ketika \textit{docker host} menyala, jalankan Kode Sumber \ref{systemctldocker}.\\
   \begin{minipage}{\linewidth}
   \begin{lstlisting}[caption=Command untuk installasi Flask,language=Python,label=systemctldocker]
   sudo systemctl enable docker
   \end{lstlisting}
   \end{minipage} 
 
-  \subsubsection{Rute \textit{Web Service} pada \textit{Middleware}}
+  \subsubsection{Rute \textit{Web Service} pada \textit{Maaiddleware}}
   \textit{Middleware} tidak memiliki antar muka grafis. Namun tetap diperlukan adanya rute-rute yang bisa diakses untuk melayani permintaan penyediaan kontainer \textit{docker} dari \textit{client}. Daftar rute yang disediakan oleh \textit{middleware} tertera pada Tabel \ref{tabelRuteWebServiceDockerHost}.\\
   \begin{longtable}{|p{0.15\textwidth}|p{0.25\textwidth}|p{0.4\textwidth}|p{0.3\textwidth}|} % L = Rata kiri untuk setiap kolom, | = garis batas vertikal.
   	
@@ -319,15 +227,6 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   \end{minipage}
     
   \section{Implementasi Pemasangan Kontainer \textit{Docker} pada \textit{Docker Host}}
-  Pada implementasi pemasangan kontainer \textit{docker} pada \textit{docker host} menggunakan perangkat lunak \textit{docker}. Diperlukan beberapa tahap untuk dapat menggunakan perangkat lunak \textit{docker}, yaitu tahap pemasangan dan konfigurasi. Untuk melakukan pemasangan \textit{docker} versi 1.13.1 pada sistem operasi Linux Mint jalankan Kode Sumber \ref{installdocker} pada terminal.
-  \newline
-  \begin{minipage}{\linewidth}
-  \begin{lstlisting}[caption=Perintah untuk installasi Docker,language=Python,label=installdocker]
-  sudo apt-get update
-  sudo apt-get install docker-ce
-  \end{lstlisting}
-  \end{minipage}
-  
   Setelah berhasil melakukan pemasangan \textit{docker} versi 1.13.1, sekarang lakukan konfigurasi supaya \textit{docker} tidak hanya dapat digunakan oleh \textit{root user} dari sebuah sistem. Hal ini dapat dilakukan dengan menjalankan perintah pada Kode Sumber \ref{konfigurasildocker1}.
   \newline
     \begin{minipage}{\linewidth}
@@ -427,10 +326,33 @@ Pada implementasi pembuatan aturan untuk mengarahkan \textit{traffic client} ke 
 
 Pada \textit{rules} pertama berfungsi untuk mengizinkan atau memperbolehkan \textit{traffic} dari \textit{client} melewati \textit{router}. Lalu \textit{rules} kedua dan ketiga berfungsi untuk mengarahkan \textit{traffic cleint} ke kontainer \textit{docker} yang sudah dibuat dengan satu port khusus untuk \textit{client} tersebut. Lalu \textit{rules} keempat berfungsi untuk mengizinkan atau memperbolehkan \textit{client} untuk mengakses internet.
 
-\section{Implementasi Pembacaan \textit{Log File} dari \textit{Client}}
-Pada implementasi pembacaan \textit{log file} dari \textit{client} dilakukan dengan membaca \textit{file} hasil \textit{output} dari \textit{mitmproxy}. \textit{File} hasil \textit{output} dari \textit{mitmproxy} berbentu \textit{binary} dimana yang bisa membacanya hanya komputer saja. Maka dari itu perlu dilakukan pembacaan lagi \textit{file} yang berisi \textit{binary} tersebut dengan menjalankan \textit{command} seperti pada Kode Sumber \ref{parsemitmdump}.\\
+\section{Implementasi Pembuatan Halaman \textit{Administrator}}
+Halaman \textit{administrator} dibangun pada \textit{Docker Host} dengan IP \texttt{10.151.36.134}. Pada sub-bab ini akan dibagi lagi menjadi beberapa bagian, antara lain implementasi pembacaan \textit{log file} dari \textit{client} dan implementasi antarmuka.
+
+\subsection{Implementasi Pembacaan \textit{Log File} dari \textit{Client}}
+Pada implementasi pembacaan \textit{log file} dari \textit{client} dilakukan dengan membaca \textit{file} hasil \textit{output} dari \textit{mitmproxy}. \textit{File} hasil \textit{output} dari \textit{mitmproxy} berbentuk \textit{binary} dimana yang bisa membacanya hanya komputer saja. Maka dari itu perlu dilakukan pembacaan lagi \textit{file} yang berisi \textit{binary} tersebut dengan menjalankan \textit{command} seperti pada Kode Sumber \ref{parsemitmdump}.\\
 \begin{minipage}{\linewidth}
-\begin{lstlisting}[caption=Perintah untuk Membaca \textit{File Log} dari \textit{Mitmproxy},language=Python,label=parsemitmdump]
-mitmdump -nr [NAMA-FILE] --set flow_detail=2 --showhost > [NAMA-FILE]
-\end{lstlisting}
+	\begin{lstlisting}[caption=Perintah untuk Membaca \textit{File Log} dari \textit{Mitmproxy},language=Python,label=parsemitmdump]
+	mitmdump -nr [NAMA-FILE] --set flow_detail=2 --showhost > 
+		[NAMA-FILE]
+	\end{lstlisting}
 \end{minipage}
+Sedangkan untuk membaca \textit{log file} dari \textit{client} secara langsung atau \textit{live} dapat dilakukan dengan menjalankan \textit{command} seperti pada Kode Sumber \ref{streammitmdump}.\\
+\begin{minipage}{\linewidth}
+	\begin{lstlisting}[caption=Perintah untuk Membaca \textit{File Log} dari \textit{Client},language=Python,label=streammitmdump]
+	tail -f -c +0 [NAMA_FILE] | mitmdump -n -r - --set flow_detail=1
+		--showhost
+	\end{lstlisting}
+\end{minipage}
+
+Parameter \texttt{-nr} berfungsi untuk tidak menjalankan \textit{proxy server} dari \textit{mitmproxy} sendiri, dan juga berfungsi untuk melakukan analisa dari \textit{file output mitmproxy} yang berbentuk \textit{binary}. Sedangkan parameter \texttt{--set flow detail} berfungsi untuk menampilkan detail dari analisa yang dilakukan oleh \textit{mitmproxy}. Terdapat tingkat satu sampai dengan tiga, semakin tinggi tingkat yang diberikan maka semakin jelas detail dari \textit{log} yang dianalisa oleh \textit{mitmproxy}. Lalu parameter \texttt{--showhost} berfungsi untuk menampilkan \textit{header} dari URL yang telah diakses oleh \textit{client}.
+
+\subsection{Implementasi Antarmuka Halaman \textit{Administrator}}
+Halaman \textit{administrator} diperuntukkan bagi \textit{User} yang mempunyai akses ke \textit{Docker Host}. Halaman ini berguna sebagai \textit{dashboard} dari \textit{administrator}. Pada halaman ini menampilkan siapa saja \textit{Client} yang telah berhasil \textit{login} ke dalam sistem. Terdapat tiga \textit{button}, yaitu \textit{Stream Log} yang berfungsi untuk melihat secara langsung atau \textit{live log} dari \textit{client}. Lalu terdapat \textit{button} Lihat \textit{Log} yang berfungsi untuk melihat \textit{log} dari \textit{client} sampai terakhir \textit{client} tersebut mengakses internet. Lalu terdapat \textit{button Download Log} yang berfungsi untuk mengunduh \textit{log} dari \textit{client}. Implementasi antarmuka halaman \textit{administrator} dapat dilihat pada Gambar \ref{halamandashboardadmin}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{images/bab4/halamandashboardadmin}
+	\caption{Halaman \textit{Login}}
+	\label{halamandashboardadmin}
+\end{figure}
