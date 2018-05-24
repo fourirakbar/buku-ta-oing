@@ -28,7 +28,7 @@
 \contentsline {section}{\numberline {2.5}\textit {Nginx}}{10}{section.2.5}
 \contentsline {section}{\numberline {2.6}\textit {Iptables}}{10}{section.2.6}
 \contentsline {section}{\numberline {2.7}MySQL}{11}{section.2.7}
-\contentsline {section}{\numberline {2.8}\textit {Mitmproxy}}{13}{section.2.8}
+\contentsline {section}{\numberline {2.8}\textit {Mitmproxy}}{12}{section.2.8}
 \contentsline {section}{\numberline {2.9}\textit {VirtualBox}}{13}{section.2.9}
 \contentsline {section}{\numberline {2.10}\textit {Proxmos VE}}{14}{section.2.10}
 \contentsline {section}{\numberline {2.11}\textit {Docker}}{15}{section.2.11}

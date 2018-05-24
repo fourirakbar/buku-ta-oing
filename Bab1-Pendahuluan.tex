@@ -10,11 +10,12 @@
 \section{Rumusan Masalah}
 	Berikut beberapa hal yang menjadi rumusan masalah dalam tugas akhir ini:
 	\begin{enumerate}
-	 \item Bagaimana cara mengarahkan \textit{traffic} dari \textit{client} ke halaman \textit{login}?
-	 \item Bagaimana cara membuat sebuah kontainer \textit{docker} secara otomatis ketika terdapat \textit{client} yang terhubung dengan jaringan ITS?
+	 \item Bagaimana cara \textit{client} untuk melakukan \textit{autentifikasi}?
+	 \item Bagaimana cara membuat sebuah kontainer \textit{docker} secara otomatis ketika terdapat \textit{client} yang akan mengakses internet?
 	 \item Bagaimana cara mengarahkan \textit{traffic} dari \textit{client} ke kontainer \textit{docker} yang sesuai?
-	 \item Bagaimana cara mengetahui apa saja yang diakses oleh \textit{client}?
+	 \item Bagaimana cara mencatat aktivitas dari \textit{client}?
 	 \item Bagaimana perbandingan performa antara IAM konvensional dengan IAM berbasi kontainer?
+	 \item Bagaimana mengevaluasi penggunaan sumber daya dan skalabilitas pada \textit{docker host}?
 	\end{enumerate}
 
 	\section{Batasan Masalah}
@@ -25,26 +26,25 @@
 	 \item Parameter untuk mengetahui apa saja yang diakses oleh \textit{client} adalah \textit{access log} dari \textit{client} tersebut.
 	 \item Setiap \textit{client} mendapatkan IP \textit{private}.
      \item Performa yang diukur adalah \textit{response time}.
-     \item Bahaasa pemrograman yang digunakan adalah Python.
+     \item Bahasa pemrograman yang digunakan adalah \textit{Python}.
 	\end{enumerate}
     
    \section{Tujuan}
 	Tugas akhir dibuat dengan beberapa tujuan. Berikut beberapa tujuan dari pembuatan tugas akhir:
 	\begin{enumerate}
-	 \item Mengetahui cara untuk mengarahkan \textit{traffic} dari \textit{client} ke halaman \textit{login}.
+	 \item Mengetahui cara bagaimana \textit{client} dapat melakukan \textit{autentifikasi}.
 	 \item Mengimplementasikan metode untuk membuat sebuah kontainer terhadap \textit{client} yang telah berhasil \textit{login} ke jaringan ITS.
 	 \item Mengetahui cara untuk mengarahkan \textit{traffic} dari \textit{client} ke kontainer \textit{docker} yang sesuai.
-	 \item Mengetahui apa saja yang diakses oleh \textit{client}.
-	 \item Mengetahui perbandingan performa antara IAM konvensional dengan IAM berbasis kontainer.
+	 \item Mengetahui bagaimana cara mencatat aktivitas \textit{client}.
+	 \item Mengetahui penggunaan sumber daya dan skalabilitas pada \textit{docker host}.
 	\end{enumerate}
      
      \section{Manfaat}
 	 Tugas akhir dibuat dengan beberapa manfaat. Berikut beberapa manfaat dari pembuatan tugas akhir:
 	 \begin{enumerate}
-	  \item Mengetahui cara untuk mengarahkan \textit{traffic} dari \textit{client} ke halaman \textit{login}.
+	  \item Mengetahui cara bagaimana \textit{client} dapat melakukan \textit{autentifikasi}.
 	  \item Mengethaui cara untuk mengarahkan \textit{traffic} dari \textit{client} ke kontainer \textit{docker} yang sesuai.
-	  \item Mempermudah pengecekan \textit{access log} dari setiap \textit{client}.
-	  \item Mengetahui apa saja yang diakses oleh \textit{client} yang menggunakan jaringan ITS.
+	  \item Mempermudah pencatatan aktivitas dari masing-masing \textit{client} yang mengakses internet.
 	  \item Meringankan beban dari penggunaan \textit{server} di ITS karena penggunaan kontainer \textit{docker} lebih ringan.
 	 \end{enumerate}      
      
