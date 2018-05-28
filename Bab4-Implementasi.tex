@@ -165,7 +165,7 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   \end{lstlisting}
   \end{minipage} 
 
-  \subsubsection{Rute \textit{Web Service} pada \textit{Maaiddleware}}
+  \subsubsection{Rute \textit{Web Service} pada \textit{Middleware}}
   \textit{Middleware} tidak memiliki antar muka grafis. Namun tetap diperlukan adanya rute-rute yang bisa diakses untuk melayani permintaan penyediaan kontainer \textit{docker} dari \textit{client}. Daftar rute yang disediakan oleh \textit{middleware} tertera pada Tabel \ref{tabelRuteWebServiceDockerHost}.\\
   \begin{longtable}{|p{0.15\textwidth}|p{0.25\textwidth}|p{0.4\textwidth}|p{0.3\textwidth}|} % L = Rata kiri untuk setiap kolom, | = garis batas vertikal.
   	
@@ -197,19 +197,19 @@ Setelah melewati proses perancangan mengenai sistem yang akan dibuat, maka akan 
   Setelah kontainer \textit{docker} yang berisikan \textit{mitmproxy} berhasil dibuat, maka sistem akan membuat \textit{rules} yang berfungsi untuk mengarahkan \textit{traffic} dari \textit{client} menuju ke kontainer \textit{docker} milik \textit{client} tersebut, dan memperbolehkan \textit{client} untuk mengakses internet. Pada Kode Sumber \ref{pseudocodeoing} diperlihatkan bagaimana implementasinya dalam bentuk \textit{pseduocode}.
   \newline
   \begin{minipage}{\linewidth}  
-  	\begin{lstlisting}[numbers=left, frame=single,tabsize=2,breaklines,caption={Pseudocode Web Service},label=pseudocodeoing]
-  	Check whether the client is already login or not yet
+  \begin{lstlisting}[numbers=left, frame=single,tabsize=2,breaklines,caption={Pseudocode Web Service},label=pseudocodeoing]
+  Check whether the client is already login or not yet
   	
-  	if session.get login
-	  	create container
-	  	add new rules to container
-	  	return
-  	else
-	  	add new rules
-	  	client open page login
-	  	client login
-	  	return  	
-  	\end{lstlisting}
+  if session.get login
+	  create container
+	  add new rules to container
+	  return
+  else
+	  add new rules
+	  client open page login
+	  client login
+	  return  	
+  \end{lstlisting}
   \end{minipage}
   
   \subsection{Implementasi Basis Data pada \textit{Middleware}}
@@ -327,7 +327,32 @@ Pada implementasi pembuatan aturan untuk mengarahkan \textit{traffic client} ke 
 Pada \textit{rules} pertama berfungsi untuk mengizinkan atau memperbolehkan \textit{traffic} dari \textit{client} melewati \textit{router}. Lalu \textit{rules} kedua dan ketiga berfungsi untuk mengarahkan \textit{traffic cleint} ke kontainer \textit{docker} yang sudah dibuat dengan satu port khusus untuk \textit{client} tersebut. Lalu \textit{rules} keempat berfungsi untuk mengizinkan atau memperbolehkan \textit{client} untuk mengakses internet.
 
 \section{Implementasi Pembuatan Halaman \textit{Administrator}}
-Halaman \textit{administrator} dibangun pada \textit{Docker Host} dengan IP \texttt{10.151.36.134}. Pada sub-bab ini akan dibagi lagi menjadi beberapa bagian, antara lain implementasi pembacaan \textit{log file} dari \textit{client} dan implementasi antarmuka.
+Halaman \textit{administrator} dibangun pada \textit{Docker Host} dengan IP \texttt{10.151.36.134} dengan port \texttt{5001}. Fungsi dari halaman \textit{administrator} adalah untuk melihat siapa saja \textit{client} yang berhasil \textit{login} ke dalam sistem dan megnakses internet, juga untuk melihat rekap \textit{client} yang telah berhasil \textit{login} dan mengakses internet. Pada sub-bab ini akan dibagi lagi menjadi beberapa bagian, antara lain rute \textit{web service} pada halaman \textit{administrator}, implementasi pembacaan \textit{log file} dari \textit{client} dan implementasi antarmuka.
+
+\subsection{Rute \textit{Web Service} pada Halaman \textit{Administrator}}
+Pada halaman \textit{administrator} diperlukan adanya rute-rute yang bisa diakses untuk melayani permintaan dari \textit{user} yang sedang membuka hallaman \textit{administrator}, yaitu untuk melihat \textit{log} dari \textit{client}. Daftar rute yang disediakan tertera pada Tabel xx.\\
+\begin{longtable}{|p{0.1\textwidth}|p{0.2\textwidth}|p{0.25\textwidth}|p{0.4\textwidth}|} % L = Rata kiri untuk setiap kolom, | = garis batas vertikal.
+	
+	% Kepala tabel, berulang di setiap halaman
+	\caption{Daftar Rute \textit{Web Service}} \label{tabelRuteWebServiceDockerHost} \\
+	\hline
+	\textbf{HTTP Method} & \textbf{Rute} & \textbf{Parameter} & \textbf{Deskripsi} \\ \hline
+	
+	\endfirsthead
+	\caption[]{Daftar Rute \textit{Web Service}}  \\
+	\hline
+	\textbf{HTTP Method} & \textbf{Rute} & \textbf{Parameter} & \textbf{Deskripsi}  \\ \hline
+	
+	\endhead
+	\endfoot
+	\endlastfoot
+	
+	% Isi Tabel
+	GET & /table & - & Berfungsi untuk menampilkan halaman \textit{dashboard} yang menunjukkan siapa saja \textit{client} yang telah berhasil \textit{login} ke dalam sistem dan sedang aktif mengakses internet.\\ \hline
+	GET & /stream/ & id, ip, user, port & Berfungsi untuk melihat \textit{log} dari \textit{client} secara langsung atau \textit{live} dengan memasukkan parameter berupa \texttt{id}, \texttt{ip}, \texttt{user}, dan \texttt{port}.\\ \hline
+	GET & /lihat/ & id, ip, user, port & Berfungsi untuk melihat \textit{log} dari \textit{client} sampai dengan terakhjir \textit{client} mengakses internet dengan memasukkan parameter berupa \texttt{id}, \texttt{ip}, \texttt{user}, dan \texttt{port}.\\ \hline
+	GET & /history & - & Berfungsi untuk menampilkan rekap atau daftar \textit{client} yang telah berhasil \textit{login} ke dalam sistem.\\ \hline
+\end{longtable}
 
 \subsection{Implementasi Pembacaan \textit{Log File} dari \textit{Client}}
 Pada implementasi pembacaan \textit{log file} dari \textit{client} dilakukan dengan membaca \textit{file} hasil \textit{output} dari \textit{mitmproxy}. \textit{File} hasil \textit{output} dari \textit{mitmproxy} berbentuk \textit{binary} dimana yang bisa membacanya hanya komputer saja. Maka dari itu perlu dilakukan pembacaan lagi \textit{file} yang berisi \textit{binary} tersebut dengan menjalankan \textit{command} seperti pada Kode Sumber \ref{parsemitmdump}.\\
@@ -348,11 +373,20 @@ Sedangkan untuk membaca \textit{log file} dari \textit{client} secara langsung a
 Parameter \texttt{-nr} berfungsi untuk tidak menjalankan \textit{proxy server} dari \textit{mitmproxy} sendiri, dan juga berfungsi untuk melakukan analisa dari \textit{file output mitmproxy} yang berbentuk \textit{binary}. Sedangkan parameter \texttt{--set flow detail} berfungsi untuk menampilkan detail dari analisa yang dilakukan oleh \textit{mitmproxy}. Terdapat tingkat satu sampai dengan tiga, semakin tinggi tingkat yang diberikan maka semakin jelas detail dari \textit{log} yang dianalisa oleh \textit{mitmproxy}. Lalu parameter \texttt{--showhost} berfungsi untuk menampilkan \textit{header} dari URL yang telah diakses oleh \textit{client}.
 
 \subsection{Implementasi Antarmuka Halaman \textit{Administrator}}
-Halaman \textit{administrator} diperuntukkan bagi \textit{User} yang mempunyai akses ke \textit{Docker Host}. Halaman ini berguna sebagai \textit{dashboard} dari \textit{administrator}. Pada halaman ini menampilkan siapa saja \textit{Client} yang telah berhasil \textit{login} ke dalam sistem. Terdapat tiga \textit{button}, yaitu \textit{Stream Log} yang berfungsi untuk melihat secara langsung atau \textit{live log} dari \textit{client}. Lalu terdapat \textit{button} Lihat \textit{Log} yang berfungsi untuk melihat \textit{log} dari \textit{client} sampai terakhir \textit{client} tersebut mengakses internet. Lalu terdapat \textit{button Download Log} yang berfungsi untuk mengunduh \textit{log} dari \textit{client}. Implementasi antarmuka halaman \textit{administrator} dapat dilihat pada Gambar \ref{halamandashboardadmin}.
+Halaman \textit{administrator} diperuntukkan bagi \textit{User} yang mempunyai akses ke \textit{Docker Host}. Halaman ini berguna sebagai \textit{dashboard} dari \textit{administrator}. Pada halaman ini menampilkan siapa saja \textit{Client} yang telah berhasil \textit{login} ke dalam sistem. Terdapat dua \textit{button}, yaitu \textit{Stream Log} yang berfungsi untuk melihat secara langsung atau \textit{live log} dari \textit{client}. Lalu terdapat \textit{button} Lihat \textit{Log} yang berfungsi untuk melihat \textit{log} dari \textit{client} sampai terakhir \textit{client} tersebut mengakses internet.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{images/bab4/halamandashboardadmin}
-	\caption{Halaman \textit{Login}}
+	\includegraphics[width=\linewidth]{images/bab4/useraktif}
+	\caption{Halaman \textit{Administrator} Menu \textit{User List}}
 	\label{halamandashboardadmin}
+\end{figure}
+
+Pada bagian \textit{sidebar} terdapat dua menu yaitu \textit{User List} dan \textit{History}. Menu \textit{User List} berguna untuk melihat \textit{client} yang telah berhasil \textit{login} ke dalam sistem. Sedangkan menu \textit{history} berguna untuk melihat rekap \textit{client} yang telah berhasil \textit{login} dan mengakses internet pada hari-hari sebelumnya. Implementasi antarmuka halaman \textit{administrator} pada menu \textit{User List} dapat dilihat pada Gambar \ref{halamandashboardadmin}. Dan implementasi antarmuka halaman \textit{administrator} oada nenu \textit{History} dapat dilihat pada Gambar \ref{userrekap}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{images/bab4/userrekap}
+	\caption{Halaman \textit{Administrator} Menu \textit{History}}
+	\label{userrekap}
 \end{figure}
