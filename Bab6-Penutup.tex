@@ -3,16 +3,15 @@
   \section{Kesimpulan}
   Dari proses perancangan, implementasi dan pengujian terhadap sistem, dapat diambil beberapa kesimpulan berikut:
   \begin{enumerate}
-    \item Sistem dapat mendistribusikan 100\% penyediaan kontainer ke \textit{docker host} yang ada dengan multi kriteria dengan cara mendistirbusikan perintah penyediaan kontainer \textit{docker} melalui protokol ssh.  
-    \item Sistem dapat menentukan penyedia kontainer dengan menggunakan algoritma AHP dengan kriteria-kriteria seperti penggunaan CPU, RAM , dan Penyimpanan File pada masing-masing \textit{docker host} yang ada.
-    \item Dengan menggunakan AHP, dibandingkan dengan metode \textit{round robin}, sistem dapat menentukan \textit{docker host} yang akan menyediakan kontainer docker dengan efisien berdasarkan penggunaan CPU, RAM , dan File Storage pada masing-masing \textit{docker host} yang ada, dimana dengan menggunakan AHP ketersediaan akhir memori dari setiap \textit{docker host} lebih merata dengan rentang 628MB sampai 832MB, sedangkan dengan \textit{round robin} ketersediaan akhir memori sangat tidak merata, dengan rentang yang cukup jauh dimulai 95MB sampai 1.3GB. 
-    
+  	\item Sistem dapat mengarahkan \textit{client} ke halaman \textit{login} dari sistem.
+  	\item Sistem dapat membuatkan kontainer \textit{docker} yang berisi \textit{mitmproxy} secara otomatis ketika terdapat \textit{client} yang berhasil \textit{login} ke dalam sistem.
+  	\item Sistem dapat mengarahkan \textit{traffic} dari \textit{client} ke kontainer \textit{docker} yang sudah dibuat dan digunakan sebagai internet \textit{access management} untuk \textit{client} untuk memperbolehkan atau mengijinkan \textit{client} tersebut untuk mengakses internet.     
   \end{enumerate}
   \section{Saran}
   Berikut beberapa saran yang diberikan untuk pengembangan lebih lanjut:
   \begin{itemize}
-    \item Sistem dapat dikembangkan dengan menambahkan kriteria-kriteria yang sesuai dengan lingkungan sistem yang ada, seperti jarak antara \textit{docker host} dan \textit{server} middleware atau kecepatan bandwith dari setiap \textit{docker host} merupakan kriteria yang lebih baik untuk sistem yang memasangkan kontainer yang tidak memiliki perkembangan penggunaan pada aplikasi yang terdapat pada kontainer. Sedangkan sumber daya seperti file storage dapat digunakan untuk sistem yang mengalami perkembangan penggunaan pada aplikasi yang terdapat pada kontainernya.
-    \item AHP merupakan algoritma MCDM yang paling umum digunakan dikarenakan proses yang tidak rumit dan memiliki unsur objektif dan subjektif dalam pengambilan keputusannya. Untuk pengembangan kedepannya sistem dapat diimplementasikan dengan menggunakan algortima MCDM lain untuk meningkatkan performa sistem, seperi algoritma Fuzzy AHP.
+  	\item Sistem dapat dikembangkan dengan menggunakan \textit{server} lebih dari satu untuk meringankan beban kerja dari \textit{server} itu sendiri.
+  	\item Sistem dapat dikembangkan dengan menentukan beban dari setiap \textit{server}, dengan menambahkan kriteria-kriteria yang sesuai dengan lingkungan sistem yang ada, seperti jarak antara \textit{docker host} dengan \textit{middleware} atau kecepatan bandwith dari setiap \textit{docker host} merupakan kriteria yang baik. 
   \end{itemize}
 
 % Daftar Pustaka

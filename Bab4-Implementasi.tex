@@ -330,11 +330,11 @@ Pada \textit{rules} pertama berfungsi untuk mengizinkan atau memperbolehkan \tex
 Halaman \textit{administrator} dibangun pada \textit{Docker Host} dengan IP \texttt{10.151.36.134} dengan port \texttt{5001}. Fungsi dari halaman \textit{administrator} adalah untuk melihat siapa saja \textit{client} yang berhasil \textit{login} ke dalam sistem dan megnakses internet, juga untuk melihat rekap \textit{client} yang telah berhasil \textit{login} dan mengakses internet. Pada sub-bab ini akan dibagi lagi menjadi beberapa bagian, antara lain rute \textit{web service} pada halaman \textit{administrator}, implementasi pembacaan \textit{log file} dari \textit{client} dan implementasi antarmuka.
 
 \subsection{Rute \textit{Web Service} pada Halaman \textit{Administrator}}
-Pada halaman \textit{administrator} diperlukan adanya rute-rute yang bisa diakses untuk melayani permintaan dari \textit{user} yang sedang membuka hallaman \textit{administrator}, yaitu untuk melihat \textit{log} dari \textit{client}. Daftar rute yang disediakan tertera pada Tabel xx.\\
+Pada halaman \textit{administrator} diperlukan adanya rute-rute yang bisa diakses untuk melayani permintaan dari \textit{user} yang sedang membuka hallaman \textit{administrator}, yaitu untuk melihat \textit{log} dari \textit{client}. Daftar rute yang disediakan tertera pada Tabel \ref{rutehalamanadmin}.\\
 \begin{longtable}{|p{0.1\textwidth}|p{0.2\textwidth}|p{0.25\textwidth}|p{0.4\textwidth}|} % L = Rata kiri untuk setiap kolom, | = garis batas vertikal.
 	
 	% Kepala tabel, berulang di setiap halaman
-	\caption{Daftar Rute \textit{Web Service}} \label{tabelRuteWebServiceDockerHost} \\
+	\caption{Daftar Rute \textit{Web Service} pada Halaman \textit{Administrator}} \label{rutehalamanadmin} \\
 	\hline
 	\textbf{HTTP Method} & \textbf{Rute} & \textbf{Parameter} & \textbf{Deskripsi} \\ \hline
 	
@@ -349,8 +349,8 @@ Pada halaman \textit{administrator} diperlukan adanya rute-rute yang bisa diakse
 	
 	% Isi Tabel
 	GET & /table & - & Berfungsi untuk menampilkan halaman \textit{dashboard} yang menunjukkan siapa saja \textit{client} yang telah berhasil \textit{login} ke dalam sistem dan sedang aktif mengakses internet.\\ \hline
-	GET & /stream/ & id, ip, user, port & Berfungsi untuk melihat \textit{log} dari \textit{client} secara langsung atau \textit{live} dengan memasukkan parameter berupa \texttt{id}, \texttt{ip}, \texttt{user}, dan \texttt{port}.\\ \hline
-	GET & /lihat/ & id, ip, user, port & Berfungsi untuk melihat \textit{log} dari \textit{client} sampai dengan terakhjir \textit{client} mengakses internet dengan memasukkan parameter berupa \texttt{id}, \texttt{ip}, \texttt{user}, dan \texttt{port}.\\ \hline
+	GET & /stream/ & \texttt{id, ip, user, port} & Berfungsi untuk melihat \textit{log} dari \textit{client} secara langsung atau \textit{live} dengan memasukkan parameter berupa \texttt{id}, \texttt{ip}, \texttt{user}, dan \texttt{port}.\\ \hline
+	GET & /lihat/ & \texttt{id, ip, user, port} & Berfungsi untuk melihat \textit{log} dari \textit{client} sampai dengan terakhjir \textit{client} mengakses internet dengan memasukkan parameter berupa \texttt{id}, \texttt{ip}, \texttt{user}, dan \texttt{port}.\\ \hline
 	GET & /history & - & Berfungsi untuk menampilkan rekap atau daftar \textit{client} yang telah berhasil \textit{login} ke dalam sistem.\\ \hline
 \end{longtable}
 

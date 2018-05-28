@@ -12,13 +12,11 @@ A level-1 auxiliary file: Contoh.aux
 A level-1 auxiliary file: Bab6-Penutup.aux
 The style file: ieeetr.bst
 A level-1 auxiliary file: Bab7-BiodataPenulis.aux
+I found no \citation commands---while reading file main.aux
 Database file #1: Zotero.bib
-Warning--I didn't find a database entry for "bab2-python"
-Warning--I didn't find a database entry for "chi_web_2012"
-Warning--I didn't find a database entry for "shreedhar_efficient_1996"
 You've used 0 entries,
             1876 wiz_defined-function locations,
-            490 strings with 3716 characters,
+            487 strings with 3669 characters,
 and the built_in function-call counts, 20 in all, are:
 = -- 0
 > -- 0
@@ -57,4 +55,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 2
-(There were 3 warnings)
+(There was 1 error message)

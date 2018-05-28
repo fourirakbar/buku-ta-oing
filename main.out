@@ -29,7 +29,7 @@
 \BOOKMARK [1][-]{section.2.7}{MySQL}{chapter.2}% 29
 \BOOKMARK [1][-]{section.2.8}{Mitmproxy}{chapter.2}% 30
 \BOOKMARK [1][-]{section.2.9}{VirtualBox}{chapter.2}% 31
-\BOOKMARK [1][-]{section.2.10}{Framework\040Laravel}{chapter.2}% 32
+\BOOKMARK [1][-]{section.2.10}{Crontab}{chapter.2}% 32
 \BOOKMARK [1][-]{section.2.11}{Docker}{chapter.2}% 33
 \BOOKMARK [2][-]{subsection.2.11.1}{Docker\040Container}{section.2.11}% 34
 \BOOKMARK [2][-]{subsection.2.11.2}{Docker\040Images}{section.2.11}% 35
@@ -43,8 +43,8 @@
 \BOOKMARK [2][-]{subsection.3.3.3}{Perancangan\040Pembuatan\040Aturan\040untuk\040Mengarahkan\040Traffic\040Client\040ke\040Halaman\040Login\040dari\040Sistem}{section.3.3}% 43
 \BOOKMARK [2][-]{subsection.3.3.4}{Pembuatan\040Middleware\040untuk\040Menerima\040Permintaan\040dari\040Client}{section.3.3}% 44
 \BOOKMARK [2][-]{subsection.3.3.5}{Perancangan\040Pemasangan\040Kontainer\040pada\040Docker\040Host}{section.3.3}% 45
-\BOOKMARK [2][-]{subsection.3.3.6}{Pembuatan\040Halaman\040Administrator\040untuk\040Membaca\040dan\040Mengunduh\040Log\040File\040dari\040Client}{section.3.3}% 46
-\BOOKMARK [2][-]{subsection.3.3.7}{Pembuatan\040Aturan\040untuk\040Mengarahkan\040Traffic\040Client\040ke\040Kontainer\040Docker\040dari\040Tiap-Tiap\040Client}{section.3.3}% 47
+\BOOKMARK [2][-]{subsection.3.3.6}{Pembuatan\040Aturan\040untuk\040Mengarahkan\040Traffic\040Client\040ke\040Kontainer\040Docker\040dari\040Tiap-Tiap\040Client}{section.3.3}% 46
+\BOOKMARK [2][-]{subsection.3.3.7}{Pembuatan\040Halaman\040Administrator\040untuk\040Membaca\040Log\040File\040dari\040Client}{section.3.3}% 47
 \BOOKMARK [0][-]{chapter.4}{IMPLEMENTASI}{}% 48
 \BOOKMARK [1][-]{section.4.1}{Lingkungan\040Implementasi}{chapter.4}% 49
 \BOOKMARK [2][-]{subsection.4.1.1}{Perangkat\040Keras}{section.4.1}% 50

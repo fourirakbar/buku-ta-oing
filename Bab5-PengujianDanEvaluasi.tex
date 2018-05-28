@@ -22,7 +22,7 @@
     & Flask versi 1.0.2. \\ \cline{2-2} 
     & VIM versi 7.4.1. \\ \cline{2-2} 
     & Iptables versi 1.6.0. \\ \hline
-    \multirow{4}{*}{\textbf{Konfigurasi Jaringan}} & IP address : 10.151.36.38 \\ \cline{2-2} 
+    \multirow{4}{*}{\textbf{Konfigurasi Jaringan}} & IP address : 10.151.36.134 \\ \cline{2-2} 
     & Netmask : 255.255.255.0 \\ \cline{2-2} 
     & Gateway : 10.151.36.1 \\ \cline{2-2} 
     & Hostname : X450LD \\ \hline
@@ -39,10 +39,12 @@
    	\multirow{5}{*}{\textbf{Perangkat Lunak}}      & Ubuntu 16.04 64 bit. \\ \cline{2-2} 
    	& Python versi 3.5.2. \\ \cline{2-2} 
    	& Flask versi 1.0.2. \\ \cline{2-2} 
-   	& VIM versi 7.4.1. \\ \hline 
-   	\multirow{4}{*}{\textbf{Konfigurasi Jaringan}} & IP address : 10.151.36.130 \\ \cline{2-2} 
+   	& Supervisor versi 3.2.0. \\ \cline{2-2} 
+   	& Nginx versi 1.10.3. \\ \cline{2-2} 
+   	& Gunicorn versi 19.9.1. \\ \hline 
+   	\multirow{4}{*}{\textbf{Konfigurasi Jaringan}} & IP address : 10.151.36.173 \\ \cline{2-2} 
    	& Netmask : 255.255.255.0 \\ \cline{2-2} 
-   	& Gateway : 10.151.36.38 \\ \cline{2-2} 
+   	& Gateway : 10.151.36.134 \\ \cline{2-2} 
    	& Hostname : SERVERLOGIN \\ \hline
     \end{longtable}
     
@@ -99,6 +101,7 @@
       \item Pengujian \textit{client} dapat \textit{login}. ke dalam sistem.
       \item Pengujian \textit{client} dapat mengirimkan permintaan penyediaan kontainer \textit{docker} ke \textit{docker host}.
       \item Pengujian \textit{docker host} dapat menerima perintah penyediaan kontainer \textit{docker}.
+      \item Pengujian \textit{client} dapat mengakses internet.
       \end{enumerate}
       
 \subsubsection{Uji Coba \textit{Client} dapat \textit{Login} ke Dalam Sistem}
@@ -160,6 +163,9 @@ Uji coba ini dilakukan dengan mengakses sistem melalui rute /tests/endpoint. \te
 % Isi Tabel
 1 & /tests/endpoint & Menerima \textit{requests} dari \textit{client} yang menuju ke \textit{docker host} melalui browser. & \textit{Docker Host} dapat menerima perintah penyediaan kontainer \textit{docker} dan menyediakan kontainer \textit{docker} yang diinginkan. \\ \hline
 \end{longtable}
+
+\subsubsection{Uji Coba \textit{Client} dapat Mengakses Internet}
+Uji coba ini dilakukan oleh \textit{client} saat \textit{client} telah berhasil \textit{login} ke dalam sistem. Saat \textit{client} mencoba membuka sebuah web HTTP maupun HTTPS, maka web tersebut akan berhasil terbuka.
 
 
       \subsection{Skenario Uji Performa}
@@ -341,7 +347,7 @@ Sesuai dengan Gambar \ref{DataCpu},\ref{DataRam} dan \ref{DataDf}, ,semua \texti
 
 
       \subsection{Uji Performa}
- Seperti yang dijelaskan pada bab 5.2 pengujian performa akan dilakukan pada 4 \textit{docker host} yang tersedia dengan menggunakan sistem yang ada, namun dengan 2 algoritma yang berbeda yaitu menggunakan algoritma pengambilan keputusan AHP dan menggunakan algoritma pembagian kerja dasar, \textit{round robin}\cite{shreedhar_efficient_1996}. Selain itu pengujian juga akan menggunakan beberapa image \textit{docker} yang akan di pasangkan pada setiap \textit{docker host} yang tersedia. Pengujian akan dijalankan dengan mengirimkan permintaan penyediaan kontainer pada sistem dengan jumlah permintaan penyediaan kontainer yang beragam.
+ Seperti yang dijelaskan pada bab 5.2 pengujian performa akan dilakukan pada 4 \textit{docker host} yang tersedia dengan menggunakan sistem yang ada, namun dengan 2 algoritma yang berbeda yaitu menggunakan algoritma pengambilan keputusan AHP dan menggunakan algoritma pembagian kerja dasar, \textit{round robin}[xx]. Selain itu pengujian juga akan menggunakan beberapa image \textit{docker} yang akan di pasangkan pada setiap \textit{docker host} yang tersedia. Pengujian akan dijalankan dengan mengirimkan permintaan penyediaan kontainer pada sistem dengan jumlah permintaan penyediaan kontainer yang beragam.
 
 \subsubsection{Pengujian Dengan Algoritma AHP}
 Kondisi awal ketersediaan sumberdaya \textit{docker host} sebelum uji coba sistem dengan image \textit{docker} httpd dan nginx menggunakan AHP dijalankan ditunjukkan pada Tabel \ref{kondisiawal1}.
